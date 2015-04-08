@@ -1,4 +1,4 @@
-var dest = "./build";
+var dest = "./";
 var src  = './src';
 //var neat = require('node-neat').includePaths;
 //var bourbon = require('node-bourbon');
