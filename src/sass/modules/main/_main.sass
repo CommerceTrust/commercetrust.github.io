@@ -1,0 +1,51 @@
+//- This container hold the main content on each page
+//- It is found on all internal pages
+
+//- All "Main" classes have share these rules
+%main
+  display: flex
+  padding: 1rem 2rem
+
+  +responsive-stack
+
+.main-standard
+  @extend %main
+
+  &__content
+
+  &__text
+
+    * + *
+      margin-top: 1rem
+
+    h2
+      +standard-heading()
+
+
+// Main content block on Leadership page
+.main-bios
+  @extend %main
+  flex-direction: column
+
+
+// Main content block on News page
+.main-news
+  @extend %main
+
+
+// Main content block on Blog Post page
+.main-post
+  @extend %main
+
+  &__text
+
+    * + *
+      margin-top: 1rem
+
+    h2, h3
+      +standard-heading()
+
+    figcaption
+      color: $graphite
+      font-size: .75rem
+      margin-top: 0

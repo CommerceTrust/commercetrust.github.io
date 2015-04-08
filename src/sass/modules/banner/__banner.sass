@@ -1,0 +1,79 @@
+//Banner Tall - This is found on the homepage only
+.banner-tall
+  background-image: url(images/boat.jpg)
+  background-position: center
+  background-size: cover
+  display: flex
+  height: 200px
+
+  @include media(">tablet")
+    height: 465px
+
+
+  &__title
+    align-self: center
+    color: $white
+    font-family: serif
+    font-size: 2rem
+    font-weight: $normal
+    line-height: 1
+    margin: 0 0 1rem 1rem
+    text-shadow: 2px 2px 2px $charcoal
+
+    @include media(">tablet")
+      font-size: 3.5rem
+      align-self: flex-end
+      margin: 0 0 2rem 2rem
+
+// Banner Standard - This is found on the majority of the internal pages
+.banner-standard
+  background: $green
+  color: $white
+  display: flex
+
+  flex-flow: row wrap
+  justify-content: space-around
+  align-items: stretch
+
+  +responsive-stack
+
+  @include media(">tablet")
+    height: 335px
+
+  &__box
+    padding: 1rem 2rem
+
+  &__title
+    font-family: $serif
+    font-size: 2rem
+    font-weight: $normal
+
+  &__text
+
+  &__media
+    background-color: $slate
+
+  // THis is found on the Approach Page
+  &__media-approach
+    background-image: url(../images/meeting.jpg)
+    background-position: center
+    background-size: cover
+
+    @include media("<=tablet")
+      height: 300px
+
+  // This is found on the Leadership page
+  &__media-leadership
+    background-image: url(../images/people.jpg)
+    background-position: center
+    background-size: cover
+
+    @include media("<=tablet")
+      height: 300px
+
+// Banner Panorama - This is found on the News page
+.banner-panorama
+  background-image: url(../images/trees.jpg)
+  background-position: center
+  background-size: cover
+  height: 255px

@@ -1,0 +1,56 @@
+//-
+//- This is a 'Front Matter block'
+//- It uses YAML to create JSON objects that provide local variables to the page
+//-
+---
+title: Contact Us
+description: Collaboratively administrate empowered markets via plug-and-play networks.
+
+sidebar:
+  image: meeting.jpg
+  title: Our Locations
+  text: Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.
+  button_text: Find a Location
+  button_url: http://google.com
+---
+//- This will add the content of this page inside the 'global.jade' file
+extends ../layout/global
+//-
+//- This will overwrite the 'block seo' placeholder in the 'global.jade' file
+//- with the content below
+block seo
+  //- Iindent(nest) your code after a 'block' placeholder to make it show
+  title= title
+  meta(name="description" content="#{description}")
+//-
+//- This will overwrite the 'block content' placeholder in the 'global.jade' file
+//- with the content below
+block content
+  //-
+  //- Indent(nest) your code after a 'block' placeholder to make it show
+  //-
+  .banner-standard
+    .banner-standard__box.col-5-12
+      h1.banner-standard__title= title
+      p.banner-standard__text Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+    .banner-standard__media-approach.col-7-12
+
+  .main-standard
+    .main-standard__content.col-7-12
+      .main-standard__text
+        form.form-standard
+          label I want to get in contact with...
+          select
+            option Personal Wealth Management
+            option Institutional Asset Management
+          label My name is...
+          input(type='name' placeholder='Name')
+          label My email is...
+          input(type='email' placeholder='Email')
+          label Message
+          textarea(rows='8' placeholder='Comments')
+          input(type='checkbox' class='form-standard__checkbox')
+          label Yes, Sign Me Up for Newsletter
+          input(type='submit' value='Submit')
+
+    include ../inc/sidebar.jade

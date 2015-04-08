@@ -1,0 +1,91 @@
+//- HOMEPAGE
+//-
+//- This is a 'Frontmatter block'
+//- It uses YAML to create JSON objects that provide local variables to the page
+//-
+---
+title: Commerce Trust
+description: Commerce Trust
+individuals:
+  - Investment Management
+  - Private Banking
+  - Wealth Planning
+  - Trust Services
+  - Commerce Family Office
+
+institutions:
+  - Investment Management
+  - Retirement Planning
+  - Trust & Custody Services
+  - Corporate Trust
+  - Non-Profit Services
+---
+//- This will add the content of this page inside the 'global.jade' file
+extends ../layout/global
+//-
+//- This will overwrite the 'block seo' placeholder in the 'global.jade' file
+//- with the content below
+block seo
+  //- Indent(nest) your code after a 'block' placeholder to make it show
+  //-
+  //- Title and description are variable created above in the frontmatter
+  title= title
+  meta(name="description" content="#{description}")
+//-
+//- This will overwrite the 'block content' placeholder in the 'global.jade' file
+//- with the content below
+block content
+  //-
+  //- Iindent(nest) your code after a 'block' placeholder to make it show
+  //-
+  .banner-tall
+    h1.banner-tall__title Your Goals.
+      br 
+      | Our Guidance. 
+      br 
+      | Your Success
+    
+      
+  .cta-contact
+    .cta-contact__box
+      p.cta-contact__text Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer.
+      a.cta-contact__button(href="#") Contact Us
+    
+    
+  .cta-teaser
+    .cta-teaser__box.col-7-12
+      h2.cta-teaser__title Our Mission
+      p.cta-teaser__text You have a vision for where you want to go and what you want to achieve. To learn more about us and our approach to helping you get there, watch this video of our president and CEO Ray Stranghoener:
+      a.cta-teaser__button(href="#") Learn More
+      
+    .cta-teaser__media.col-5-12
+      //-img(src="../images/meeting.jpg", alt="Meeting")
+      
+      
+  .card-diptic
+    .card-diptic__box.col-6-12
+      h2.card-diptic__title Individuals
+      .card-diptic__media
+        img(src="")
+      p.card-diptic__text Collaboratively administrate empowered markets via plug-and-play networks. Quickly maximize timely deliverables for real-time schemas. 
+      ul
+        each val in individuals
+          li
+            a.card-diptic__link(href="")= val
+
+          
+    .card-diptic__box.col-6-12
+      h2.card-diptic__title Institutions
+      .card-diptic__media
+        img(src="")
+      p.card-diptic__text Collaboratively administrate empowered markets via plug-and-play networks. Quickly maximize timely deliverables for real-time schemas.  
+      ul
+        each val in institutions
+          li
+            a.card-diptic__link(href="")= val
+          
+          
+  .cta-center
+    h2.cta-center__title About Commerce Trust Company
+    p.cta-center__text Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence value.
+    a.cta-center__button(href="#") Contact

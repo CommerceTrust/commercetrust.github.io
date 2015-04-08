@@ -1,0 +1,28 @@
+.nav-minor
+  display: none
+  @include media(">desktop")
+    display: block
+    padding-top: 1rem
+    text-align: right
+
+  li
+    display: inline-block
+
+    &:after
+      display: inline-block
+      content: '|'
+      color: $green
+      margin: 0 2px
+
+    &:last-child
+
+      &:after
+        display: none
+
+  &__link
+    color: $charcoal
+    display: inline-block
+    font-size: .9rem
+
+    &:hover
+      color: $green

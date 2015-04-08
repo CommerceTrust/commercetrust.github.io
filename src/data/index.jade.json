@@ -1,0 +1,111 @@
+{
+  "home": {
+    "seo": {
+      "title": "Commerce Trust",
+      "description": "Commerce Bank | St. Louis"
+    }
+  },
+  "lorem": {
+    "s": "Lorem ipsum dolor sit amet, consectetur adipisicing elit",
+    "t": "Lorem ipsum dolor",
+    "p": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+  },
+  "nav_major": [
+    {
+      "page": "Our Approach",
+      "url": "/our-approach/",
+      "sub": [
+        {
+          "subpage": "Leadership",
+          "suburl": "/our-approach/leadership.html"
+        }
+      ]
+    },
+    {
+      "page": "Personal Wealth Management",
+      "url": "/personal-wealth-management/",
+      "sub": [
+        {
+          "subpage": "Investment Management",
+          "suburl": "/personal-wealth-management/investment-management.html"
+        },
+        {
+          "subpage": "Financial Planning",
+          "suburl": "/personal-wealth-management/financial-planning.html"
+        },
+        {
+          "subpage": "Private Banking",
+          "suburl": "/personal-wealth-management/private-banking.html"
+        },
+        {
+          "subpage": "Trust & Estate Services",
+          "suburl": "/personal-wealth-management/trust-and-estate-services.html"
+        }
+      ]
+    },
+    {
+      "page": "Institutional Asset Management",
+      "url": "/institutional-asset-management/",
+      "sub": [
+        {
+          "subpage": "Investment Management",
+          "suburl": "/institutional-asset-management/investment-management.html"
+        },
+        {
+          "subpage": "Trust & Custody Services",
+          "suburl": "/institutional-asset-management/trust-and-custody-services.html"
+        },
+        {
+          "subpage": "Retirement Plan Services",
+          "suburl": "/institutional-asset-management/retirement-plan-services.html"
+        },
+        {
+          "subpage": "Non-profit Services",
+          "suburl": "/institutional-asset-management/non-profit-services.html"
+        },
+        {
+          "subpage": "Corporate Trust",
+          "suburl": "/institutional-asset-management/corporate-trust.html"
+        }
+      ]
+    },
+    {
+      "page": "News & Insights",
+      "url": "/news-and-insights/",
+      "sub": [
+        {
+          "subpage": "Archive",
+          "suburl": "/news-and-insights/archive.html"
+        }
+      ]
+    }
+  ],
+  "nav_minor": [
+    {
+      "page": "Contact Us",
+      "url": "/contact-us.html"
+    },
+    {
+      "page": "Locations",
+      "url": "/locations.html"
+    },
+    {
+      "page": "Account Access",
+      "url": "/account-access.html"
+    },
+    {
+      "page": "Search",
+      "url": "/search.html"
+    }
+  ],
+  "nav_terms": [
+    {
+      "page": "Terms & Conditions",
+      "url": "/terms-and-conditions.html"
+    },
+    {
+      "page": "Privacy Policy",
+      "url": "/privacy-policy.html"
+    }
+  ]
+}

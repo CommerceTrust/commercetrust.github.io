@@ -1,0 +1,128 @@
+//Footer
+$footer-header-nav: Trebuchet MS
+
+
+%menu
+	list-style: none
+	margin-left: 0
+	margin-bottom: 0
+	padding-left: 0
+	ul
+		list-style: none
+		margin-left: 0
+		margin-bottom: 0
+		padding-left: 0
+
+
+//Something accessible to hide text in logos
+.visuallyhidden
+  border: 0
+  clip: rect(0 0 0 0)
+  height: 1px
+  margin: -1px
+  overflow: hidden
+  padding: 0
+  position: absolute
+  width: 1px
+
+
+footer
+
+.nav-footer
+	padding: 30px 20px 20px
+	text-align: center
+
+	@include media(">=tablet", ">=desktop")
+		display: flex
+		text-align: left
+
+	&__link
+		font-size: 14px
+	&__box
+		padding: 0 10px
+
+	&__box-narrow
+		padding: 0 10px
+
+	&__button
+		display: block
+		color: $footer-text
+		border: 1px solid $footer-text
+		font-size: 16px
+		margin-bottom: 25px
+		word-wrap: break-word //Put this in global buttons?
+	.footer-nav__major
+		@extend %menu
+		margin-top: 0
+		> li
+			font-family: $footer-header-nav
+			font-size: 16px
+		a
+		  color: $charcoal
+		  &:hover
+			  color: $green
+
+	// Sub-navigation, which hides on small sizes
+	&__sub-links
+		font-size: 14px
+		display: none
+
+		@include media(">=tablet", ">=desktop")
+			display: block
+
+.footer-copyright
+	border-top: 1px solid $cloud
+	padding: 20px 30px 0
+	display: flex
+	&__logo
+		display: none
+
+		@include media(">=tablet", ">=desktop")
+			display: block
+			width: 484px
+
+	&__box
+		text-align: center
+
+		@include media(">=tablet", ">=desktop")
+			text-align: right
+
+		small, .nav-minor
+			display: inline-block
+			font-size: 14px
+
+			@include media(">=tablet", ">=desktop")
+				font-size: 12px
+		.nav-minor
+			@extend %menu
+			li
+			  a
+			    font-size: 14px
+
+			    @include media(">=tablet", ">=desktop")
+			      font-size: 12px
+
+.footer-disclaimer
+	border: 1px solid $footer-text
+	text-align: center
+	padding: 20px
+	margin: 50px auto 10px
+	width: 11/12 * 100%
+
+	@include media(">=tablet", ">=desktop")
+		width: 9/12 * 100%
+
+	h6, p, ul
+		font-size: 14px
+		@include media(">=tablet", ">=desktop")
+			font-size: 12px
+	p
+		margin-bottom: 0
+	h6
+		margin: 0
+	ul
+		@extend %menu
+		margin-top: 0
+		li
+			display: inline-block
+			margin: 0 10px

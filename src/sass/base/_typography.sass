@@ -1,0 +1,60 @@
+// Vars
+$base-font-size: 20px
+$base-line-height: 1.5
+
+// Typefaces
+$sans: News Cycle, sans-serif
+$serif: Playfair Display, serif
+
+// Font weights
+$xlight: 200
+$light: 300
+$normal: 400
+$semibold: 600
+$bold: 700
+
+// Line height function
+@function line-height()
+  @return $base-font-size * $base-line-height
+
+// Var must be specified after returning the line-height function
+$cal-line-height: line-height()
+
+// Mixins
+=vert-margin($top: 1, $bottom: 1)
+  margin-top: $cal-line-height * $top
+  margin-bottom: $cal-line-height * $bottom
+
+=vert-padding($top: 1, $bottom: 1)
+  padding-top: $cal-line-height * $top
+  padding-bottom: $cal-line-height * $bottom
+
+
+html
+  box-sizing: border-box
+  // Box-sizing setup per Mr. Irish http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+  font-size: $base-font-size
+  // Font size on :root (html tag) so I can use REMs
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+
+
+*, *:before, *:after
+  box-sizing: inherit
+
+
+body
+  color: $charcoal
+  line-height: 1.5
+  font-family: $sans
+  //background-image: linear-gradient(transparent, transparent line-height() - 1px, $green 1px , transparent)
+  background-size: auto line-height()
+  margin: 0
+
+
+=standard-heading()
+  color: $green
+  font-family: $serif
+  font-size: 2rem
+  font-weight: $normal
+  line-height: 1

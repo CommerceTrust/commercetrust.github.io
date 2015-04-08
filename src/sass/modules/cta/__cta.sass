@@ -1,0 +1,141 @@
+//
+//CTAs - Call to Action modules
+//
+
+//Contact CTA
+//This is found on the homepage only right now
+.cta-contact
+  background-color: $slate
+  display: flex
+  align-items: center
+  justify-content: center
+
+
+  &__box
+    display: flex
+    padding: 1rem 2rem
+
+    +responsive-stack
+
+  &__text
+    flex: 4
+    margin: 0
+
+  &__button
+    flex: 1
+    @include media("<=tablet")
+      margin-top: 20px
+
+
+//Video teaser CTA
+//This is found on the homepage only right now
+.cta-teaser
+  display: flex
+  flex-flow: row wrap
+  justify-content: space-around
+  align-items: stretch
+
+  @include media("<=tablet")
+    flex-flow: column
+
+  &__box
+    //flex: 2
+    padding: 1rem 2rem
+
+  &__title
+    +standard-heading() //Mixin can be found in typography
+
+  &__text
+
+  &__button
+    display: inline-block
+    margin-top: 1rem
+
+  &__media
+    background-image: url(../images/meeting.jpg)
+    background-position: center
+    background-size: cover
+
+    @include media("<=tablet")
+      height: 300px
+
+
+//Centered CTA
+//This is found on the homepage only right now
+.cta-center
+  padding: 2rem
+  text-align: center
+
+  &__title
+    +standard-heading() //Mixin can be found in typography
+
+  &__text
+
+  &__button
+    margin-top: 1rem
+
+
+//Subscribe CTA - This is found at the top of the footer
+.cta-subscribe
+  background-color: $green
+  color: $white
+  +vert-padding(1,1)
+
+  &__title
+    font-family: $serif
+    margin: 0
+    text-align: center
+
+  &__box
+    display: flex
+    justify-content: center
+
+  // TODO use col class instead for width
+  &__input-add-on
+    display: flex
+    width: 8/12 * 100%
+
+  &__input
+    flex: 1
+
+  &__button
+    margin-left: 10px
+    // Targeting all the submits globally with button style requires overwriting it here because of green background
+    color: $white !important
+    border: 2px solid $white !important
+
+
+//Sidebar CTA - This is found on internal pages only
+.cta-sidebar
+  @include media(">tablet")
+    padding: 1rem 0 0 3rem
+
+  &__media
+    background-color: $green
+    @include media(">tablet")
+      height: 180px
+
+    img
+
+  &__title
+    color: $green
+    font-family: $serif
+    font-size: 1.25rem
+    font-weight: $normal
+    +vert-margin(.5,.5)
+
+  &__text
+
+  &__button
+    margin-top: 1rem
+
+
+//Social CTA - These are currently found at the bottom of the blog posts
+.cta-social
+  padding-left: 1rem
+
+  .icon
+    fill: $green
+
+    &:hover
+      fill: $graphite

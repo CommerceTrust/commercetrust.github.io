@@ -1,0 +1,70 @@
+.container
+  background-color: #fff
+  border-left: 1px solid $borderColor
+  border-right: 1px solid $borderColor
+  margin: 0 auto
+  max-width: 1170px
+
+//2 columns wide
+// This is used in the footer for narrower columns of links
+.col-2-12
+  width: 2/12 * 100%
+
+  @include media("<=tablet")
+    width: 100%
+
+//3 columns wide
+// This is used in the footer for fatter columns of longer-titled links
+.col-3-12
+  width: 3/12 * 100%
+
+  @include media("<=tablet")
+    width: 100%
+
+// 4 columns wide.
+// This is used in the Leadership page.
+.col-4-12
+  width: 4/12 * 100%
+
+  @include media("<=tablet")
+    width: 100%
+
+
+// 5 columns wide.
+// This is used in most of the banners.
+// It is also used in the Main module area that includes the sidebar.
+.col-5-12
+  width: 5/12 * 100%
+
+  @include media("<=tablet")
+    width: 100%
+
+
+// 6 columns wide.
+// This will span half the available width
+// The Card Module on the homepage uses this
+.col-6-12
+  width: 6/12 * 100%
+
+  @include media("<=tablet")
+    width: 100%
+
+
+// 7 columns wide.
+// This is used in most of the banners.
+// It is also used in the Main module area that includes the sidebar.
+// [class*='--col-7-12']
+.col-7-12
+  width: 7/12 * 100%
+
+  @include media("<=tablet")
+    width: 100%
+
+
+// 8 columns wide.
+// This is used in the Leadership page.
+.col-8-12
+  width: 8/12 * 100%
+
+  @include media("<=tablet")
+    width: 100%

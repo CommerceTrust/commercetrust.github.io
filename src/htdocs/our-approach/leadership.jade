@@ -1,0 +1,57 @@
+//-
+//- This is a 'Front Matter block'
+//- It uses YAML to create JSON objects that provide local variables to the page
+//-
+---
+title: Leadership
+description: Collaboratively administrate empowered markets via plug-and-play networks.
+
+people:
+  - name: V. Raymond Stranghoener
+    title: President
+
+  - name: Scott Boswell
+    title: President Western Region
+
+  - name: J.-J. Landers Carnal, CFA
+    title: Chief Investment Officer
+
+  - name: John K. Handy
+    title: Chief Operating Officer
+
+---
+//- This will add the content of this page inside the 'global.jade' file
+extends ../../layout/global
+//-
+//- This will overwrite the 'block seo' placeholder in the 'global.jade' file
+//- with the content below
+block seo
+  //- Iindent(nest) your code after a 'block' placeholder to make it show
+  title= title
+  meta(name="description" content="#{description}")
+//-
+//- This will overwrite the 'block content' placeholder in the 'global.jade' file
+//- with the content below
+block content
+  //-
+  //- Iindent(nest) your code after a 'block' placeholder to make it show
+  //-
+  .banner-standard
+    .banner-standard__box.col-5-12
+      h1.banner-standard__title= title
+      p.banner-standard__text Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+    .banner-standard__media-leadership.col-7-12
+      
+  .main-bios
+    each val in people
+      .card-bio
+        .card-bio__media.col-4-12
+          img(src="")
+        .card-bio__box.col-8-12
+          h2.card-bio__title= val.name
+          h3.card-bio__subtitle= val.title
+          .card-bio__text
+            p= lorem.p
+            
+            p= lorem.p
+    

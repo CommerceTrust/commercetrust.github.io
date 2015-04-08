@@ -1,0 +1,91 @@
+.card-diptic
+  display: flex
+  border-top: 1px solid $borderColor
+  border-bottom: 1px solid $borderColor
+
+  +responsive-stack
+
+  &__box
+    padding: 2rem 1rem
+
+    @include media(">tablet")
+      padding: 2rem 1rem 2rem 2rem
+
+    &:nth-child(2)
+      @include media(">tablet")
+        border-left: 1px solid $borderColor
+        padding: 2rem 2rem 2rem 1rem
+
+  &__title
+    +standard-heading() //Mixin can be found in typography
+    text-align: center
+
+  &__media
+    background-color: $green
+    height: 150px
+    img
+
+  &__text
+    text-align: center
+
+  ul
+    text-align: center
+    li
+      display: inline-block
+      list-style: none
+
+  &__link
+    display: block
+
+
+// Card Bio - These are found on the Leadership page
+.card-bio
+  display: flex
+  padding-bottom: 2rem
+
+  +responsive-stack
+
+  &__media
+    background-color: $green
+    height: 355px
+
+    img
+
+  &__box
+    flex: 4
+    padding-top: 1rem
+    @include media(">tablet")
+      padding-left: 2rem
+      padding-top: 0
+
+  &__title
+    +standard-heading() //Mixin can be found in typography
+
+  &__subtitle
+    color: $graphite
+
+  &__text
+
+    * + *
+      margin-top: 1rem
+
+
+// Card article - These are found on the News and Insights page
+.card-article
+
+
+  &__box
+    box-shadow: 0 1px 0 $green
+    +vert-padding(1,1)
+
+    * + *
+      margin-top: 1rem
+
+  h2
+    +standard-heading() //Mixin can be found in typography
+
+  small
+    color: $graphite
+    font-size: .75rem
+
+  p

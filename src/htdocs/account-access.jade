@@ -1,0 +1,42 @@
+//-
+//- This is a 'Front Matter block'
+//- It uses YAML to create JSON objects that provide local variables to the page
+//-
+---
+title: Account Access
+description: SEO Description
+---
+//- This will add the content of this page inside the 'global.jade' file
+extends ../layout/global
+//-
+//- This will overwrite the 'block seo' placeholder in the 'global.jade' file
+//- with the content below
+block seo
+  //- Indent(nest) your code after a 'block' placeholder to make it show
+  title= title
+  meta(name="description" content="#{description}")
+//-
+//- This will overwrite the 'block content' placeholder in the 'global.jade' file
+//- with the content below
+block content
+  //-
+  //- Indent(nest) your code after a 'block' placeholder to make it show
+  //-
+  .banner-standard
+    .banner-standard__box.col-5-12
+      h1.banner-standard__title Access Your Account
+      form.form-standard
+        label Username
+        input(type="text")
+        label Password
+        input(type="password")
+        input(type="submit" value="Login")
+        a(href="") Forgot Your Password?
+    .banner-standard__box.col-7-12
+      a(href="").banner-standard__title Enroll for your Trust Account Online Access
+
+  .main-standard
+    .main-standard__content.col-7-12
+      .main-standard__text
+
+

@@ -1,0 +1,85 @@
+footer
+  .cta-subscribe
+    h2.cta-subscribe__title Subscribe to Our Latest Insights
+    .cta-subscribe__box
+      .cta-subscribe__input-add-on
+        input.cta-subscribe__input(
+          type="email"
+          name="subscribe-newsletter"
+        )
+        input.cta-subscribe__button(
+          type="submit"
+          value="Sign Up"
+        )
+
+
+  nav.nav-footer
+    .nav-footer__box.col-3-12
+      ul.footer-nav__major
+        li.nav-footer__title
+          a(href="#{nav_major[1].url}")= nav_major[1].page
+        ul.nav-footer__sub-links
+          each val in nav_major[1].sub
+            li
+              a.footer-nav__link(href="#{val.suburl}")= val.subpage
+
+    .nav-footer__box.col-3-12
+      ul.footer-nav__major
+        li.nav-footer__title
+          a(href="#{nav_major[2].url}")= nav_major[2].page
+        ul.nav-footer__sub-links
+          each val in nav_major[2].sub
+            li
+              a.footer-nav__link(href="#{val.suburl}")= val.subpage
+
+    .nav-footer__box-narrow.col-2-12
+      ul.footer-nav__major
+        li.nav-footer__title
+          a(href="#{nav_major[0].url}")= nav_major[0].page
+        ul.nav-footer__sub-links
+          each val in nav_major[0].sub
+            li
+              a.footer-nav__link(href="#{val.suburl}")= val.subpage
+            li
+              a.footer-nav__link(href="#{nav_minor[0].url}")= nav_minor[0].page
+            li
+              a.footer-nav__link(href="#{nav_minor[1].url}")= nav_minor[1].page
+            li
+              a.footer-nav__link(href="#{nav_minor[2].url}")= nav_minor[2].page
+
+    .nav-footer__box-narrow.col-2-12
+      ul.footer-nav__major
+        li.nav-footer__title
+          a(href="#{nav_major[3].url}")= nav_major[3].page
+        ul.nav-footer__sub-links
+          li
+            a.footer-nav__link(href="#") Connect on LinkedIn
+
+    .nav-footer__box-narrow.col-2-12
+      a.nav-footer__button(href="") Visit Commerce Family Office
+      a.nav-footer__button(href="") Visit Commerce Family Office
+
+
+  .footer-copyright
+    .footer-copyright__logo
+      a(href="/", class="visuallyhidden") The Commerce Trust Company
+      include ../inc/logo
+
+    .footer-copyright__box.col-7-12
+      small.
+        &copy; 2015 Commerce Bank, LLC
+      nav.nav-minor
+        ul
+          each val in nav_terms
+            li
+              a.nav-minor__link(href="#{val.url}")= val.page
+
+
+  .footer-disclaimer
+    h6.footer-disclaimer__title Disclosures:
+    p.footer-disclaimer__text To send an email that contains confidential information, please visit the Secure Message Center where there are additional instructions about whether to use Secure Email or Online Banking messaging.
+    p.footer-disclaimer__text Mutual funds, annuities, and other investment products:
+    ul.footer-disclaimer__list
+      li Not FDIC-insured
+      li May lose value
+      li No bank guarantee

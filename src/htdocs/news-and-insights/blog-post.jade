@@ -1,0 +1,51 @@
+//-
+//- This is a 'Front Matter block'
+//- It uses YAML to create JSON objects that provide local variables to the page
+//-
+---
+title: Blog Post
+description: Article
+date: March 1, 2015
+
+sidebar:
+  image: meeting-2.jpg
+  title: Connect with Commerce Trust
+  text: Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. 
+  button_text: Learn more
+  button_url: http://google.com
+---
+//- This will add the content of this page inside the 'global.jade' file
+extends ../../layout/global
+//-
+//- This will overwrite the 'block seo' placeholder in the 'global.jade' file
+//- with the content below
+block seo
+  //- Iindent(nest) your code after a 'block' placeholder to make it show
+  title= title
+  meta(name="description" content="#{description}")
+//-
+//- This will overwrite the 'block content' placeholder in the 'global.jade' file
+//- with the content below
+block content
+  //-
+  //- Iindent(nest) your code after a 'block' placeholder to make it show
+  //-
+  .main-post
+    .main-post__text.col-7-12
+      h2= title
+      small= date
+      p= lorem.p
+      p= lorem.p
+      h3= lorem.t
+      figure
+        img(src="../images/meeting.jpg", alt="Meeting")
+        figcaption A 1,000,000 dollar deal
+      p= lorem.p
+      p= lorem.p
+      h3= lorem.t
+      p= lorem.p
+      p= lorem.p
+            
+    include ../../inc/sidebar.jade
+      
+  include ../../inc/social.jade
