@@ -98,7 +98,7 @@ module.exports = {
     dest: dest
   },
   deploy: {
-    bulidSrc: dest + '/**/*,
+    buildSrc: dest + '/**/*',
     dest: dest
   }
 };
