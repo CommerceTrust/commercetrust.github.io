@@ -96,5 +96,9 @@ module.exports = {
     cssSrc: dest + '/*.css',
     jsSrc: dest + '/*.js',
     dest: dest
+  },
+  deploy: {
+    bulidSrc: dest + '/**/*,
+    dest: dest
   }
 };
