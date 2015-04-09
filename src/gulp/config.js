@@ -1,5 +1,5 @@
-var dest = "./";
-var src  = './src';
+var dest = "../";
+var src  = './';
 //var neat = require('node-neat').includePaths;
 //var bourbon = require('node-bourbon');
 

@@ -22,7 +22,7 @@ gulp.task('markup', function() {
       //return JSON.parse(fs.readFileSync('./src/data/' + path.basename(file.path) + '.json'));
 
       //Use this when watching a global JSON file for all pages
-      return JSON.parse(fs.readFileSync('./src/data/index.jade.json'));
+      return JSON.parse(fs.readFileSync('./data/index.jade.json'));
     }))
     .pipe(jade({ pretty: true }))
     .pipe(evilIcons())
