@@ -11,32 +11,33 @@
 ---
 
 ## Environment URLs
-- :construction: **DEV** - [dev.commbank.com](http://dev.ucmrx.com/)
-- :ship: **PROD** - []()
+- **DEV** - [commercetrust.github.io](http://commercetrust.github.io/)
+- **PROD** - []()
 
 
 ---
-## :ocean: Workflow
+## Workflow
 
-### :construction: Setup
+### Setup
 1. Clone this repo to the local directory of your choice, or run `git pull` if you are already setup
-1. Create a feature branch `git checkout -b featureName`
+1. Create a feature branch `git checkout -b featureName` or use SourceTree for that.
 
 
-### :construction: Editing local repo
+### Editing local repo
 1. You must have Node installed. Go do that if you don't have it. If you are unsure, jump into the terminal and run `node -v`. If a version shows up, then you have node installed.
+1. From the project root run `cd src` to get in to the src directory where the gulpfile exists.
 1. With node installed run `npm i` from the root directory. This will install all of the dependencies.
-1. Now run `gulp`. This with build the site and launch it inyour browser. The site will automatically update with each save from a sass, scss, js, coffee or jade file.
+1. Now run `gulp`. This with build the site and launch it in your browser. The site will automatically update with each save from a sass, scss, js, coffee, yaml or jade file.
 
 
-### :construction: Dev deployment
-1. Push your feature branch `git push origin featureName` to Bitbucket
+### Dev deployment
+1. Push your feature branch `git push origin featureName` to GitHub
 1. Create a pull request to merge into develop
+1. Create another pull request to merge into develop into master. This will push the changes live to [commercetrust.github.io](http://commercetrust.github.io/)
 
 
-### :ship: Produciton Deployment
-1. Run `gulp prod` this will prepare all of the files in the build directory for distrobution
-1. Give the `dist` directory to the client
+### Produciton Deployment
+This has yet to be determined
 
 
 ### :poop: Clean up
@@ -81,18 +82,8 @@ We are using LibSass for faster compile times while using browser-sync to refres
 [libSass](http://sass-lang.com/libsass)
 
 
-
-```
-  h1 Gulp All The Things SON!
-  h2 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do.
-  h3= home.seo.title
-  h4 Ubiquitous Social Icons!
-  h5= title
-```
-
-
 ---
-## :mailbox: Contacts
+## Contacts
 
 ### :smiley: Developer(s)
 - Lindsay Hornsby
