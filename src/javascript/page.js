@@ -14,17 +14,9 @@ $('header #mobile-menu nav').meanmenu({
 // This combination lets this file use the jquery module bundled with
 // global.js, instead of including it twice!
 
-var today = new Date();
+var today = new Date(),
+    year = today.getFullYear();
 
-var messageTemplate = _.template("<p class='love-letter'>Made with <%= feels %> at <a href='<%= url %>'><%= bestCompanyEvar %>!</a> <%= year %></p>");
-
-var message = messageTemplate({
-  year: today.getFullYear(),
-  bestCompanyEvar: 'Integrity',
-  feels: '♥',
-  url: 'http://integritystl.com'
-});
-
-$('body').append(message);
+$('.footer-copyright__box').prepend("<small>&copy;"+ year +" Commerce Bank, LLC</small>");
 
 console.log('page.js loaded!');
