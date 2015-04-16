@@ -94,3 +94,48 @@
     font-size: .75rem
 
   p
+
+
+.card-triptic
+  display: flex
+  border-top: 1px solid $borderColor
+  border-bottom: 1px solid $borderColor
+
+  +responsive-stack
+
+  &__box
+    padding: 2rem 1rem
+
+    @include media(">tablet")
+      padding: 2rem 1rem 2rem 2rem
+
+    &:nth-child(2)
+      @include media(">tablet")
+        border-left: 1px solid $borderColor
+        padding: 2rem 2rem 2rem 1rem
+
+  &__title
+    +standard-heading()
+    text-align: center
+
+  &__media
+    background-color: $green
+    height: 150px
+    img
+
+  &__text
+    text-align: center
+
+  ul
+    text-align: center
+    li
+      display: inline-block
+      list-style: none
+
+  &__link
+    color: $site-text-color-link
+    display: inline-block
+    font-family: $serif
+    padding: 0 .4rem
+    &:hover
+      color: $site-text-color-link-hover

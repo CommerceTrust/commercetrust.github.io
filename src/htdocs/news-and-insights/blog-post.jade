@@ -3,7 +3,7 @@
 //- It uses YAML to create JSON objects that provide local variables to the page
 //-
 ---
-title: Blog Post
+title: This is an H2 News & Insights main headline
 description: Article
 date: March 1, 2015
 
@@ -39,13 +39,17 @@ block content
       h3= lorem.t
       figure
         img(src="../images/meeting.jpg", alt="Meeting")
-        figcaption A 1,000,000 dollar deal
+        figcaption Image caption goes here; hidden on mobile views
       p= lorem.p
       p= lorem.p
-      h3= lorem.t
+      h3 This is an H3 Subheadline
+      p= lorem.p
+      p= lorem.p
+      blockquote “Analytics A/B testing hypotheses accelerator learning curve validation www.discoverartisans.com gen-z success direct mailing ownership.”
       p= lorem.p
       p= lorem.p
             
     include ../../inc/sidebar.jade
       
   include ../../inc/social.jade
+  include ../../inc/triptic.jade
