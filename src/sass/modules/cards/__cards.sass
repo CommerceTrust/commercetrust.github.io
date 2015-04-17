@@ -104,38 +104,36 @@
   +responsive-stack
 
   &__box
-    padding: 2rem 1rem
+    padding: 2rem
 
     @include media(">tablet")
-      padding: 2rem 1rem 2rem 2rem
+      //padding: 2rem 1rem 2rem 2rem
 
     &:nth-child(2)
       @include media(">tablet")
         border-left: 1px solid $borderColor
-        padding: 2rem 2rem 2rem 1rem
+        //padding: 2rem 1rem 2rem 1rem
 
-  &__title
-    +standard-heading()
-    text-align: center
+    &:nth-child(3)
+      @include media(">tablet")
+        border-left: 1px solid $borderColor
+        //padding: 2rem 2rem 2rem 1rem
 
   &__media
-    background-color: $green
+    //background-color: $green
     height: 150px
+    overflow: hidden
+
     img
+
+  &__title-link
+    +small-heading()
+    color: $site-text-color-link
+    display: inline-block
+    text-align: center
+
+    &:hover
+      color: $site-text-color-link-hover
 
   &__text
     text-align: center
-
-  ul
-    text-align: center
-    li
-      display: inline-block
-      list-style: none
-
-  &__link
-    color: $site-text-color-link
-    display: inline-block
-    font-family: $serif
-    padding: 0 .4rem
-    &:hover
-      color: $site-text-color-link-hover
