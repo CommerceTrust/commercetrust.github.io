@@ -1,5 +1,5 @@
 // Vars
-$base-font-size: 20px
+$base-font-size: 16px
 $base-line-height: 1.5
 
 // Typefaces
@@ -51,10 +51,40 @@ body
   background-size: auto line-height()
   margin: 0
 
-
+// Used in article headers in the .Main columns
 =standard-heading()
   color: $green
   font-family: $serif
   font-size: 2rem
   font-weight: $normal
   line-height: 1
+
+
+// Found in the Main Blog Posts
+=minor-heading()
+  color: $nightgreen
+  font-family: $serif
+  font-size: 1.25rem
+  font-weight: $bold
+  line-height: 1
+  text-transform: uppercase
+  +vert-margin(1.5,0)
+
+
+// Used in article headers in the .Main columns
+=small-heading()
+  color: $green
+  font-family: $serif
+  font-size: 1.375rem
+  font-weight: $normal
+  line-height: 1
+
+
+// Found in the Main Blog Posts
+=blockquote()
+  color: $green
+  font-family: $serif
+  font-size: 1.5rem
+  font-style: italic
+  font-weight: $bold
+  +vert-margin(1.5,1.5)

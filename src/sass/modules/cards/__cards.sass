@@ -35,7 +35,12 @@
       list-style: none
 
   &__link
-    display: block
+    color: $site-text-color-link
+    display: inline-block
+    font-family: $serif
+    padding: 0 .4rem
+    &:hover
+      color: $site-text-color-link-hover
 
 
 // Card Bio - These are found on the Leadership page
@@ -89,3 +94,46 @@
     font-size: .75rem
 
   p
+
+
+.card-triptic
+  display: flex
+  border-top: 1px solid $borderColor
+  border-bottom: 1px solid $borderColor
+
+  +responsive-stack
+
+  &__box
+    padding: 2rem
+
+    @include media(">tablet")
+      //padding: 2rem 1rem 2rem 2rem
+
+    &:nth-child(2)
+      @include media(">tablet")
+        border-left: 1px solid $borderColor
+        //padding: 2rem 1rem 2rem 1rem
+
+    &:nth-child(3)
+      @include media(">tablet")
+        border-left: 1px solid $borderColor
+        //padding: 2rem 2rem 2rem 1rem
+
+  &__media
+    //background-color: $green
+    height: 150px
+    overflow: hidden
+
+    img
+
+  &__title-link
+    +small-heading()
+    color: $site-text-color-link
+    display: inline-block
+    text-align: center
+
+    &:hover
+      color: $site-text-color-link-hover
+
+  &__text
+    text-align: center
