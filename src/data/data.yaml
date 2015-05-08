@@ -43,9 +43,9 @@ nav_major:
 
   - page: News & Insights
     url: /news-and-insights/
-    sub:
-      - subpage: Archive
-        suburl: /news-and-insights/archive.html
+    # sub:
+    #   - subpage: Archive
+    #     suburl: /news-and-insights/archive.html
 
 nav_minor:
   - page: Contact Us
