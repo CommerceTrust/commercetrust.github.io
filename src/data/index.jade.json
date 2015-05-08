@@ -71,13 +71,7 @@
     },
     {
       "page": "News & Insights",
-      "url": "/news-and-insights/",
-      "sub": [
-        {
-          "subpage": "Archive",
-          "suburl": "/news-and-insights/archive.html"
-        }
-      ]
+      "url": "/news-and-insights/"
     }
   ],
   "nav_minor": [
