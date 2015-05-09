@@ -2,12 +2,6 @@
 //- 1. nav-minor - this is the minor nav at the top right
 //- 2. logo
 //- 3. nav-major - this is the main navigation
-//-
-
-//- {% for dale in site.data.nav %}
-//- ul
-//-   each val, index in data.minor
-//-     li= index + ': ' + val
 
 header
   nav
@@ -29,40 +23,3 @@ header.cd-main-header
       a.cd-nav-trigger(href="#cd-primary-nav")
         | Menu
         span
-
-  
-//- header
-//- 
-//-   #mobile-menu
-//-     nav
-//-       ul.nav-mobile
-//-         each val in nav_major
-//-           li
-//-             a(href="#{val.url}")= val.page
-//-             if val.sub
-//-               ul.nav-mobile_submenu
-//-                 each subval in val.sub
-//-                   li
-//-                     a(href="#{subval.suburl}").nav-mobile__link= subval.subpage
-//-         each vals in nav_minor
-//-           li
-//-             a(href="#{vals.url}").nav-mobile__link= vals.page
-//- 
-//-   nav
-//-     ul.nav-minor
-//-       each vals in nav_minor
-//-         li
-//-           a(href="#{vals.url}").nav-minor__link= vals.page
-//- 
-//-   .header__logo
-//-     include ../inc/logo
-//-   nav
-//-     ul.nav-major
-//-       each val in nav_major
-//-         li
-//-           a(href="#{val.url}")= val.page
-//-           if val.sub
-//-             ul
-//-               each subval in val.sub
-//-                 li
-//-                   a(href="#{subval.suburl}")= subval.subpage

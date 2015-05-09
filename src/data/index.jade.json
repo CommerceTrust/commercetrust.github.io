@@ -13,11 +13,17 @@
   "nav_major": [
     {
       "page": "Our Approach",
-      "url": "/our-approach/",
+      "url": "/",
       "sub": [
         {
+          "subpage": "Our Approach",
+          "suburl": "/our-approach/",
+          "subimg": "/images/meeting-2.jpg"
+        },
+        {
           "subpage": "Leadership",
-          "suburl": "/our-approach/leadership.html"
+          "suburl": "/our-approach/leadership.html",
+          "subimg": "/images/meeting-2.jpg"
         }
       ]
     },

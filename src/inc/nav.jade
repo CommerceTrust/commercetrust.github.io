@@ -15,9 +15,9 @@ nav.cd-nav
                   a(href="#0") Main menu
                   
                 each subval in val.sub
-                  li.cd-nav-item
-                    a(href="#{subval.suburl}")
-                      img(src="/images/img.jpg", alt="Product Image")
+                  li
+                    a(href="#{subval.suburl}").cd-nav-item
+                      img(src="#{subval.subimg}", alt="#{subval.subpage}")
                       h3= subval.subpage
                       
       else
