@@ -57,8 +57,8 @@ nav_minor:
   - page: Account Access
     url: /account-access.html
 
-  - page: Search
-    url: /search.html
+  # - page: Search
+  #   url: /search.html
 
 nav_terms:
   - page: Terms & Conditions

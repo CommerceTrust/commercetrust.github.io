@@ -301,6 +301,7 @@ input[type="search"]::-webkit-search-results-decoration
   transform: translateZ(0)
   transform: translateX(0)
   transition: transform 0.3s
+
   a
     display: block
     height: 50px
@@ -316,9 +317,11 @@ input[type="search"]::-webkit-search-results-decoration
     transform: translateZ(0)
     will-change: transform, opacity
     transition: transform 0.3s, opacity 0.3s
+
   &.is-hidden
     /* secondary navigations hidden by default
     transform: translateX(100%)
+
   &.moves-out > li > a
     /* push the navigation items to the left - and lower down opacity - when secondary nav slides in
     transform: translateX(-100%)
@@ -334,15 +337,20 @@ input[type="search"]::-webkit-search-results-decoration
   .see-all a
     /* different style for the See all button on mobile and tablet
     color: $color-2
-  .cd-nav-gallery .cd-nav-item, .cd-nav-icons .cd-nav-item
+
+  .cd-nav-gallery .cd-nav-item,
+  .cd-nav-icons .cd-nav-item
     /* items with picture (or icon) and title
     height: 80px
     line-height: 80px
+
     h3
       overflow: hidden
       text-overflow: ellipsis
+
   .cd-nav-gallery .cd-nav-item
     padding-left: 90px
+
     img
       position: absolute
       display: block
@@ -351,13 +359,16 @@ input[type="search"]::-webkit-search-results-decoration
       left: 20px
       top: 50%
       margin-top: -20px
+
   .cd-nav-icons .cd-nav-item
     padding-left: 75px
+
     p
       color: $color-1
       font-size: 1.3rem
       /* hide description on small devices
       display: none
+
     &::before
       /* item icon
       content: ''
@@ -371,6 +382,7 @@ input[type="search"]::-webkit-search-results-decoration
       background-repeat: no-repeat
       background-position: center center
       background-size: 40px 40px
+
     &.item-1::before
       background-image: url("/images/line-icon-1.svg")
     &.item-2::before
@@ -387,6 +399,7 @@ input[type="search"]::-webkit-search-results-decoration
       background-image: url("/images/line-icon-7.svg")
     &.item-8::before
       background-image: url("/images/line-icon-8.svg")
+
   +MQ(maxL)
     /* by default .cd-primary-nav is hidden - trick for iOS devices where you can see the navigation if you pull down
     visibility: hidden
@@ -396,36 +409,48 @@ input[type="search"]::-webkit-search-results-decoration
       transition: visibility 0s 0s
 
 +MQ(L)
+
   .cd-primary-nav
     position: static
     padding: 0 150px 0 0
     height: auto
-    width: auto
-    float: right
+    width: 100%
+    //float: right
     overflow: visible
     background: transparent
+    text-align: center
+
     +clearfix
+
     &.moves-out > li > a
       /* reset mobile style
       transform: translateX(0)
       opacity: 1
+
     ul
       position: static
       height: auto
       width: auto
       background: transparent
       overflow: visible
+      text-align: left
       z-index: $above-content
+
       &.is-hidden
         /* reset mobile style
         transform: translateX(0)
+
       &.moves-out > li > a
         /* reset mobile style
         transform: translateX(0)
         opacity: 1
+
+    //Top nav items
     > li
-      float: left
+      display: inline-block
+      //float: left
       margin-left: 3em
+
     > li > a
       /* main navigation buttons style
       position: relative
@@ -437,18 +462,24 @@ input[type="search"]::-webkit-search-results-decoration
       overflow: visible
       border-bottom: none
       transition: color 0.3s, box-shadow 0.3s
+
       &:hover
         color: $color-2
       &.selected
         color: $color-2
         box-shadow: inset 0 -2px 0 $color-2
+
     .go-back, .see-all
       display: none
-    .cd-secondary-nav, .cd-nav-gallery, .cd-nav-icons
+
+    .cd-secondary-nav,
+    .cd-nav-gallery,
+    .cd-nav-icons
       /* dropdown menu style
       position: absolute
       top: $header-height-L
-      width: 100vw
+      //width: 100vw
+      width: 100%
       background: $color-4
       padding: 48px 64px 130px
       box-shadow: inset 0 1px 0 $color-3, 0 3px 6px rgba(#000, 0.05)
