@@ -8,39 +8,54 @@
 //- ul
 //-   each val, index in data.minor
 //-     li= index + ': ' + val
-header
 
-  #mobile-menu
-    nav
-      ul.nav-mobile
-        each val in nav_major
-          li
-            a(href="#{val.url}")= val.page
-            if val.sub
-              ul.nav-mobile_submenu
-                each subval in val.sub
-                  li
-                    a(href="#{subval.suburl}").nav-mobile__link= subval.subpage
-        each vals in nav_minor
-          li
-            a(href="#{vals.url}").nav-mobile__link= vals.page
 
-  nav
-    ul.nav-minor
-      each vals in nav_minor
-        li
-          a(href="#{vals.url}").nav-minor__link= vals.page
+header.cd-main-header
+  a.cd-logo(href="#0")
+    img(src="img/cd-logo.svg", alt="Logo")
+  ul.cd-header-buttons
+    li
+      a.cd-search-trigger(href="#cd-search")
+        | Search
+        span
+    li
+      a.cd-nav-trigger(href="#cd-primary-nav")
+        | Menu
+        span
 
-  .header__logo
-    include ../inc/logo
-  nav
-    ul.nav-major
-      each val in nav_major
-        li
-          a(href="#{val.url}")= val.page
-          if val.sub
-            ul
-              each subval in val.sub
-                li
-                  a(href="#{subval.suburl}")= subval.subpage
-
+  
+//- header
+//- 
+//-   #mobile-menu
+//-     nav
+//-       ul.nav-mobile
+//-         each val in nav_major
+//-           li
+//-             a(href="#{val.url}")= val.page
+//-             if val.sub
+//-               ul.nav-mobile_submenu
+//-                 each subval in val.sub
+//-                   li
+//-                     a(href="#{subval.suburl}").nav-mobile__link= subval.subpage
+//-         each vals in nav_minor
+//-           li
+//-             a(href="#{vals.url}").nav-mobile__link= vals.page
+//- 
+//-   nav
+//-     ul.nav-minor
+//-       each vals in nav_minor
+//-         li
+//-           a(href="#{vals.url}").nav-minor__link= vals.page
+//- 
+//-   .header__logo
+//-     include ../inc/logo
+//-   nav
+//-     ul.nav-major
+//-       each val in nav_major
+//-         li
+//-           a(href="#{val.url}")= val.page
+//-           if val.sub
+//-             ul
+//-               each subval in val.sub
+//-                 li
+//-                   a(href="#{subval.suburl}")= subval.subpage
