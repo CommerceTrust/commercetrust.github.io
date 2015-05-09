@@ -1,7 +1,7 @@
 //- This file includes:
 //- 1. nav-minor - this is the minor nav at the top right
 //- 2. logo
-//- 3. nav-major - this is the main navigation
+//- 3. cd-nav - this is the main navigation
 
 header
   nav
@@ -13,13 +13,11 @@ header
   .header__logo
     include ../inc/logo
     
-header.cd-main-header
-  ul.cd-header-buttons
-    li
-      a.cd-search-trigger(href="#cd-search")
-        | Search
-        span
-    li
-      a.cd-nav-trigger(href="#cd-primary-nav")
-        | Menu
-        span
+  div.cd-main-header
+    ul.cd-header-buttons
+      li
+        a.cd-search-trigger(href="#cd-search") Search
+          span
+      li
+        a.cd-nav-trigger(href="#cd-primary-nav") Menu
+          span

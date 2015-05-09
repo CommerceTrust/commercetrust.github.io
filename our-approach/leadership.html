@@ -9,6 +9,9 @@
     <link href="http://fonts.googleapis.com/css?family=News+Cycle:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="/style.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/evil-icons/1.7.2/evil-icons.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/evil-icons/1.7.2/evil-icons.min.js"></script>
+    <script src="/javascript/vendor/modernizr.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <link rel="shortcut icon" sizes="16x16 24x24 32x32 48x48 64x64" href="/favicon.ico">
     <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon-57.png">
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/images/favicon-57.png">
@@ -415,12 +418,12 @@
               </g>
             </svg>
             <!--img.ie8-logo(src="/wp-content/themes/k2Search_2014/img/k2search_logo.png", alt="")--></a></div>
-      </header>
-      <header class="cd-main-header">
-        <ul class="cd-header-buttons">
-          <li><a href="#cd-search" class="cd-search-trigger">Search<span></span></a></li>
-          <li><a href="#cd-primary-nav" class="cd-nav-trigger">Menu<span></span></a></li>
-        </ul>
+        <div class="cd-main-header">
+          <ul class="cd-header-buttons">
+            <li><a href="#cd-search" class="cd-search-trigger">Search<span></span></a></li>
+            <li><a href="#cd-primary-nav" class="cd-nav-trigger">Menu<span></span></a></li>
+          </ul>
+        </div>
       </header>
       <div class="banner-standard">
         <div class="banner-standard__box col-5-12">
@@ -488,8 +491,9 @@
         <nav class="nav-footer">
           <div class="nav-footer__box col-3-12">
             <ul class="footer-nav__major">
-              <li class="nav-footer__title"><a href="/personal-wealth-management/">Personal Wealth Management</a></li>
+              <li class="nav-footer__title"><a href="/">Personal Wealth Management</a></li>
               <ul class="nav-footer__sub-links">
+                <li><a href="/personal-wealth-management/" class="footer-nav__link">Personal Wealth Management</a></li>
                 <li><a href="/personal-wealth-management/investment-management.html" class="footer-nav__link">Investment Management</a></li>
                 <li><a href="/personal-wealth-management/financial-planning.html" class="footer-nav__link">Financial Planning</a></li>
                 <li><a href="/personal-wealth-management/private-banking.html" class="footer-nav__link">Private Banking</a></li>
@@ -499,8 +503,9 @@
           </div>
           <div class="nav-footer__box col-3-12">
             <ul class="footer-nav__major">
-              <li class="nav-footer__title"><a href="/institutional-asset-management/">Institutional Asset Management</a></li>
+              <li class="nav-footer__title"><a href="/">Institutional Asset Management</a></li>
               <ul class="nav-footer__sub-links">
+                <li><a href="/institutional-asset-management/" class="footer-nav__link">Institutional Asset Management</a></li>
                 <li><a href="/institutional-asset-management/investment-management.html" class="footer-nav__link">Investment Management</a></li>
                 <li><a href="/institutional-asset-management/trust-and-custody-services.html" class="footer-nav__link">Trust &amp; Custody Services</a></li>
                 <li><a href="/institutional-asset-management/retirement-plan-services.html" class="footer-nav__link">Retirement Plan Services</a></li>
@@ -942,40 +947,47 @@
       <div class="cd-overlay"></div>
       <nav class="cd-nav">
         <ul id="cd-primary-nav" class="cd-primary-nav is-fixed">
-          <li class="has-children"><a href="/">Our Approach
-              <ul class="cd-nav-gallery is-hidden">
-                <li class="go-back"><a href="#0">Main menu</a></li>
-                <li><a href="/our-approach/" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Our Approach">
-                    <h3>Our Approach</h3></a></li>
-                <li><a href="/our-approach/leadership.html" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Leadership">
-                    <h3>Leadership</h3></a></li>
-              </ul></a></li>
-          <li class="has-children"><a href="/personal-wealth-management/">Personal Wealth Management
-              <ul class="cd-nav-gallery is-hidden">
-                <li class="go-back"><a href="#0">Main menu</a></li>
-                <li><a href="/personal-wealth-management/investment-management.html" class="cd-nav-item"><img src="undefined" alt="Investment Management">
-                    <h3>Investment Management</h3></a></li>
-                <li><a href="/personal-wealth-management/financial-planning.html" class="cd-nav-item"><img src="undefined" alt="Financial Planning">
-                    <h3>Financial Planning</h3></a></li>
-                <li><a href="/personal-wealth-management/private-banking.html" class="cd-nav-item"><img src="undefined" alt="Private Banking">
-                    <h3>Private Banking</h3></a></li>
-                <li><a href="/personal-wealth-management/trust-and-estate-services.html" class="cd-nav-item"><img src="undefined" alt="Trust &amp; Estate Services">
-                    <h3>Trust &amp; Estate Services</h3></a></li>
-              </ul></a></li>
-          <li class="has-children"><a href="/institutional-asset-management/">Institutional Asset Management
-              <ul class="cd-nav-gallery is-hidden">
-                <li class="go-back"><a href="#0">Main menu</a></li>
-                <li><a href="/institutional-asset-management/investment-management.html" class="cd-nav-item"><img src="undefined" alt="Investment Management">
-                    <h3>Investment Management</h3></a></li>
-                <li><a href="/institutional-asset-management/trust-and-custody-services.html" class="cd-nav-item"><img src="undefined" alt="Trust &amp; Custody Services">
-                    <h3>Trust &amp; Custody Services</h3></a></li>
-                <li><a href="/institutional-asset-management/retirement-plan-services.html" class="cd-nav-item"><img src="undefined" alt="Retirement Plan Services">
-                    <h3>Retirement Plan Services</h3></a></li>
-                <li><a href="/institutional-asset-management/non-profit-services.html" class="cd-nav-item"><img src="undefined" alt="Non-profit Services">
-                    <h3>Non-profit Services</h3></a></li>
-                <li><a href="/institutional-asset-management/corporate-trust.html" class="cd-nav-item"><img src="undefined" alt="Corporate Trust">
-                    <h3>Corporate Trust</h3></a></li>
-              </ul></a></li>
+          <li class="has-children"><a href="/">Our Approach</a>
+            <ul class="cd-nav-gallery is-hidden">
+              <li class="go-back"><a href="#0">Main menu</a></li>
+              <li><a href="/our-approach/" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Our Approach">
+                  <h3>Our Approach</h3></a></li>
+              <li><a href="/our-approach/leadership.html" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Leadership">
+                  <h3>Leadership</h3></a></li>
+            </ul>
+          </li>
+          <li class="has-children"><a href="/">Personal Wealth Management</a>
+            <ul class="cd-nav-gallery is-hidden">
+              <li class="go-back"><a href="#0">Main menu</a></li>
+              <li><a href="/personal-wealth-management/" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Personal Wealth Management">
+                  <h3>Personal Wealth Management</h3></a></li>
+              <li><a href="/personal-wealth-management/investment-management.html" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Investment Management">
+                  <h3>Investment Management</h3></a></li>
+              <li><a href="/personal-wealth-management/financial-planning.html" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Financial Planning">
+                  <h3>Financial Planning</h3></a></li>
+              <li><a href="/personal-wealth-management/private-banking.html" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Private Banking">
+                  <h3>Private Banking</h3></a></li>
+              <li><a href="/personal-wealth-management/trust-and-estate-services.html" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Trust &amp; Estate Services">
+                  <h3>Trust &amp; Estate Services</h3></a></li>
+            </ul>
+          </li>
+          <li class="has-children"><a href="/">Institutional Asset Management</a>
+            <ul class="cd-nav-gallery is-hidden">
+              <li class="go-back"><a href="#0">Main menu</a></li>
+              <li><a href="/institutional-asset-management/" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Institutional Asset Management">
+                  <h3>Institutional Asset Management</h3></a></li>
+              <li><a href="/institutional-asset-management/investment-management.html" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Investment Management">
+                  <h3>Investment Management</h3></a></li>
+              <li><a href="/institutional-asset-management/trust-and-custody-services.html" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Trust &amp; Custody Services">
+                  <h3>Trust &amp; Custody Services</h3></a></li>
+              <li><a href="/institutional-asset-management/retirement-plan-services.html" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Retirement Plan Services">
+                  <h3>Retirement Plan Services</h3></a></li>
+              <li><a href="/institutional-asset-management/non-profit-services.html" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Non-profit Services">
+                  <h3>Non-profit Services</h3></a></li>
+              <li><a href="/institutional-asset-management/corporate-trust.html" class="cd-nav-item"><img src="/images/meeting-2.jpg" alt="Corporate Trust">
+                  <h3>Corporate Trust</h3></a></li>
+            </ul>
+          </li>
           <li><a href="/news-and-insights/">News &amp; Insights</a></li>
         </ul>
       </nav>
@@ -987,7 +999,6 @@
     </div>
     <script src="/global.js"></script>
     <script src="/page.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/evil-icons/1.7.2/evil-icons.min.js"></script>
     <script type="text/javascript">
       (function (d, t) {
         var bh = d.createElement(t), s = d.getElementsByTagName(t)[0];
