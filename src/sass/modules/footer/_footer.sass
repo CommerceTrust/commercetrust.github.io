@@ -33,7 +33,7 @@ footer
 	padding: 30px 20px 20px
 	text-align: center
 
-	@include media(">=tablet", ">=desktop")
+	+media(">=tablet", ">=desktop")
 		display: flex
 		text-align: left
 
@@ -68,7 +68,7 @@ footer
 		font-size: 14px
 		display: none
 
-		@include media(">=tablet", ">=desktop")
+		+media(">=tablet", ">=desktop")
 			display: block
 
 .footer-copyright
@@ -78,21 +78,21 @@ footer
 	&__logo
 		display: none
 
-		@include media(">=tablet", ">=desktop")
+		+media(">=tablet", ">=desktop")
 			display: block
 			width: 484px
 
 	&__box
 		text-align: center
 
-		@include media(">=tablet", ">=desktop")
+		+media(">=tablet", ">=desktop")
 			text-align: right
 
 		small, .nav-minor
 			display: inline-block
 			font-size: 14px
 
-			@include media(">=tablet", ">=desktop")
+			+media(">=tablet", ">=desktop")
 				font-size: 12px
 		.nav-minor
 			@extend %menu
@@ -100,7 +100,7 @@ footer
 			  a
 			    font-size: 14px
 
-			    @include media(">=tablet", ">=desktop")
+			    +media(">=tablet", ">=desktop")
 			      font-size: 12px
 
 .footer-disclaimer
@@ -110,12 +110,12 @@ footer
 	margin: 50px auto 10px
 	width: 11/12 * 100%
 
-	@include media(">=tablet", ">=desktop")
+	+media(">=tablet", ">=desktop")
 		width: 9/12 * 100%
 
 	h6, p, ul
 		font-size: 14px
-		@include media(">=tablet", ">=desktop")
+		+media(">=tablet", ">=desktop")
 			font-size: 12px
 	p
 		margin-bottom: 0

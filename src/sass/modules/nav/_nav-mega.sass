@@ -1,29 +1,88 @@
+// colors
+
+$color-1: #2e3233
+$color-2: #69aa6f
+$color-3: #e2e3df
+$color-4: #ffffff
+
+$primary-font: sans-serif
+
+// header size
+
+$header-height-S: 50px
+$header-height-L: 80px
+
+// Navigation size
+
+$nav-width-S: 260px
+
+// Search size
+
+$search-height-S: 50px
+$search-height-L: 120px
+
+// z-index
+
+$below-content: 1
+$content: 2
+$above-content: 3
+
+// breakpoints
+
+$S: 480px
+$M: 768px
+$L: 1170px
+$maxL: $L - 1px
+
+// media queries
+
+=MQ($canvas)
+  @if $canvas == S
+    @media only screen and (min-width: $S)
+      @content
+  @else if $canvas == M
+    @media only screen and (min-width: $M)
+      @content
+  @else if $canvas == L
+    @media only screen and (min-width: $L)
+      @content
+  @else if $canvas == maxL
+    @media only screen and (max-width: $maxL)
+      @content
+
+// super light grid - it works with the .cd-container class inside style.scss
+
+=column($percentage, $float-direction: left)
+  width: 100% * $percentage
+  float: $float-direction
+
+=clearfix
+  &:after
+    content: ""
+    display: table
+    clear: both
+
 /* --------------------------------
  *
  *Primary style
  *
  *--------------------------------
 
-header
-  padding: 0
+body
+  +MQ(maxL)
+    // layout mixins inside partials > _layout.scss
+    &.nav-on-left.overflow-hidden
+      overflow: hidden
 
-@media only screen and (max-width: 1169px)
-  body.nav-on-left.overflow-hidden
-    overflow: hidden
+input[type="search"]::-ms-clear
+  /* removes close icon - IE
+  display: none
 
-
-input
-  font-size: 1.6rem
-  &[type="search"]
-    &::-ms-clear
-      /* removes close icon - IE
-      display: none
-
-    &::-webkit-search-decoration,
-    &::-webkit-search-cancel-button,
-    &::-webkit-search-results-button,
-    &::-webkit-search-results-decoration
-      display: none
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration
+  display: none
 
 /* --------------------------------
  *
@@ -39,53 +98,47 @@ input
 .cd-main-content, .cd-main-header
   position: relative
   transition: transform 0.3s
-
-@media only screen and (max-width: 1169px)
-  .cd-main-content.nav-is-visible, .cd-main-header.nav-is-visible
-    transform: translateX(-260px)
-  .nav-on-left
-    .cd-main-content.nav-is-visible, .cd-main-header.nav-is-visible
-      transform: translateX(260px)
+  +MQ(maxL)
+    &.nav-is-visible
+      transform: translateX(-$nav-width-S)
+    .nav-on-left &.nav-is-visible
+      transform: translateX($nav-width-S)
 
 .cd-main-content
-  background: #e2e3df
+  background: $color-3
   min-height: 100vh
-  z-index: 2
+  z-index: $content
 
 .cd-main-header
-  height: 50px
-  background: #ffffff
-  z-index: 3
+  height: $header-height-S
+  background: $color-4
+  z-index: $above-content
 
-.nav-is-fixed .cd-main-header
-  /* add .nav-is-fixed class to body if you want a fixed navigation on > 1170px
-  position: fixed
-  top: 0
-  left: 0
-  width: 100%
+  .nav-is-fixed &
+    /* add .nav-is-fixed class to body if you want a fixed navigation on > 1170px
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
 
-@media only screen and (min-width: 1170px)
-  .cd-main-header
-    height: 80px
-    &:after
-      content: ""
-      display: table
-      clear: both
+  +MQ(L)
+    height: $header-height-L
+    +clearfix
 
 .cd-logo
   position: absolute
   top: 12px
   left: 5%
+
   img
     display: block
 
-@media only screen and (max-width: 1169px)
-  .nav-on-left .cd-logo
-    left: auto
-    right: 5%
+  +MQ(maxL)
+    .nav-on-left &
+      left: auto
+      right: 5%
 
-@media only screen and (min-width: 1170px)
-  .cd-logo
+  +MQ(L)
     top: 26px
     left: 4em
 
@@ -94,18 +147,18 @@ input
   display: inline-block
   top: 3px
   right: 5%
+
   li
     display: inline-block
 
-@media only screen and (max-width: 1169px)
-  .nav-on-left .cd-header-buttons
-    right: auto
-    left: 5%
-    li
-      float: right
+  +MQ(maxL)
+    .nav-on-left &
+      right: auto
+      left: 5%
+      li
+        float: right
 
-@media only screen and (min-width: 1170px)
-  .cd-header-buttons
+  +MQ(L)
     top: 18px
     right: 4em
 
@@ -118,12 +171,10 @@ input
   white-space: nowrap
   /* hide text
   color: transparent
-  z-index: 3
+  z-index: $above-content
 
 .cd-search-trigger
-
-  &::before,
-  &::after
+  &::before, &::after
     /* search icon
     content: ''
     position: absolute
@@ -139,17 +190,16 @@ input
     width: 18px
     height: 18px
     border-radius: 50%
-    border: 3px solid #2e3233
+    border: 3px solid $color-1
 
   &::after
     /* handle
     height: 3px
     width: 8px
-    background: #2e3233
+    background: $color-1
     bottom: 14px
     right: 11px
     transform: rotate(45deg)
-
   span
     /* container for the X icon
     position: absolute
@@ -157,193 +207,142 @@ input
     width: 100%
     top: 0
     left: 0
+  span::before, span::after
+    /* close icon
+    content: ''
+    position: absolute
+    display: inline-block
+    height: 3px
+    width: 22px
+    top: 50%
+    margin-top: -2px
+    left: 50%
+    margin-left: -11px
+    background: $color-1
+    opacity: 0
+    /* Force Hardware Acceleration in WebKit
+    transform: translateZ(0)
+    backface-visibility: hidden
+    transition: opacity 0.3s, transform 0.3s
 
-    &::before,
-    &::after
-      /* close icon
-      content: ''
-      position: absolute
-      display: inline-block
-      height: 3px
-      width: 22px
-      top: 50%
-      margin-top: -2px
-      left: 50%
-      margin-left: -11px
-      background: #2e3233
-      opacity: 0
+  span::before
+    transform: rotate(45deg)
 
-      /* Force Hardware Acceleration in WebKit
-      transform: translateZ(0)
-      backface-visibility: hidden
-      transition: opacity 0.3s, transform 0.3s
-
-    &::before
-      transform: rotate(45deg)
-
-    &::after
-      transform: rotate(-45deg)
+  span::after
+    transform: rotate(-45deg)
 
   &.search-is-visible
-    &::before,
-    &::after
+    &::before, &::after
       /* hide search icon
       opacity: 0
-
-    span
-      &::before,
-      &::after
-        /* show close icon
-        opacity: 1
-
-      &::before
-        transform: rotate(135deg)
-
-      &::after
-        transform: rotate(45deg)
+    span::before, span::after
+      /* show close icon
+      opacity: 1
+    span::before
+      transform: rotate(135deg)
+    span::after
+      transform: rotate(45deg)
 
 .cd-nav-trigger
-  span
+  span, span::before, span::after
     /* hamburger icon in CSS
     position: absolute
     display: inline-block
     height: 3px
     width: 24px
-    background: #2e3233
-
-    &::before,
-    &::after
-      /* hamburger icon in CSS
-      position: absolute
-      display: inline-block
-      height: 3px
-      width: 24px
-      background: #2e3233
-
+    background: $color-1
+  span
     /* line in the center
     position: absolute
     top: 50%
     right: 10px
     margin-top: -2px
-
     transition: background 0.3s 0.3s
-
-    &::before,
-    &::after
-      /* other 2 lines
-      content: ''
-      right: 0
-      /* Force Hardware Acceleration in WebKit
-      transform: translateZ(0)
-      backface-visibility: hidden
-      transform-origin: 0% 50%
-      transition: transform 0.3s 0.3s
-
-    &::before
-      /* menu icon top line
-      top: -6px
-
-    &::after
-      /* menu icon bottom line
-      top: 6px
-
-  &.nav-is-visible span
-    /* hide line in the center
-    background: rgba(46, 50, 51, 0)
-
-    &::before,
-    &::after
+  span::before, span::after
+    /* other 2 lines
+    content: ''
+    right: 0
+    /* Force Hardware Acceleration in WebKit
+    transform: translateZ(0)
+    backface-visibility: hidden
+    transform-origin: 0% 50%
+    transition: transform 0.3s 0.3s
+  span::before
+    /* menu icon top line
+    top: -6px
+  span::after
+    /* menu icon bottom line
+    top: 6px
+  &.nav-is-visible
+    span
+      /* hide line in the center
+      background: rgba($color-1, 0)
+    span::before, span::after
       /* keep visible other 2 lines
-      background: #2e3233
-
-    &::before
+      background: rgba($color-1, 1)
+    span::before
       transform: translateX(4px) translateY(-3px) rotate(45deg)
-
-    &::after
+    span::after
       transform: translateX(4px) translateY(2px) rotate(-45deg)
-
-@media only screen and (min-width: 1170px)
-  .cd-nav-trigger
+  +MQ(L)
     display: none
 
-.cd-primary-nav
+.cd-primary-nav, .cd-primary-nav ul
   position: fixed
   top: 0
   right: 0
   height: 100%
-  width: 260px
-  background: #2e3233
+  width: $nav-width-S
+  background: $color-1
   overflow: auto
   -webkit-overflow-scrolling: touch
-  z-index: 1
-
+  z-index: $below-content
   /* Force Hardware Acceleration in WebKit
   transform: translateZ(0)
   transform: translateX(0)
   transition: transform 0.3s
-
-  ul
-    position: fixed
-    top: 0
-    right: 0
-    height: 100%
-    width: 260px
-    background: #2e3233
-    overflow: auto
-    -webkit-overflow-scrolling: touch
-    z-index: 1
-
-    /* Force Hardware Acceleration in WebKit
-    transform: translateZ(0)
-    transform: translateX(0)
-    transition: transform 0.3s
-
-  a,
-  ul a
+  a
     display: block
     height: 50px
     line-height: 50px
     padding: 0 20px
-    color: #ffffff
+    color: $color-4
     -webkit-font-smoothing: antialiased
     -moz-osx-font-smoothing: grayscale
-
     overflow: hidden
     text-overflow: ellipsis
     white-space: nowrap
-    border-bottom: 1px solid #3a3f40
+    border-bottom: 1px solid lighten($color-1, 5%)
     transform: translateZ(0)
     will-change: transform, opacity
     transition: transform 0.3s, opacity 0.3s
-
-  &.is-hidden,
-  ul.is-hidden
+  &.is-hidden
     /* secondary navigations hidden by default
     transform: translateX(100%)
-
-  &.moves-out > li > a, ul.moves-out > li > a
+  &.moves-out > li > a
     /* push the navigation items to the left - and lower down opacity - when secondary nav slides in
     transform: translateX(-100%)
     opacity: 0
 
++MQ(maxL)
+  .nav-on-left .cd-primary-nav, .nav-on-left .cd-primary-nav ul
+    right: auto
+    left: 0
+
+
+.cd-primary-nav
   .see-all a
     /* different style for the See all button on mobile and tablet
-    color: #69aa6f
-
-  .cd-nav-gallery .cd-nav-item,
-  .cd-nav-icons .cd-nav-item
+    color: $color-2
+  .cd-nav-gallery .cd-nav-item, .cd-nav-icons .cd-nav-item
     /* items with picture (or icon) and title
     height: 80px
     line-height: 80px
-
-  .cd-nav-gallery .cd-nav-item h3,
-  .cd-nav-icons .cd-nav-item h3
-    overflow: hidden
-    text-overflow: ellipsis
-
+    h3
+      overflow: hidden
+      text-overflow: ellipsis
   .cd-nav-gallery .cd-nav-item
     padding-left: 90px
-
     img
       position: absolute
       display: block
@@ -352,15 +351,13 @@ input
       left: 20px
       top: 50%
       margin-top: -20px
-
   .cd-nav-icons .cd-nav-item
     padding-left: 75px
     p
-      color: #2e3233
+      color: $color-1
       font-size: 1.3rem
       /* hide description on small devices
       display: none
-
     &::before
       /* item icon
       content: ''
@@ -374,7 +371,6 @@ input
       background-repeat: no-repeat
       background-position: center center
       background-size: 40px 40px
-
     &.item-1::before
       background-image: url("/images/line-icon-1.svg")
     &.item-2::before
@@ -391,26 +387,15 @@ input
       background-image: url("/images/line-icon-7.svg")
     &.item-8::before
       background-image: url("/images/line-icon-8.svg")
-
-@media only screen and (max-width: 1169px)
-  .nav-on-left .cd-primary-nav
-    right: auto
-    left: 0
-    ul
-      right: auto
-      left: 0
-
-@media only screen and (max-width: 1169px)
-  .cd-primary-nav
+  +MQ(maxL)
     /* by default .cd-primary-nav is hidden - trick for iOS devices where you can see the navigation if you pull down
     visibility: hidden
     transition: visibility 0s 0.3s
-
     &.nav-is-visible
       visibility: visible
       transition: visibility 0s 0s
 
-@media only screen and (min-width: 1170px)
++MQ(L)
   .cd-primary-nav
     position: static
     padding: 0 150px 0 0
@@ -419,258 +404,196 @@ input
     float: right
     overflow: visible
     background: transparent
-
-    &:after
-      content: ""
-      display: table
-      clear: both
-
+    +clearfix
     &.moves-out > li > a
       /* reset mobile style
       transform: translateX(0)
       opacity: 1
-
     ul
       position: static
       height: auto
       width: auto
       background: transparent
       overflow: visible
-      z-index: 3
-
+      z-index: $above-content
       &.is-hidden
         /* reset mobile style
         transform: translateX(0)
-
       &.moves-out > li > a
         /* reset mobile style
         transform: translateX(0)
         opacity: 1
-
     > li
       float: left
       margin-left: 3em
-
-      > a
-        /* main navigation buttons style
-        position: relative
-        display: inline-block
-        height: 80px
-        line-height: 80px
-        padding: 0 10px
-        color: #2e3233
-        overflow: visible
-        border-bottom: none
-        transition: color 0.3s, box-shadow 0.3s
-
-        &:hover
-          color: #69aa6f
-
-        &.selected
-          color: #69aa6f
-          box-shadow: inset 0 -2px 0 #69aa6f
-
+    > li > a
+      /* main navigation buttons style
+      position: relative
+      display: inline-block
+      height: $header-height-L
+      line-height: $header-height-L
+      padding: 0 10px
+      color: $color-1
+      overflow: visible
+      border-bottom: none
+      transition: color 0.3s, box-shadow 0.3s
+      &:hover
+        color: $color-2
+      &.selected
+        color: $color-2
+        box-shadow: inset 0 -2px 0 $color-2
     .go-back, .see-all
       display: none
-
-    .cd-secondary-nav,
-    .cd-nav-gallery,
-    .cd-nav-icons
+    .cd-secondary-nav, .cd-nav-gallery, .cd-nav-icons
       /* dropdown menu style
       position: absolute
-      top: 80px
+      top: $header-height-L
       width: 100vw
-      background: #ffffff
+      background: $color-4
       padding: 48px 64px 130px
-      box-shadow: inset 0 1px 0 #e2e3df, 0 3px 6px rgba(0, 0, 0, 0.05)
+      box-shadow: inset 0 1px 0 $color-3, 0 3px 6px rgba(#000, 0.05)
       transform: translateX(0)
+      +clearfix
+
       transition: opacity .3s 0s, visibility 0s 0s
-
-    .cd-secondary-nav:after,
-    .cd-nav-gallery:after,
-    .cd-nav-icons:after
-      content: ""
-      display: table
-      clear: both
-
-    .cd-secondary-nav.is-hidden,
-    .cd-nav-gallery.is-hidden,
-    .cd-nav-icons.is-hidden
-      opacity: 0
-      visibility: hidden
-      transition: opacity .3s 0s, visibility 0s .3s
-
-    .cd-secondary-nav > .see-all,
-    .cd-nav-gallery > .see-all,
-    .cd-nav-icons > .see-all
-      /* this is the BIG See all button at the bottom of the dropdown menu
-      display: block
-      position: absolute
-      left: 0
-      bottom: 0
-      height: 80px
-      width: 100%
-      overflow: hidden
-      /* reset some inherited style
-      margin: 0
-      padding: 0
-
-    .cd-secondary-nav > .see-all a,
-    .cd-nav-gallery > .see-all a,
-    .cd-nav-icons > .see-all a
-      position: absolute
-      width: 100%
-      height: 100%
-      top: 0
-      left: 0
-      font-size: 2.2rem
-      font-weight: bold
-      text-align: center
-      line-height: 80px
-      border-top: 1px solid #e2e3df
-      /* reset some inherited style
-      border-bottom: none
-      margin: 0
-      padding: 0
-      transition: color 0.2s, background 0.2s, border 0.2s
-
-    .cd-secondary-nav > .see-all a:hover,
-    .cd-nav-gallery > .see-all a:hover,
-    .cd-nav-icons > .see-all a:hover
-      background: #2e3233
-      border-color: #2e3233
-      color: #ffffff
-
+      &.is-hidden
+        opacity: 0
+        visibility: hidden
+        transition: opacity .3s 0s, visibility 0s .3s
+      > .see-all
+        /* this is the BIG See all button at the bottom of the dropdown menu
+        display: block
+        position: absolute
+        left: 0
+        bottom: 0
+        height: 80px
+        width: 100%
+        overflow: hidden
+        /* reset some inherited style
+        margin: 0
+        padding: 0
+        a
+          position: absolute
+          width: 100%
+          height: 100%
+          top: 0
+          left: 0
+          font-size: 2.2rem
+          font-weight: bold
+          text-align: center
+          line-height: 80px
+          border-top: 1px solid $color-3
+          /* reset some inherited style
+          border-bottom: none
+          margin: 0
+          padding: 0
+          transition: color 0.2s, background 0.2s, border 0.2s
+          &:hover
+            background: $color-1
+            border-color: $color-1
+            color: $color-4
     .cd-secondary-nav
       > li
         /* change the height according to your needs - you can even set height: auto
         height: 340px
-
         /* here you set the number of columns - use width percentage
-        width: 23%
-
-        float: left
+        +column(0.23)
+        // see partials > _layout.scss
         margin-right: 2.66%
-        border-right: 1px solid #e2e3df
+        border-right: 1px solid $color-3
         overflow: hidden
         overflow-x: hidden
         overflow-y: auto
         -webkit-overflow-scrolling: touch
-
         &:nth-child(4n+2)
           /* +2 because we have 2 list items with display:none
           margin-right: 0
           border-right: none
-
         > a
           /* secondary nav title
-          color: #69aa6f
+          color: $color-2
           font-weight: bold
           font-size: 1.6rem
           margin-bottom: .6em
-
       a
         height: 30px
         line-height: 30px
         padding: 0 18% 0 0
-        color: #2e3233
+        color: $color-1
         border-bottom: none
         font-size: 1.4rem
-
         &:hover
-          color: #69aa6f
+          color: $color-2
       ul
         /* Force Hardware Acceleration in WebKit
         transform: translateZ(0)
-
-        ul
-          /* tertiary navigation
-          position: absolute
-          top: 0
-          left: 0
-          height: 100%
-          width: 100%
-
-          &.is-hidden
-            transform: translateX(100%)
-
-          .go-back
-            display: block
-
-            a
-              color: transparent
-
-          .see-all
-            display: block
-
+      ul ul
+        /* tertiary navigation
+        position: absolute
+        top: 0
+        left: 0
+        height: 100%
+        width: 100%
+        &.is-hidden
+          transform: translateX(100%)
+        .go-back
+          display: block
+          a
+            color: transparent
+        .see-all
+          display: block
       .moves-out > li > a
         /* push the navigation items to the left - and lower down opacity - when tertiary nav slides in
         transform: translateX(-100%)
-
     .cd-nav-gallery
       li
         /* set here number of columns - use width percentage
-        width: 22%
-        float: left
+        +column(0.22)
         margin: 0 4% 40px 0
-
         &:nth-child(4n+2)
           /* +2 because we have two additional list items with display:none
           margin-right: 0
-
       .cd-nav-item
         border-bottom: none
         padding: 0
         height: auto
         line-height: 1.2
-
         img
           position: static
           margin-top: 0
           height: auto
           width: 100%
           margin-bottom: .6em
-
         h3
-          color: #69aa6f
+          color: $color-2
           font-weight: bold
           padding: 0 .4em
-
     .cd-nav-icons
       li
         /* set here number of columns - use width percentage
-        width: 32%
-        float: left
+        +column(0.32)
         margin: 0 2% 20px 0
-
         &:nth-child(3n+2)
           /* +2 because we have two additional list items with display:none
           margin-right: 0
-
       .cd-nav-item
         border-bottom: none
         height: 80px
         line-height: 1.2
         padding: 24px 0 0 85px
-
         &:hover
-          background: #f6f6f5
-
+          background: lighten($color-3, 8%)
         h3
-          color: #69aa6f
+          color: $color-2
           font-weight: bold
-
         p
           display: block
-
         &::before
           left: 25px
 
-.has-children > a,
-.go-back a
-  position: relative
 
-.has-children > a
+.has-children > a, .go-back a
+  position: relative
   &::before, &::after
     /* arrow icon in CSS - for element with nested unordered lists
     content: ''
@@ -680,124 +603,73 @@ input
     display: inline-block
     height: 2px
     width: 10px
-    background: #464c4e
-    backface-visibility: hidden
+    background: lighten($color-1, 10%)
 
-.go-back a
-  &::before,
+    backface-visibility: hidden
+  &::before
+    transform: rotate(45deg)
   &::after
-    /* arrow icon in CSS - for element with nested unordered lists
-    content: ''
-    position: absolute
-    top: 50%
-    margin-top: -1px
-    display: inline-block
-    height: 2px
-    width: 10px
-    background: #464c4e
-    backface-visibility: hidden
-
-.has-children > a::before,
-.go-back a::before
-  transform: rotate(45deg)
-
-.has-children > a::after,
-.go-back a::after
-  transform: rotate(-45deg)
-
-@media only screen and (min-width: 1170px)
-  .has-children > a
-
+    transform: rotate(-45deg)
+  +MQ(L)
     &::before, &::after
-      background: #c9cbc4
-
-  .go-back a
-    &::before, &::after
-      background: #c9cbc4
-
-  .has-children > a:hover
-    &::before, &::after
-      background: #69aa6f
-
-  .go-back a:hover
-    &::before, &::after
-      background: #69aa6f
+      background: darken($color-3, 10%)
+    &:hover::before, &:hover::after
+      background: $color-2
 
 .has-children > a
   padding-right: 40px
-
-  &::before,
-  &::after
+  &::before, &::after
     /* arrow goes on the right side - children navigation
     right: 20px
     transform-origin: 9px 50%
 
 .cd-primary-nav .go-back a
   padding-left: 40px
-  &::before,
-  &::after
+  &::before, &::after
     /* arrow goes on the left side - go back button
     left: 20px
     transform-origin: 1px 50%
 
-@media only screen and (min-width: 1170px)
++MQ(L)
   .has-children > a
-
-    &::before,
-    &::after
+    &::before, &::after
       right: 15%
-
   .cd-primary-nav > .has-children > a
     /* main navigation arrows on larger devices
     padding-right: 30px !important
-
-    &::before,
-    &::after
+    &::before, &::after
       width: 9px
       transform-origin: 50% 50%
-      background: #c9cbc4
+      background: darken($color-3, 10%)
+
       backface-visibility: hidden
       transition: width 0.3s, transform 0.3s
-
     &::before
       right: 12px
-
     &::after
       right: 7px
-
-    &.selected
-
-      &::before,
-      &::after
-        width: 14px
-
-      &::before
-        transform: translateX(5px) rotate(-45deg)
-
-      &::after
-        transform: rotate(45deg)
-
-  .cd-secondary-nav > .has-children > a
-
-    &::before,
-    &::after
-      /* remove arrows on secondary nav titles
-      display: none
-
+    &.selected::before, &.selected::after
+      width: 14px
+    &.selected::before
+      transform: translateX(5px) rotate(-45deg)
+    &.selected::after
+      transform: rotate(45deg)
+  .cd-secondary-nav > .has-children > a::before, .cd-secondary-nav > .has-children > a::after
+    /* remove arrows on secondary nav titles
+    display: none
   .cd-primary-nav .go-back a
     padding-left: 20px
-
-    &::before,
-    &::after
+    &::before, &::after
       left: 1px
+
 
 .cd-search
   position: absolute
-  height: 50px
+  height: $search-height-S
   width: 100%
-  top: 50px
+  top: $header-height-S
   left: 0
-  z-index: 3
+  z-index: $above-content
   opacity: 0
   visibility: hidden
   transition: opacity .3s 0s, visibility 0s .3s
@@ -809,18 +681,17 @@ input
   input
     border-radius: 0
     border: none
-    background: #ffffff
+    background: $color-4
     height: 100%
     width: 100%
     padding: 0 5%
-    box-shadow: inset 0 1px 0 #e2e3df, 0 3px 6px rgba(0, 0, 0, 0.05)
+    box-shadow: inset 0 1px 0 $color-3, 0 3px 6px rgba(#000, 0.05)
     appearance: none
 
-    &::-webkit-input-placeholder,
-    &::-moz-placeholder,
-    &:-moz-placeholder,
-    &:-ms-input-placeholder
-      color: #c9cbc4
+    // &::-webkit-input-placeholder,
+    // &::-moz-placeholder,
+    // &:-ms-input-placeholder
+    //   color: darken($color-3, 10%)
 
     &:focus
       outline: none
@@ -830,17 +701,20 @@ input
     visibility: visible
     transition: opacity .3s 0s, visibility 0s 0s
 
-.nav-is-fixed .cd-search
-  position: fixed
-
-@media only screen and (min-width: 1170px)
-  .cd-search
-    height: 120px
-    top: 80px
+  .nav-is-fixed &
+    position: fixed
+  +MQ(L)
+    height: $search-height-L
+    top: $header-height-L
     input
       padding: 0 2em
       font-size: 3.2rem
       font-weight: 300
+
+      // &::-webkit-input-placeholder,
+      // &::-moz-placeholder,
+      // &:-moz-placeholder,
+      // &:-ms-input-placeholder
 
 .cd-overlay
   /* shadow layer visible when navigation is active
@@ -851,7 +725,7 @@ input
   top: 0
   left: 0
   cursor: pointer
-  background-color: rgba(105, 170, 111, 0.8)
+  background-color: rgba($color-2, 0.8)
   visibility: hidden
   opacity: 0
   backface-visibility: hidden
@@ -862,16 +736,13 @@ input
     visibility: visible
     transition: opacity 0.3s 0s, visibility 0s 0s, transform 0.3s 0s
 
-@media only screen and (max-width: 1169px)
-  .cd-overlay.is-visible
-    transform: translateX(-260px)
-
-  .nav-on-left .cd-overlay.is-visible
-    transform: translateX(260px)
-
-  .cd-overlay.is-visible.search-is-visible,
-  .nav-on-left .cd-overlay.is-visible.search-is-visible
-    transform: translateX(0)
+  +MQ(maxL)
+    &.is-visible
+      transform: translateX(-$nav-width-S)
+    .nav-on-left &.is-visible
+      transform: translateX($nav-width-S)
+    &.is-visible.search-is-visible, .nav-on-left &.is-visible.search-is-visible
+      transform: translateX(0)
 
 /* --------------------------------
  *
@@ -879,31 +750,28 @@ input
  *
  *--------------------------------
 
-.no-js
-  .cd-primary-nav
-    position: relative
-    height: auto
-    width: 100%
-    overflow: visible
-    visibility: visible
-    z-index: 2
+.no-js .cd-primary-nav
+  position: relative
+  height: auto
+  width: 100%
+  overflow: visible
+  visibility: visible
+  z-index: $content
 
-  .cd-search
-    position: relative
+.no-js .cd-search
+  position: relative
+  top: 0
+  opacity: 1
+  visibility: visible
+
++MQ(L)
+  .no-js .cd-primary-nav
+    position: absolute
+    z-index: $above-content
+    display: inline-block
+    width: auto
     top: 0
-    opacity: 1
-    visibility: visible
-
-@media only screen and (min-width: 1170px)
-  .no-js
-    .cd-primary-nav
-      position: absolute
-      z-index: 3
-      display: inline-block
-      width: auto
-      top: 0
-      right: 150px
-      padding: 0
-
-    .nav-is-fixed .cd-primary-nav
-      position: fixed
+    right: 150px
+    padding: 0
+  .no-js .nav-is-fixed .cd-primary-nav
+    position: fixed

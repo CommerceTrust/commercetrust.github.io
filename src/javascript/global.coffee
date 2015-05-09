@@ -3,7 +3,7 @@
 console.log 'global.js loaded!'
 
 $ = require("jquery")
-
+# jmobile = require('./vendor/jquery.mobile.custom.min')
 
 #jQuery(document).ready ($) ->
 

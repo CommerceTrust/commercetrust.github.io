@@ -1,12 +1,16 @@
 // Browserify entry point for the page.js bundle (yay JavaScript!)
 
 var $ = require('jquery');
-var _ = require('underscore');
-var mean = require('./vendor/meanmenu');
 
-$('header #mobile-menu nav').meanmenu({
-  meanScreenWidth:'1024' // our breakpoint is early due to menu length, so show menu here
-});
+//var jmobile = require('./vendor/jquery.mobile.custom.min');
+
+//var _ = require('underscore');
+
+// var mean = require('./vendor/meanmenu');
+//
+// $('header #mobile-menu nav').meanmenu({
+//   meanScreenWidth:'1024' // our breakpoint is early due to menu length, so show menu here
+// });
 
 // global.js already contains jQuery, so in our config.js file, we
 // are exposing it to other files like this one in the `require` array.

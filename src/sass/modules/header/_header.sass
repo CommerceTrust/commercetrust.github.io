@@ -2,15 +2,15 @@ header
   background-color: $white
   //padding: 0 2rem
   // Need a consistent min height to help position mobile menu without leaving a gap
-  @include media("<tablet")
+  +media("<tablet")
     min-height: 50px
 
 .header__logo
   display: block
   width: 275px
 
-  @include media(">=480px", "<tablet")
+  +media(">=480px", "<tablet")
     width: 330px
 
-  @include media(">=tablet")
+  +media(">=tablet")
     width: 550px
