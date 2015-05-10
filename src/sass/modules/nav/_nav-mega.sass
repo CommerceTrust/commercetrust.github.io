@@ -287,7 +287,12 @@ input[type="search"]::-webkit-search-results-decoration
   +MQ(L)
     display: none
 
-.cd-primary-nav, .cd-primary-nav ul
+.cd-primary-nav
+  //box-shadow: 0 1px 5px rgba(100,100,100, .5)
+  border-bottom: 1px solid $cloud
+
+.cd-primary-nav,
+.cd-primary-nav ul
   position: fixed
   top: 0
   right: 0
@@ -740,7 +745,7 @@ input[type="search"]::-webkit-search-results-decoration
     opacity: 1
     visibility: visible
     transition: opacity .3s 0s, visibility 0s 0s
-    box-shadow: 5px 5px 5px rgba(100,100,100, .5)
+    box-shadow: 1px 1px 5px rgba(100,100,100, .5)
     // CHANGED - to move search bar to top
     top: 0
 

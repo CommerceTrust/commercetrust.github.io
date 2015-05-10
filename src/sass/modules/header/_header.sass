@@ -1,16 +1,117 @@
-header
-  background-color: $white
-  //padding: 0 2rem
-  // Need a consistent min height to help position mobile menu without leaving a gap
-  +media("<tablet")
-    min-height: 50px
+
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
 
 .header__logo
+  background: $white
+
+
+.logo
   display: block
-  width: 275px
+  padding: 2rem 0 2rem 2rem
+  margin: 0 auto
+  width: 800px
 
-  +media(">=480px", "<tablet")
-    width: 330px
+  +media("<desktop")
+    width: 400px
 
-  +media(">=tablet")
-    width: 550px
+
+
+svg
+
+  path, polygon
+    fill: $green
+
+  &:hover path,
+  &:hover polygon
+    fill: orange
+    transition: fill 0.2s ease
+
+.logo__stretched
+  display: block
+
+  +media("<desktop")
+    display: none
+
+.logo__stacked
+  display: none
+
+  +media("<desktop")
+    display: block
+
+
+
+
+// 25 pieces
+.logo__globe
+  path
+    fill: $green
+    opacity: 0
+    animation: fadeIn ease-in 1
+    animation-fill-mode: forwards
+    animation-duration: .5s
+
+  path:nth-child(1)
+    animation-delay: 0.1s
+
+  path:nth-child(2)
+    animation-delay: 0.11s
+
+  path:nth-child(3)
+    animation-delay: 0.22s
+
+  path:nth-child(4)
+    animation-delay: 0.13s
+
+  path:nth-child(5)
+    animation-delay: 0.14s
+
+  path:nth-child(6)
+    animation-delay: 0.15s
+
+  path:nth-child(7)
+    animation-delay: 0.16s
+
+  path:nth-child(8)
+    animation-delay: 0.37s
+
+  path:nth-child(9)
+    animation-delay: 0.18s
+
+  path:nth-child(10)
+    animation-delay: 0.19s
+
+  path:nth-child(11)
+    animation-delay: 0.20s
+
+  path:nth-child(12)
+    animation-delay: 0.21s
+
+  path:nth-child(13)
+    animation-delay: 0.12s
+
+  path:nth-child(14)
+    animation-delay: 0.23s
+
+  path:nth-child(15)
+    animation-delay: 0.34s
+
+  path:nth-child(16)
+    animation-delay: 0.25s
+
+.logo__text
+
+.logo__commerce
+  path, polygon
+
+
+.logo__trust
+  path, polygon
+
+
+.logo__tagline
+  path, polygon

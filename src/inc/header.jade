@@ -4,14 +4,11 @@
 //- 3. cd-nav - this is the main navigation
 
 header
-  nav
-    ul.nav-minor
-      each vals in nav_minor
-        li
-          a(href="#{vals.url}").nav-minor__link= vals.page
-
-  .header__logo
-    include ../inc/logo
+  //- nav
+  //-   ul.nav-minor
+  //-     each vals in nav_minor
+  //-       li
+  //-         a(href="#{vals.url}").nav-minor__link= vals.page
     
   div.cd-main-header
     ul.cd-header-buttons
@@ -21,3 +18,6 @@ header
       li
         a.cd-nav-trigger(href="#cd-primary-nav") Menu
           span
+            
+  .header__logo
+    include ../inc/logo
