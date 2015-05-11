@@ -60,6 +60,9 @@ nav_major:
         suburl: /institutional-asset-management/corporate-trust.html
         subimg: /images/meeting-2.jpg
 
+  - page: News & Insights
+    url: /news-and-insights/
+
   - page: Contact Us
     url: /
     sub:
@@ -75,11 +78,8 @@ nav_major:
         suburl: /account-access.html
         subimg: /images/meeting-2.jpg
 
-  - page: News & Insights
-    url: /news-and-insights/
-    # sub:
-    #   - subpage: Archive
-    #     suburl: /news-and-insights/archive.html
+
+
 
 nav_minor:
   - page: Contact Us

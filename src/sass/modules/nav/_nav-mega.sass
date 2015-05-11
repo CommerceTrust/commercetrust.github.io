@@ -14,26 +14,27 @@ $below-content: 1
 $content: 2
 $above-content: 3
 
-// breakpoints
-$S: 480px
-$M: 768px
-$L: 1170px
-$maxL: $L - 1px
+//
+  "phone": 320px,
+  "tablet": 768px,
+  "desktop": 1024px)
 
-// media queries
-=MQ($canvas)
-  @if $canvas == S
-    @media only screen and (min-width: $S)
-      @content
-  @else if $canvas == M
-    @media only screen and (min-width: $M)
-      @content
-  @else if $canvas == L
-    @media only screen and (min-width: $L)
-      @content
-  @else if $canvas == maxL
-    @media only screen and (max-width: $maxL)
-      @content
+
+// breakpoints
+  $S: 480px
+  $M: 768px
+  $L: 1024px
+  $maxL: $L - 1px
+
+
+//
+  +MQ(maxL)
+  +media("<=desktop")
+
+//
+  +MQ(L)
+  +media(">desktop")
+
 
 // super light grid - it works with the .cd-container class inside style.scss
 
@@ -54,7 +55,7 @@ $maxL: $L - 1px
  *--------------------------------
 
 body
-  +MQ(maxL)
+  +media("<=desktop")
     // layout mixins inside partials > _layout.scss
     &.nav-on-left.overflow-hidden
       overflow: hidden
@@ -77,15 +78,19 @@ input[type="search"]::-webkit-search-results-decoration
 
 .cd-main-content,
 .cd-main-header
+  font-family: $serif
   /* Force Hardware Acceleration in WebKit
   transform: translateZ(0)
   will-change: transform
+
+  ul
+    list-style: none
 
 .cd-main-content
   position: relative
   transition: transform 0.3s
 
-  +MQ(maxL)
+  +media("<=desktop")
     &.nav-is-visible
       transform: translateX(-$nav-width-S)
 
@@ -96,7 +101,7 @@ input[type="search"]::-webkit-search-results-decoration
   position: relative
   transition: transform 0.3s
 
-  +MQ(maxL)
+  +media("<=desktop")
     &.nav-is-visible
       //transform: translateX(-$nav-width-S)
       transform: translateX(0)
@@ -114,6 +119,10 @@ input[type="search"]::-webkit-search-results-decoration
   background: $white
   z-index: $above-content
 
+  //CHANGED
+  //box-shadow: 0 1px 5px rgba(100,100,100, .5)
+  border-bottom: 1px solid $cloud
+
   .nav-is-fixed &
     /* add .nav-is-fixed class to body if you want a fixed navigation on > 1170px
     position: fixed
@@ -121,7 +130,7 @@ input[type="search"]::-webkit-search-results-decoration
     left: 0
     width: 100%
 
-  +MQ(L)
+  +media(">desktop")
     height: $header-height-L
     +clearfix
 
@@ -133,12 +142,12 @@ input[type="search"]::-webkit-search-results-decoration
   img
     display: block
 
-  +MQ(maxL)
+  +media("<=desktop")
     .nav-on-left &
       left: auto
       right: 5%
 
-  +MQ(L)
+  +media(">desktop")
     top: 26px
     left: 4em
 
@@ -151,18 +160,19 @@ input[type="search"]::-webkit-search-results-decoration
   li
     display: inline-block
 
-  +MQ(maxL)
+  +media("<=desktop")
     .nav-on-left &
       right: auto
       left: 5%
       li
         float: right
 
-  +MQ(L)
-    top: 18px
-    right: 4em
+  +media(">desktop")
+    top: 1rem
+    right: 1rem
 
-.cd-search-trigger, .cd-nav-trigger
+.cd-search-trigger,
+.cd-nav-trigger
   position: relative
   display: block
   width: 44px
@@ -284,12 +294,9 @@ input[type="search"]::-webkit-search-results-decoration
       transform: translateX(4px) translateY(-3px) rotate(45deg)
     span::after
       transform: translateX(4px) translateY(2px) rotate(-45deg)
-  +MQ(L)
+  +media(">desktop")
     display: none
 
-.cd-primary-nav
-  //box-shadow: 0 1px 5px rgba(100,100,100, .5)
-  border-bottom: 1px solid $cloud
 
 .cd-primary-nav,
 .cd-primary-nav ul
@@ -332,8 +339,9 @@ input[type="search"]::-webkit-search-results-decoration
     transform: translateX(-100%)
     opacity: 0
 
-+MQ(maxL)
-  .nav-on-left .cd-primary-nav, .nav-on-left .cd-primary-nav ul
++media("<=desktop")
+  .nav-on-left .cd-primary-nav,
+  .nav-on-left .cd-primary-nav ul
     right: auto
     left: 0
 
@@ -405,7 +413,7 @@ input[type="search"]::-webkit-search-results-decoration
     &.item-8::before
       background-image: url("/images/line-icon-8.svg")
 
-  +MQ(maxL)
+  +media("<=desktop")
     /* by default .cd-primary-nav is hidden - trick for iOS devices where you can see the navigation if you pull down
     visibility: hidden
     transition: visibility 0s 0.3s
@@ -413,11 +421,11 @@ input[type="search"]::-webkit-search-results-decoration
       visibility: visible
       transition: visibility 0s 0s
 
-+MQ(L)
++media(">desktop")
 
   .cd-primary-nav
     position: static
-    padding: 0 150px 0 0
+    padding: 0 50px 0 0
     height: auto
     width: 100%
     //float: right
@@ -454,7 +462,7 @@ input[type="search"]::-webkit-search-results-decoration
     > li
       display: inline-block
       //float: left
-      margin-left: 3em
+      margin-left: .5rem
 
     > li > a
       /* main navigation buttons style
@@ -486,16 +494,20 @@ input[type="search"]::-webkit-search-results-decoration
       //width: 100vw
       width: 100%
       background: $white
-      padding: 48px 64px 130px
+      //CHANGED
+      //padding: 48px 64px 130px
+      padding: 2rem
       box-shadow: inset 0 1px 0 $cloud, 0 3px 6px rgba(#000, 0.05)
       transform: translateX(0)
       +clearfix
 
       transition: opacity .3s 0s, visibility 0s 0s
+
       &.is-hidden
         opacity: 0
         visibility: hidden
         transition: opacity .3s 0s, visibility 0s .3s
+
       > .see-all
         /* this is the BIG See all button at the bottom of the dropdown menu
         display: block
@@ -508,6 +520,7 @@ input[type="search"]::-webkit-search-results-decoration
         /* reset some inherited style
         margin: 0
         padding: 0
+
         a
           position: absolute
           width: 100%
@@ -524,11 +537,14 @@ input[type="search"]::-webkit-search-results-decoration
           margin: 0
           padding: 0
           transition: color 0.2s, background 0.2s, border 0.2s
+
           &:hover
             background: $nightgreen
             border-color: $nightgreen
             color: $white
+
     .cd-secondary-nav
+
       > li
         /* change the height according to your needs - you can even set height: auto
         height: 340px
@@ -541,16 +557,19 @@ input[type="search"]::-webkit-search-results-decoration
         overflow-x: hidden
         overflow-y: auto
         -webkit-overflow-scrolling: touch
+
         &:nth-child(4n+2)
           /* +2 because we have 2 list items with display:none
           margin-right: 0
           border-right: none
+
         > a
           /* secondary nav title
           color: $green
           font-weight: bold
           font-size: 1.6rem
           margin-bottom: .6em
+
       a
         height: 30px
         line-height: 30px
@@ -558,11 +577,14 @@ input[type="search"]::-webkit-search-results-decoration
         color: $nightgreen
         border-bottom: none
         font-size: 1.4rem
+
         &:hover
           color: $green
+
       ul
         /* Force Hardware Acceleration in WebKit
         transform: translateZ(0)
+
       ul ul
         /* tertiary navigation
         position: absolute
@@ -570,41 +592,59 @@ input[type="search"]::-webkit-search-results-decoration
         left: 0
         height: 100%
         width: 100%
+
         &.is-hidden
           transform: translateX(100%)
+
         .go-back
           display: block
+
           a
             color: transparent
+
         .see-all
           display: block
+
       .moves-out > li > a
         /* push the navigation items to the left - and lower down opacity - when tertiary nav slides in
         transform: translateX(-100%)
+
     .cd-nav-gallery
+
       li
         /* set here number of columns - use width percentage
-        +column(0.22)
-        margin: 0 4% 40px 0
+        //+column(0.22)
+        //margin: 0 4% 40px 0
+
+        float: left
+        width: 25%
+        padding: 1rem
+
         &:nth-child(4n+2)
           /* +2 because we have two additional list items with display:none
-          margin-right: 0
+          //margin-right: 0
+
       .cd-nav-item
         border-bottom: none
         padding: 0
         height: auto
         line-height: 1.2
+
         img
           position: static
           margin-top: 0
           height: auto
           width: 100%
-          margin-bottom: .6em
+          margin-bottom: .6rem
+
         h3
           color: $green
           font-weight: bold
-          padding: 0 .4em
+          font-size: .9rem
+          padding: 0 .4rem
+
     .cd-nav-icons
+
       li
         /* set here number of columns - use width percentage
         +column(0.32)
@@ -646,7 +686,7 @@ input[type="search"]::-webkit-search-results-decoration
     transform: rotate(45deg)
   &::after
     transform: rotate(-45deg)
-  +MQ(L)
+  +media(">desktop")
     &::before, &::after
       background: darken($cloud, 10%)
     &:hover::before, &:hover::after
@@ -666,7 +706,7 @@ input[type="search"]::-webkit-search-results-decoration
     left: 20px
     transform-origin: 1px 50%
 
-+MQ(L)
++media(">desktop")
   .has-children > a
     &::before, &::after
       right: 15%
@@ -699,15 +739,13 @@ input[type="search"]::-webkit-search-results-decoration
       left: 1px
 
 
+
+
 .cd-search
   position: absolute
-  //CHANGED
-  //height: $search-height-S
-  height: 105px
+  height: $search-height-S
   width: 100%
-  //CHANGED
-  //top: $header-height-S
-  top: 0
+  top: $header-height-S
   left: 0
   z-index: $above-content
   opacity: 0
@@ -724,13 +762,9 @@ input[type="search"]::-webkit-search-results-decoration
     background: $white
     height: 100%
     width: 100%
-
-    padding: 0 2em
     font-size: 3.2rem
-
-    // CHANGED
-    //padding: 0 5%
-    box-shadow: inset 0 1px 0 $cloud, 0 3px 6px rgba(#000, 0.05)
+    padding: 0 5%
+    //box-shadow: inset 0 1px 0 $cloud, 0 3px 6px rgba(#000, 0.05)
     appearance: none
 
     &::-webkit-input-placeholder,
@@ -745,19 +779,19 @@ input[type="search"]::-webkit-search-results-decoration
     opacity: 1
     visibility: visible
     transition: opacity .3s 0s, visibility 0s 0s
-    box-shadow: 1px 1px 5px rgba(100,100,100, .5)
-    // CHANGED - to move search bar to top
-    top: 0
+    //box-shadow: 1px 1px 5px rgba(100,100,100, .5)
 
   .nav-is-fixed &
     position: fixed
 
-  +MQ(L)
-    // CHANGED
-    //height: 105px
-    top: 0
+  +media(">desktop")
+    height: $search-height-L
+    top: $header-height-L
 
     input
+      border: none
+      color: $green
+      font-family: serif
       padding: 0 2em
       font-size: 3.2rem
 
@@ -782,7 +816,7 @@ input[type="search"]::-webkit-search-results-decoration
     visibility: visible
     transition: opacity 0.3s 0s, visibility 0s 0s, transform 0.3s 0s
 
-  +MQ(maxL)
+  +media("<=desktop")
     &.is-visible
       //transform: translateX(-$nav-width-S)
       transform: translateX(0)
@@ -814,7 +848,7 @@ input[type="search"]::-webkit-search-results-decoration
   opacity: 1
   visibility: visible
 
-+MQ(L)
++media(">desktop")
   .no-js .cd-primary-nav
     position: absolute
     z-index: $above-content

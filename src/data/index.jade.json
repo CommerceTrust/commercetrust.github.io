@@ -95,6 +95,10 @@
       ]
     },
     {
+      "page": "News & Insights",
+      "url": "/news-and-insights/"
+    },
+    {
       "page": "Contact Us",
       "url": "/",
       "sub": [
@@ -114,10 +118,6 @@
           "subimg": "/images/meeting-2.jpg"
         }
       ]
-    },
-    {
-      "page": "News & Insights",
-      "url": "/news-and-insights/"
     }
   ],
   "nav_minor": [

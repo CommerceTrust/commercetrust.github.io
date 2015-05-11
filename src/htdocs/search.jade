@@ -46,13 +46,12 @@ block content
   .banner-panorama
 
   .main-news
-    h1 Search Results
+  
     .card-article.col-8-12
-      each val in articles
-        .card-article__box
-          a(href="#{val.url}")
-            h2= val.title
-          small= val.date
-          p= lorem.p
+      h1 Search Results
+      
+      //- Google Custom Search 
+      
+      gcse:searchresults-only
 
     include ../inc/sidebar.jade

@@ -16,8 +16,13 @@
   margin: 0 auto
   width: 800px
 
-  +media("<desktop")
+  +media("<900px")
     width: 400px
+
+  +media("<500px")
+    padding: 1rem
+    width: 300px
+
 
 
 
@@ -34,13 +39,13 @@ svg
 .logo__stretched
   display: block
 
-  +media("<desktop")
+  +media("<900px")
     display: none
 
 .logo__stacked
   display: none
 
-  +media("<desktop")
+  +media("<900px")
     display: block
 
 

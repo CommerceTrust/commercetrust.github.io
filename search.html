@@ -187,20 +187,9 @@
       </header>
       <div class="banner-panorama"></div>
       <div class="main-news">
-        <h1>Search Results</h1>
         <div class="card-article col-8-12">
-          <div class="card-article__box"><a href="/news-and-insights/blog-post.html">
-              <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h2></a><small>February 10, 2015</small>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="card-article__box"><a href="/news-and-insights/blog-post.html">
-              <h2>Lorem ipsum dolor sit amet</h2></a><small>March 15, 2015</small>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
-          <div class="card-article__box"><a href="/news-and-insights/blog-post.html">
-              <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, ipsum dolor sit amet, consectetur adipiscing elit</h2></a><small>February 15, 2015</small>
-            <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-          </div>
+          <h1>Search Results</h1>
+          <gcse:searchresults-only></gcse:searchresults-only>
         </div>
         <div class="cta-sidebar col-5-12">
           <div class="cta-sidebar__media"><img src="../images/meeting-2.jpg"></div>
@@ -261,7 +250,7 @@
           </div>
           <div class="nav-footer__box-narrow col-2-12">
             <ul class="footer-nav__major">
-              <li class="nav-footer__title"><a href="/">Contact Us</a></li>
+              <li class="nav-footer__title"><a href="/news-and-insights/">News &amp; Insights</a></li>
               <ul class="nav-footer__sub-links">
                 <li><a href="#" class="footer-nav__link">Connect on LinkedIn</a></li>
               </ul>
@@ -485,6 +474,7 @@
                   <h3>Corporate Trust</h3></a></li>
             </ul>
           </li>
+          <li><a href="/news-and-insights/">News &amp; Insights</a></li>
           <li class="has-children"><a href="/">Contact Us</a>
             <ul class="cd-nav-gallery is-hidden">
               <li class="go-back"><a href="#0">Main menu</a></li>
@@ -496,14 +486,13 @@
                   <h3>Account Access</h3></a></li>
             </ul>
           </li>
-          <li><a href="/news-and-insights/">News &amp; Insights</a></li>
         </ul>
-        <div id="cd-search" class="cd-search">
-          <form>
-            <input type="search" placeholder="Search...">
-          </form>
-        </div>
       </nav>
+      <div id="cd-search" class="cd-search">
+        <form action="/search.html">
+          <input name="q" type="search" placeholder="Search...">
+        </form>
+      </div>
     </div>
     <script src="/global.js"></script>
     <script src="/page.js"></script>
