@@ -39,7 +39,7 @@ block content
   //- Iindent(nest) your code after a 'block' placeholder to make it show
   //-
   .banner-tall
-    h1.banner-tall__title Your Goals.
+    h1.banner-tall__headline Your Goals.
       br 
       | Our Guidance. 
       br 
@@ -47,26 +47,26 @@ block content
     
       
   .cta-contact
-    .cta-contact__box
+    .cta-contact__box.col-9-12
       p.cta-contact__text Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer.
+    .cta-contact__box.col-3-12
       a.cta-contact__button(href="#") Contact Us
     
     
   .cta-teaser
     .cta-teaser__box.col-7-12
-      h2.cta-teaser__title Our Mission
+      h2.cta-teaser__heading Our Mission
       p.cta-teaser__text You have a vision for where you want to go and what you want to achieve. To learn more about us and our approach to helping you get there, watch this video of our president and CEO Ray Stranghoener:
       a.cta-teaser__button(href="#") Learn More
-      
     .cta-teaser__media.col-5-12
-      //-img(src="../images/meeting.jpg", alt="Meeting")
+      img(src="../images/meeting.jpg", alt="Meeting")
       
       
   .card-diptic
     .card-diptic__box.col-6-12
-      h2.card-diptic__title Individuals
+      h2.card-diptic__heading Individuals
       .card-diptic__media
-        img(src="")
+        img(src="../images/meeting.jpg", alt="Meeting")
       p.card-diptic__text Collaboratively administrate empowered markets via plug-and-play networks. Quickly maximize timely deliverables for real-time schemas. 
       ul
         each val in individuals
@@ -75,9 +75,9 @@ block content
 
           
     .card-diptic__box.col-6-12
-      h2.card-diptic__title Institutions
+      h2.card-diptic__heading Institutions
       .card-diptic__media
-        img(src="")
+        img(src="../images/meeting.jpg", alt="Meeting")
       p.card-diptic__text Collaboratively administrate empowered markets via plug-and-play networks. Quickly maximize timely deliverables for real-time schemas.  
       ul
         each val in institutions
@@ -86,6 +86,6 @@ block content
           
           
   .cta-center
-    h2.cta-center__title About Commerce Trust Company
+    h2.cta-center__heading About Commerce Trust Company
     p.cta-center__text Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence value.
-    a.cta-center__button(href="#") Contact
+    a.cta-center__button(href="#") Learn more

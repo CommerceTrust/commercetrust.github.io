@@ -1,12 +1,13 @@
 footer
   .cta-subscribe
-    h2.cta-subscribe__title Subscribe to Our Latest Insights
+    h2.cta-subscribe__heading Subscribe to Our Latest Insights
     .cta-subscribe__box
-      .cta-subscribe__input-add-on
+      .cta-subscribe__input-add-on.col-8-12
         input.cta-subscribe__input(
           type="email"
           name="subscribe-newsletter"
         )
+      .cta-subscribe__input-add-on.col-4-12
         input.cta-subscribe__button(
           type="submit"
           value="Sign Up"
@@ -40,12 +41,6 @@ footer
           each val in nav_major[0].sub
             li
               a.footer-nav__link(href="#{val.suburl}")= val.subpage
-            li
-              a.footer-nav__link(href="#{nav_minor[0].url}")= nav_minor[0].page
-            li
-              a.footer-nav__link(href="#{nav_minor[1].url}")= nav_minor[1].page
-            li
-              a.footer-nav__link(href="#{nav_minor[2].url}")= nav_minor[2].page
 
     .nav-footer__box-narrow.col-2-12
       ul.footer-nav__major
@@ -61,11 +56,10 @@ footer
 
 
   .footer-copyright
-    .footer-copyright__logo
-      a(href="/", class="visuallyhidden") The Commerce Trust Company
-      include ../inc/logo
+    .footer-copyright__logo.col-5-12
+      include ../inc/logo-plain
 
-    .footer-copyright__box.col-7-12
+    .footer-copyright__box.col-5-12
       //- Copyright info is being injected here using JS to get the current year
       nav.nav-minor
         ul
@@ -74,7 +68,7 @@ footer
               a.nav-minor__link(href="#{val.url}")= val.page
 
 
-  .footer-disclaimer
+  .footer-disclaimer.col-8-12
     h6.footer-disclaimer__title Disclosures:
     p.footer-disclaimer__text To send an email that contains confidential information, please visit the Secure Message Center where there are additional instructions about whether to use Secure Email or Online Banking messaging.
     p.footer-disclaimer__text Mutual funds, annuities, and other investment products:

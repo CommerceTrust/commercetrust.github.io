@@ -5,6 +5,15 @@
   margin: 0 auto
   max-width: 1200px
 
+
+[class*='col-']
+  display: table-cell
+  vertical-align: middle
+
+  +media("<=tablet")
+    display: inline-block
+    text-align: center
+
 //2 columns wide
 // This is used in the footer for narrower columns of links
 .col-2-12
@@ -65,6 +74,26 @@
 // This is used in the Leadership page.
 .col-8-12
   width: 8/12 * 100%
+
+  +media("<=tablet")
+    width: 100%
+
+
+.col-9-12
+  width: 9/12 * 100%
+
+  +media("<=tablet")
+    width: 100%
+
+
+.col-10-12
+  width: 10/12 * 100%
+
+  +media("<=tablet")
+    width: 100%
+
+.col-11-12
+  width: 11/12 * 100%
 
   +media("<=tablet")
     width: 100%

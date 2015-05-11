@@ -78,7 +78,6 @@ input[type="search"]::-webkit-search-results-decoration
 
 .cd-main-content,
 .cd-main-header
-  font-family: $serif
   /* Force Hardware Acceleration in WebKit
   transform: translateZ(0)
   will-change: transform
@@ -98,6 +97,7 @@ input[type="search"]::-webkit-search-results-decoration
       transform: translateX($nav-width-S)
 
 .cd-main-header
+  font-family: $serif
   position: relative
   transition: transform 0.3s
 
@@ -110,7 +110,8 @@ input[type="search"]::-webkit-search-results-decoration
       transform: translateX($nav-width-S)
 
 .cd-main-content
-  background: $cloud
+  //CHANGED
+  //background: $cloud
   min-height: 100vh
   z-index: $content
 
@@ -124,7 +125,7 @@ input[type="search"]::-webkit-search-results-decoration
   border-bottom: 1px solid $cloud
 
   .nav-is-fixed &
-    /* add .nav-is-fixed class to body if you want a fixed navigation on > 1170px
+    /* add .nav-is-fixed class to body if you want a fixed navigation on > 1024px
     position: fixed
     top: 0
     left: 0

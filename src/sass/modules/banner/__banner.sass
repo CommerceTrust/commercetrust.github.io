@@ -3,27 +3,30 @@
   background-image: url(images/boat.jpg)
   background-position: center
   background-size: cover
-  display: flex
   height: 200px
+  position: relative
 
   +media(">tablet")
     height: 465px
 
 
-  &__title
-    align-self: center
+  &__headline
+    bottom: 3rem
     color: $white
     font-family: serif
-    font-size: 2rem
+    font-size: 5rem
     font-weight: $normal
+    left: 2rem
     line-height: 1
+    position: absolute
     margin: 0 0 1rem 1rem
     text-shadow: 2px 2px 2px $charcoal
 
-    +media(">tablet")
-      font-size: 3.5rem
-      align-self: flex-end
-      margin: 0 0 2rem 2rem
+    +media("<tablet")
+      position: static
+      font-size: 2rem
+      padding: 2rem
+
 
 // Banner Standard - This is found on the majority of the internal pages
 .banner-standard

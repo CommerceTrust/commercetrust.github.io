@@ -43,13 +43,26 @@ body
   background-size: auto line-height()
   margin: 0
 
+
+//[class*='__headline']
+
+
 // Used in article headers in the .Main columns
+[class*='__heading']
+  color: $green
+  font-family: $serif
+  font-size: 2.5rem
+  font-weight: $normal
+  line-height: 1
+  margin-bottom: 2rem
+
 =standard-heading()
   color: $green
   font-family: $serif
   font-size: 2rem
   font-weight: $normal
   line-height: 1
+  margin-bottom: 2rem
 
 
 // Found in the Main Blog Posts
@@ -80,3 +93,49 @@ body
   font-style: italic
   font-weight: $bold
   +vert-margin(1.5,1.5)
+
+
+//input[type="submit"]
+
+[class*=__button],
+input[type="button"],
+input[type="reset"]
+  border: 2px solid $green
+  display: inline-block
+  font-family: $serif
+  font-size: 1.2rem
+  font-style: italic
+  text-align: center
+  padding: .75rem 3rem
+  text-decoration: none
+  /*Items for transition
+  background-color: transparent
+  color: $green
+  /*Transition settings
+  transition: all .2s ease
+
+  &:hover
+    /*These will transition on hover
+    background-color: $green
+    color: $white
+
+
+// in progress
+
+// Mixins
+=button($background, $color, $border-color)
+  border: 2px solid $border-color
+  font-family: $serif
+  font-size: 1.2rem
+  font-style: italic
+  padding: .5rem 1rem
+  text-decoration: none
+  /*Items for transition
+  background-color: transparent
+  color: $color
+  /*Transition settings
+  transition: all .2s ease
+  &:hover
+    /*These will transition on hover
+    background-color: $green
+    color: $color
