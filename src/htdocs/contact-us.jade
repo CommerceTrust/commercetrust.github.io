@@ -31,7 +31,7 @@ block content
   //-
   .banner-standard
     .banner-standard__box.col-5-12
-      h1.banner-standard__title= title
+      h1.banner-standard__heading= title
       p.banner-standard__text Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
     .banner-standard__media-approach.col-7-12
 
@@ -40,9 +40,10 @@ block content
       .main-standard__text
         form.form-standard
           label I want to get in contact with...
-          select
-            option Personal Wealth Management
-            option Institutional Asset Management
+          .selectbox
+            select#select1(name='select1')
+              option Personal Wealth Management
+              option Institutional Asset Management
           label My name is...
           input(type='name' placeholder='Name')
           label My email is...

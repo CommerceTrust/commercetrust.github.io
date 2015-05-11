@@ -14,85 +14,86 @@ $footer-header-nav: Trebuchet MS
 		padding-left: 0
 
 
-//Something accessible to hide text in logos
-.visuallyhidden
-  border: 0
-  clip: rect(0 0 0 0)
-  height: 1px
-  margin: -1px
-  overflow: hidden
-  padding: 0
-  position: absolute
-  width: 1px
-
-
 footer
 	padding-bottom: 205px
+
+	+media("<=tablet")
+		padding: 0
 
 .nav-footer
 	padding: 30px 20px 20px
 	text-align: center
 
-	@include media(">=tablet", ">=desktop")
-		display: flex
-		text-align: left
+	+media("<=tablet")
+		display: none
+
+	&__heading
+		font-family: $sans
+		font-size: 1rem
+		font-weight: $bold
+		margin-bottom: 1rem
+
+		a
+			color: $charcoal
+			&:hover
+				color: $green
 
 	&__link
 		font-size: 14px
+
 	&__box
 		padding: 0 10px
+		vertical-align: top
 
 	&__box-narrow
 		padding: 0 10px
+		vertical-align: top
 
 	&__button
-		display: block
-		color: $footer-text
-		border: 1px solid $footer-text
-		font-size: 16px
-		margin-bottom: 25px
-		word-wrap: break-word //Put this in global buttons?
-	.footer-nav__major
-		@extend %menu
-		margin-top: 0
-		> li
-			font-family: $footer-header-nav
-			font-size: 16px
-		a
-		  color: $charcoal
-		  &:hover
-			  color: $green
+		border-width: 1px
+		color: $green
+		font-size: .9rem
+		margin-bottom: 1rem
+		padding: .5rem 1rem
+
 
 	// Sub-navigation, which hides on small sizes
 	&__sub-links
 		font-size: 14px
-		display: none
 
-		@include media(">=tablet", ">=desktop")
-			display: block
+		a
+			color: $charcoal
+			&:hover
+				color: $green
+
 
 .footer-copyright
 	border-top: 1px solid $cloud
-	padding: 20px 30px 0
-	display: flex
-	&__logo
-		display: none
+	display: table
+	padding: 2rem
+	width: 100%
 
-		@include media(">=tablet", ">=desktop")
-			display: block
-			width: 484px
+	&__logo
+		width: 500px
+
+		+media("<=tablet")
+
+			.logo__stacked
+				display: inline-block
+				width: 250px
+
 
 	&__box
-		text-align: center
+		text-align: right
 
-		@include media(">=tablet", ">=desktop")
+		+media(">=tablet", ">=desktop")
 			text-align: right
 
 		small, .nav-minor
 			display: inline-block
 			font-size: 14px
 
-			@include media(">=tablet", ">=desktop")
+			+media(">=tablet", ">=desktop")
 				font-size: 12px
 		.nav-minor
 			@extend %menu
@@ -100,30 +101,33 @@ footer
 			  a
 			    font-size: 14px
 
-			    @include media(">=tablet", ">=desktop")
+			    +media(">=tablet", ">=desktop")
 			      font-size: 12px
 
-.footer-disclaimer
-	border: 1px solid $footer-text
-	text-align: center
-	padding: 20px
-	margin: 50px auto 10px
-	width: 11/12 * 100%
 
-	@include media(">=tablet", ">=desktop")
-		width: 9/12 * 100%
+.footer-disclaimer
+	text-align: center
+	width: 100%
+
+	&__box
+		border: 1px solid $footer-text
+		display: inline-block
+		text-align: center
+		padding: 20px
+		margin: 50px auto 10px
 
 	h6, p, ul
 		font-size: 14px
-		@include media(">=tablet", ">=desktop")
+		margin-bottom: 1rem
+
+		+media(">=tablet", ">=desktop")
 			font-size: 12px
-	p
-		margin-bottom: 0
-	h6
-		margin: 0
+
 	ul
 		@extend %menu
 		margin-top: 0
+
 		li
 			display: inline-block
 			margin: 0 10px
+			padding: .5rem

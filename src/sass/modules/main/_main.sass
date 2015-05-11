@@ -3,15 +3,17 @@
 
 //- All "Main" classes have share these rules
 %main
-  display: flex
+  display: table
   padding: 1rem 2rem
-
-  +responsive-stack
 
 .main-standard
   @extend %main
+  padding-bottom: 5rem
 
   &__content
+
+    +media("<=tablet")
+      text-align: left
 
   &__text
 
@@ -20,12 +22,13 @@
 
     h2
       +standard-heading()
+      +vert-padding(1,0)
 
 
 // Main content block on Leadership page
 .main-bios
-  @extend %main
-  flex-direction: column
+  display: table
+  padding: 2rem
 
 
 // Main content block on News page
@@ -38,6 +41,9 @@
   @extend %main
 
   &__text
+
+    +media("<=tablet")
+      text-align: left
 
     * + *
       margin-top: 1rem

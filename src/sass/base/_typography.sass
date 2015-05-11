@@ -31,17 +31,9 @@ $cal-line-height: line-height()
 
 
 html
-  box-sizing: border-box
-  // Box-sizing setup per Mr. Irish http://www.paulirish.com/2012/box-sizing-border-box-ftw/
   font-size: $base-font-size
-  // Font size on :root (html tag) so I can use REMs
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
-
-
-*, *:before, *:after
-  box-sizing: inherit
-
 
 body
   color: $charcoal
@@ -51,7 +43,19 @@ body
   background-size: auto line-height()
   margin: 0
 
+
+//[class*='__headline']
+
+
 // Used in article headers in the .Main columns
+[class*='__heading']
+  color: $green
+  font-family: $serif
+  font-size: 2.5rem
+  font-weight: $normal
+  line-height: 1
+  margin-bottom: 2rem
+
 =standard-heading()
   color: $green
   font-family: $serif
@@ -88,3 +92,49 @@ body
   font-style: italic
   font-weight: $bold
   +vert-margin(1.5,1.5)
+
+
+//input[type="submit"]
+
+[class*=__button],
+input[type="button"],
+input[type="reset"]
+  border: 2px solid $green
+  display: inline-block
+  font-family: $serif
+  font-size: 1.2rem
+  font-style: italic
+  text-align: center
+  padding: .75rem 3rem
+  text-decoration: none
+  /*Items for transition
+  background-color: transparent
+  color: $green
+  /*Transition settings
+  transition: all .2s ease
+
+  &:hover
+    /*These will transition on hover
+    background-color: $green
+    color: $white
+
+
+// in progress
+
+// Mixins
+=button($background, $color, $border-color)
+  border: 2px solid $border-color
+  font-family: $serif
+  font-size: 1.2rem
+  font-style: italic
+  padding: .5rem 1rem
+  text-decoration: none
+  /*Items for transition
+  background-color: transparent
+  color: $color
+  /*Transition settings
+  transition: all .2s ease
+  &:hover
+    /*These will transition on hover
+    background-color: $green
+    color: $color
