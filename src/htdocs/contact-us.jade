@@ -40,9 +40,10 @@ block content
       .main-standard__text
         form.form-standard
           label I want to get in contact with...
-          select
-            option Personal Wealth Management
-            option Institutional Asset Management
+          .selectbox
+            select#select1(name='select1')
+              option Personal Wealth Management
+              option Institutional Asset Management
           label My name is...
           input(type='name' placeholder='Name')
           label My email is...
