@@ -125,21 +125,23 @@
 
 //Sidebar CTA - This is found on internal pages only
 .cta-sidebar
-  +media(">tablet")
-    padding: 1rem 0 0 3rem
+  padding: 1rem 0 0 5rem
+  vertical-align: top
+
+  +media("<=tablet")
+    padding: 3rem 2rem
 
   &__media
-    background-color: $green
-    +media(">tablet")
-      height: 180px
+    //height: 180px
+    //overflow: hidden
+
+    +media("<=tablet")
+
 
     img
 
-  &__title
-    color: $green
-    font-family: $serif
+  &__heading
     font-size: 1.25rem
-    font-weight: $normal
     +vert-margin(.5,.5)
 
   &__text

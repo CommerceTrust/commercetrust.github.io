@@ -27,8 +27,20 @@ footer
 	+media("<=tablet")
 		display: none
 
+	&__heading
+		font-family: $sans
+		font-size: 1rem
+		font-weight: $bold
+		margin-bottom: 1rem
+
+		a
+			color: $charcoal
+			&:hover
+				color: $green
+
 	&__link
 		font-size: 14px
+
 	&__box
 		padding: 0 10px
 		vertical-align: top
@@ -39,29 +51,21 @@ footer
 
 	&__button
 		border-width: 1px
+		color: $green
 		font-size: .9rem
 		margin-bottom: 1rem
 		padding: .5rem 1rem
 
 
-	.footer-nav__major
-		@extend %menu
-		margin-top: 0
-		> li
-			font-family: $footer-header-nav
-			font-size: 16px
-		a
-		  color: $charcoal
-		  &:hover
-			  color: $green
-
 	// Sub-navigation, which hides on small sizes
 	&__sub-links
 		font-size: 14px
-		display: none
 
-		+media(">=tablet", ">=desktop")
-			display: block
+		a
+			color: $charcoal
+			&:hover
+				color: $green
+
 
 .footer-copyright
 	border-top: 1px solid $cloud
@@ -100,12 +104,17 @@ footer
 			    +media(">=tablet", ">=desktop")
 			      font-size: 12px
 
-.footer-disclaimer
-	border: 1px solid $footer-text
-	text-align: center
-	padding: 20px
-	margin: 50px auto 10px
 
+.footer-disclaimer
+	text-align: center
+	width: 100%
+
+	&__box
+		border: 1px solid $footer-text
+		display: inline-block
+		text-align: center
+		padding: 20px
+		margin: 50px auto 10px
 
 	h6, p, ul
 		font-size: 14px

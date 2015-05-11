@@ -32,24 +32,14 @@
 .banner-standard
   background: $green
   color: $white
-  display: flex
-
-  flex-flow: row wrap
-  justify-content: space-around
-  align-items: stretch
-
-  +responsive-stack
-
-  +media(">tablet")
-    height: 335px
+  display: table
+  height: 340px
 
   &__box
     padding: 1rem 2rem
 
-  &__title
-    font-family: $serif
-    font-size: 2rem
-    font-weight: $normal
+  &__heading
+    color: $white
 
   &__text
 
