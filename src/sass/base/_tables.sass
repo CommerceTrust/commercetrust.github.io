@@ -8,7 +8,7 @@ table
 tr
   border-bottom: 1px solid $cloud
 
-  @include media($table-break)
+  +media($table-break)
     margin-top: 0 !important;
 
     &:first-child
@@ -21,7 +21,7 @@ td
   vertical-align: top
   padding: 10px 5px
 
-  @include media($table-break)
+  +media($table-break)
     margin-top: 0 !important;
     position: relative
     padding-left: 40%
@@ -52,7 +52,7 @@ thead
   tr
     //Hide the thead information in an accessible way
 
-    @include media($table-break)
+    +media($table-break)
       position: absolute
       top: -9999px
       left: -9999px
@@ -63,5 +63,5 @@ thead
     padding: 5px
 
 table, thead, tbody, th, td, tr
-  @include media($table-break)
+  +media($table-break)
     display: block

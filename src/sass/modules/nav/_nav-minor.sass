@@ -1,9 +1,11 @@
 .nav-minor
   display: none
-  @include media(">desktop")
+
+  +media(">desktop")
     display: block
     padding-top: 1rem
     text-align: right
+    
 
   li
     display: inline-block

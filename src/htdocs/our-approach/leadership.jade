@@ -38,7 +38,7 @@ block content
   //-
   .banner-standard
     .banner-standard__box.col-5-12
-      h1.banner-standard__title= title
+      h1.banner-standard__heading= title
       p.banner-standard__text Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
     .banner-standard__media-leadership.col-7-12
       
@@ -46,9 +46,9 @@ block content
     each val in people
       .card-bio
         .card-bio__media.col-4-12
-          img(src="")
+          img(src="../images/head-shot.jpg", alt="Meeting")
         .card-bio__box.col-8-12
-          h2.card-bio__title= val.name
+          h2.card-bio__heading= val.name
           h3.card-bio__subtitle= val.title
           .card-bio__text
             p= lorem.p
