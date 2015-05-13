@@ -1,29 +1,36 @@
 .nav-minor
-  display: none
+  display: block
+  text-align: right
 
-  +media(">desktop")
-    display: block
+  +media("<=tablet")
+    display: none
+
+  &__container
+    background-color: $white
+    border-left: 1px solid $borderColor
+    border-right: 1px solid $borderColor
+    margin: 0 auto
     padding-top: 1rem
-    text-align: right
-    
+    max-width: 1200px
 
   li
     display: inline-block
 
     &:after
       display: inline-block
-      content: '|'
+      content: ' | '
       color: $green
       margin: 0 2px
 
-    &:last-child
+    &:nth-child(3)
 
       &:after
-        display: none
+        content: ' '
 
   &__link
     color: $charcoal
     display: inline-block
+    padding: 0 .5rem
 
     &:hover
       color: $green

@@ -102,7 +102,8 @@ We are using LibSass for faster compile times while using browser-sync to refres
 ---
 
 ### :disappointed: Shame Log
-1.
+1. There is some funky stuff about this site.
+1. Branch - titlehead - has the header that I think works best
 
 
 
