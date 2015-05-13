@@ -12,9 +12,8 @@
 
 .logo
   display: block
-  padding: 2rem 0 2rem 2rem
-  margin: 0 auto
-  width: 800px
+  padding: 1rem
+  width: 600px
 
   +media("<900px")
     width: 400px
@@ -33,7 +32,7 @@ svg
 
   &:hover path,
   &:hover polygon
-    fill: orange
+    opacity: .7
     transition: fill 0.2s ease
 
 .logo__stretched
@@ -54,7 +53,6 @@ svg
 // 25 pieces
 .logo__globe
   path
-    fill: $green
     opacity: 0
     animation: fadeIn ease-in 1
     animation-fill-mode: forwards
