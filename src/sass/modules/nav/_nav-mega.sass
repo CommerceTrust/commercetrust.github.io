@@ -310,6 +310,7 @@ input[type="search"]::-webkit-search-results-decoration
   overflow: auto
   -webkit-overflow-scrolling: touch
   z-index: $below-content
+
   /* Force Hardware Acceleration in WebKit
   transform: translateZ(0)
   transform: translateX(0)
@@ -317,6 +318,7 @@ input[type="search"]::-webkit-search-results-decoration
 
   a
     display: block
+    font-size: 1.2rem
     height: 50px
     line-height: 50px
     padding: 0 20px
@@ -611,6 +613,7 @@ input[type="search"]::-webkit-search-results-decoration
         transform: translateX(-100%)
 
     .cd-nav-gallery
+      box-shadow: 0 5px 5px rgba(100,100,100,.3)
 
       li
         /* set here number of columns - use width percentage
@@ -790,10 +793,11 @@ input[type="search"]::-webkit-search-results-decoration
     top: $header-height-L
 
     input
+      box-sizing: border-box
       border: none
       color: $green
       font-family: serif
-      padding: 0 2em
+      padding: 0 2rem
       font-size: 3.2rem
 
 
@@ -806,7 +810,7 @@ input[type="search"]::-webkit-search-results-decoration
   top: 0
   left: 0
   cursor: pointer
-  background-color: rgba($green, 0.8)
+  //background-color: rgba($green, 0.8)
   visibility: hidden
   opacity: 0
   backface-visibility: hidden

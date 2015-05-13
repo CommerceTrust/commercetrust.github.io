@@ -45,6 +45,14 @@ html
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-P4FLLL');
+      
+    nav.nav-minor
+      ul.nav-minor__container
+        each vals in nav_minor
+          li
+            a(href="#{vals.url}").nav-minor__link= vals.page
+        .header__logo
+          include ../inc/logo
     
     .container.cd-main-content
       include ../inc/header
