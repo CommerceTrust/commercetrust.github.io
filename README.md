@@ -2,11 +2,25 @@
 - This is a static site built using Jade, LibSass, Gulp and Node
 
 
-## Technical Overview
-| Framework(s)| Pre-processors 	| Post-processors 	| Task Runner 	| Deployment 	|
-|-----------	|----------------	|-----------------	|-------------	|------------	|
-| Static 	    | LibSass (sass)  | Pleeease    	    | gulp        	| Dev        	|
-| Jade        |               	|         	        | gulp prod   	|           	|
+## Stack
+- Jade
+- Gulp
+- Libsass (Indented Flavor)
+- GitHub
+
+## Gulp build commands
+
+`gulp`
+
+This will compile the Jade, Sass, YAML, Frontmatter, and CoffeeScript. All css will be auto-prefixed. A lot more happends, but this is the main stuff to be concerned about.
+
+`gulp prod`
+This is not set up yet
+
+
+## Deployment
+Just merge your feature branch into master
+
 
 ---
 
@@ -102,7 +116,7 @@ We are using LibSass for faster compile times while using browser-sync to refres
 ---
 
 ### :disappointed: Shame Log
-1. There is some funky stuff about this site.
+1. There is some funky stuff about this site. 
 1. Branch - titlehead - has the header that I think works best
 
 

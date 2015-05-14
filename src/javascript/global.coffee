@@ -54,7 +54,7 @@ moveNavigation = ->
     navigation.detach()
     navigation.insertAfter ".cd-main-content"
 
-MqL = 1024
+MqL = 1023
 moveNavigation()
 $(window).on "resize", ->
   (if (not window.requestAnimationFrame) then setTimeout(moveNavigation, 300) else window.requestAnimationFrame(moveNavigation))

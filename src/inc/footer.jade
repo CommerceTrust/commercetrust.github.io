@@ -63,11 +63,9 @@ footer
 
     .footer-copyright__box.col-5-12
       //- Copyright info is being injected here using JS to get the current year
-      nav.nav-minor
-        ul
-          each val in nav_terms
-            li
-              a.nav-minor__link(href="#{val.url}")= val.page
+      each val in nav_terms
+        small
+          a.nav-minor__link(href="#{val.url}")= val.page
 
 
   .footer-disclaimer
@@ -80,4 +78,5 @@ footer
         li May lose value
         li No bank guarantee
 
+//-This nav is brought to the top with jquery to fit responsive needs
 include ../inc/nav

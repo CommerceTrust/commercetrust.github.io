@@ -1,14 +1,20 @@
 console.log 'subscribe.js loaded!'
 
+# Get subscribe box
 $subscribe = $(".cta-subscribe")
 $subscribe_box = $subscribe.find(".cta-subscribe__signup")
 
+# Get input and button
 $subscribe_input = $subscribe_box.find(".cta-subscribe__input")
 $subscribe_button = $subscribe_box.find(".cta-subscribe__button")
 
+# Get message
 $subscribe_message = $subscribe.find(".cta-subscribe__message")
 
-validate = ->
+# Validation
+IsEmail = (email) ->
+  regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/
+  regex.test email
 
 
 # <div class="cta-subscribe">
@@ -31,8 +37,9 @@ validate = ->
 # </div>
 
 $subscribe_button.on "click", ->
-  $subscribe_box.fadeOut('fast')
-  $subscribe_message.fadeIn('slow')
+  if IsEmail($subscribe_input.val())
+    $subscribe_box.fadeOut('fast')
+    $subscribe_message.fadeIn('slow')
   # if $(".cd-primary-nav").hasClass("nav-is-visible")
   #   closeNav()
   #   $(".cd-overlay").removeClass "is-visible"

@@ -47,10 +47,12 @@ html
       })(window,document,'script','dataLayer','GTM-P4FLLL');
       
     nav.nav-minor
-      ul.nav-minor__container
-        each vals in nav_minor
-          li
-            a(href="#{vals.url}").nav-minor__link= vals.page
+      .nav-minor__container
+        ul
+          each vals in nav_minor
+            li
+              a(href="#{vals.url}").nav-minor__link= vals.page
+      .header__logo-box
         .header__logo
           include ../inc/logo
     

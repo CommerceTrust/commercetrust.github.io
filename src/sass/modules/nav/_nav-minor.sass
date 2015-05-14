@@ -2,9 +2,6 @@
   display: block
   text-align: right
 
-  +media("<=tablet")
-    display: none
-
   &__container
     background-color: $white
     border-left: 1px solid $borderColor
@@ -12,6 +9,9 @@
     margin: 0 auto
     padding-top: 1rem
     max-width: 1200px
+
+    +media("<=tablet")
+      display: none
 
   li
     display: inline-block
