@@ -3,27 +3,10 @@
 console.log 'global.js loaded!'
 
 $ = require("jquery")
-# jmobile = require('./vendor/jquery.mobile.custom.min')
+subscribe = require "./subscribe"
 
-#jQuery(document).ready ($) ->
 
-#if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
-
-#move nav element position according to window width
-
-#mobile - open lateral menu clicking on the menu icon
-
-#open search form
-
-#close lateral menu on mobile
-
-#prevent default clicking on direct children of .cd-primary-nav
-
-#open submenu
-
-#desktop version only
-
-#submenu items - go back link
+# Navigation
 closeNav = ->
   $(".cd-nav-trigger").removeClass "nav-is-visible"
   $(".cd-main-header").removeClass "nav-is-visible"
