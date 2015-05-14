@@ -3,27 +3,7 @@
 console.log 'global.js loaded!'
 
 $ = require("jquery")
-# jmobile = require('./vendor/jquery.mobile.custom.min')
 
-#jQuery(document).ready ($) ->
-
-#if you change this breakpoint in the style.css file (or _layout.scss if you use SASS), don't forget to update this value as well
-
-#move nav element position according to window width
-
-#mobile - open lateral menu clicking on the menu icon
-
-#open search form
-
-#close lateral menu on mobile
-
-#prevent default clicking on direct children of .cd-primary-nav
-
-#open submenu
-
-#desktop version only
-
-#submenu items - go back link
 closeNav = ->
   $(".cd-nav-trigger").removeClass "nav-is-visible"
   $(".cd-main-header").removeClass "nav-is-visible"
@@ -71,7 +51,7 @@ moveNavigation = ->
     navigation.detach()
     navigation.insertAfter ".cd-main-content"
 
-MqL = 1024
+MqL = 1023
 moveNavigation()
 $(window).on "resize", ->
   (if (not window.requestAnimationFrame) then setTimeout(moveNavigation, 300) else window.requestAnimationFrame(moveNavigation))

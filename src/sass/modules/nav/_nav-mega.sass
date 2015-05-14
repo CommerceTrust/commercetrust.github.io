@@ -29,7 +29,7 @@ $above-content: 3
 
 //
   +MQ(maxL)
-  +media("<=desktop")
+  +media("<desktop")
 
 //
   +MQ(L)
@@ -55,7 +55,7 @@ $above-content: 3
  *--------------------------------
 
 body
-  +media("<=desktop")
+  +media("<desktop")
     // layout mixins inside partials > _layout.scss
     &.nav-on-left.overflow-hidden
       overflow: hidden
@@ -89,7 +89,7 @@ input[type="search"]::-webkit-search-results-decoration
   position: relative
   transition: transform 0.3s
 
-  +media("<=desktop")
+  +media("<desktop")
     &.nav-is-visible
       transform: translateX(-$nav-width-S)
 
@@ -101,7 +101,7 @@ input[type="search"]::-webkit-search-results-decoration
   position: relative
   transition: transform 0.3s
 
-  +media("<=desktop")
+  +media("<desktop")
     &.nav-is-visible
       //transform: translateX(-$nav-width-S)
       transform: translateX(0)
@@ -143,7 +143,7 @@ input[type="search"]::-webkit-search-results-decoration
   img
     display: block
 
-  +media("<=desktop")
+  +media("<desktop")
     .nav-on-left &
       left: auto
       right: 5%
@@ -161,7 +161,7 @@ input[type="search"]::-webkit-search-results-decoration
   li
     display: inline-block
 
-  +media("<=desktop")
+  +media("<desktop")
     .nav-on-left &
       right: auto
       left: 5%
@@ -342,7 +342,7 @@ input[type="search"]::-webkit-search-results-decoration
     transform: translateX(-100%)
     opacity: 0
 
-+media("<=desktop")
++media("<desktop")
   .nav-on-left .cd-primary-nav,
   .nav-on-left .cd-primary-nav ul
     right: auto
@@ -416,7 +416,7 @@ input[type="search"]::-webkit-search-results-decoration
     &.item-8::before
       background-image: url("/images/line-icon-8.svg")
 
-  +media("<=desktop")
+  +media("<desktop")
     /* by default .cd-primary-nav is hidden - trick for iOS devices where you can see the navigation if you pull down
     visibility: hidden
     transition: visibility 0s 0.3s
@@ -821,7 +821,7 @@ input[type="search"]::-webkit-search-results-decoration
     visibility: visible
     transition: opacity 0.3s 0s, visibility 0s 0s, transform 0.3s 0s
 
-  +media("<=desktop")
+  +media("<desktop")
     &.is-visible
       //transform: translateX(-$nav-width-S)
       transform: translateX(0)
