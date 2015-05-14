@@ -3,7 +3,10 @@
 console.log 'global.js loaded!'
 
 $ = require("jquery")
+subscribe = require "./subscribe"
 
+
+# Navigation
 closeNav = ->
   $(".cd-nav-trigger").removeClass "nav-is-visible"
   $(".cd-main-header").removeClass "nav-is-visible"

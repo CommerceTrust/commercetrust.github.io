@@ -32,6 +32,7 @@ validate = ->
 
 $subscribe_button.on "click", ->
   $subscribe_box.fadeOut('fast')
+  $subscribe_message.fadeIn('slow')
   # if $(".cd-primary-nav").hasClass("nav-is-visible")
   #   closeNav()
   #   $(".cd-overlay").removeClass "is-visible"
