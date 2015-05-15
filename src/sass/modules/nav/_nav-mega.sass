@@ -365,7 +365,7 @@ input[type="search"]::-webkit-search-results-decoration
       text-overflow: ellipsis
 
   .cd-nav-gallery .cd-nav-item
-    padding-left: 90px
+    //padding-left: 90px
 
     img
       position: absolute
@@ -375,6 +375,9 @@ input[type="search"]::-webkit-search-results-decoration
       left: 20px
       top: 50%
       margin-top: -20px
+
+      +media("<desktop")
+        display: none
 
   .cd-nav-icons .cd-nav-item
     padding-left: 75px
