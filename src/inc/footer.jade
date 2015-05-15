@@ -21,33 +21,27 @@ footer
 
   nav.nav-footer
     .nav-footer__box.col-3-12
-      h4.nav-footer__heading
-        a(href="#{nav_major[1].url}")= nav_major[1].page
       ul.nav-footer__sub-links
         each val in nav_major[1].sub
           li
             a.footer-nav__link(href="#{val.suburl}")= val.subpage
 
     .nav-footer__box.col-3-12
-      h4.nav-footer__heading
-        a(href="#{nav_major[1].url}")= nav_major[2].page
       ul.nav-footer__sub-links
         each val in nav_major[2].sub
           li
             a.footer-nav__link(href="#{val.suburl}")= val.subpage
 
     .nav-footer__box-narrow.col-2-12
-      h4.nav-footer__heading
-        a(href="#{nav_major[1].url}")= nav_major[0].page
       ul.nav-footer__sub-links
         each val in nav_major[0].sub
           li
             a.footer-nav__link(href="#{val.suburl}")= val.subpage
 
     .nav-footer__box-narrow.col-2-12
-      h4.nav-footer__heading
-        a(href="#{nav_major[1].url}")= nav_major[3].page
       ul.nav-footer__sub-links
+        li
+          a(href="#{nav_major[1].url}")= nav_major[3].page
         li
           a.footer-nav__link(href="#") Connect on LinkedIn
 
