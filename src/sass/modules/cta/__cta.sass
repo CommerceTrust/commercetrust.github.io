@@ -5,11 +5,8 @@
 //Contact CTA
 //This is found on the homepage only right now
 .cta-contact
-  background-color:  #eceee6
+  background-color: $slate
   display: table
-  // display: flex
-  // align-items: center
-  // justify-content: center
 
 
   &__box
@@ -18,8 +15,6 @@
   &__box:nth-child(2)
     padding: 2rem 0
 
-
-    //+responsive-stack
 
   &__text
     margin: 0
@@ -39,10 +34,6 @@
 //Video teaser CTA
 //This is found on the homepage only right now
 .cta-teaser
-  // display: flex
-  // flex-flow: row wrap
-  // justify-content: space-around
-  // align-items: stretch
   display: table
   padding: 1rem 2rem
 
@@ -118,6 +109,12 @@
     font-size: 1.5rem
     margin-left: 1rem
     width: 100%
+    transition: all .2s ease
+
+    &:hover
+      /*These will transition on hover
+      background-color: $white
+      color: $green
 
     +media("<=tablet")
       margin: 1rem 0 0 0
