@@ -4,6 +4,7 @@ console.log 'global.js loaded!'
 
 $ = require("jquery")
 subscribe = require "./subscribe"
+lazyloader = require "./lazyloader"
 
 
 # Navigation
