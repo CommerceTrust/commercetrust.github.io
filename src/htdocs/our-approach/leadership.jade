@@ -3,7 +3,7 @@
 //- It uses YAML to create JSON objects that provide local variables to the page
 //-
 ---
-title: Leadership
+title: Our Leadership
 description: Collaboratively administrate empowered markets via plug-and-play networks.
 
 people:
@@ -45,9 +45,9 @@ block content
   .main-bios
     each val in people
       .card-bio
-        .card-bio__media.col-4-12
+        .card-bio__media.col-2-12
           img(src="../images/head-shot.jpg", alt="Meeting")
-        .card-bio__box.col-8-12
+        .card-bio__box.col-10-12
           h2.card-bio__heading= val.name
           h3.card-bio__subtitle= val.title
           .card-bio__text
