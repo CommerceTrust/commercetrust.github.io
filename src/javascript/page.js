@@ -11,6 +11,6 @@
 var today = new Date(),
     year = today.getFullYear();
 
-$('.footer-copyright__box').prepend("<small>&copy;"+ year +" Commerce Bank, LLC</small>");
+$('.footer-copyright__box').prepend("<small>&copy;"+ year +" Commerce Bancshares, Inc.</small>");
 
 console.log('page.js loaded!');
