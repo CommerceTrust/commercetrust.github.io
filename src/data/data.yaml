@@ -15,18 +15,18 @@ nav_major:
       - subpage: Our Approach
         suburl: /our-approach/
         subimg: /images/meeting-2.jpg
-      - subpage: Leadership
+      - subpage: Our Leadership
         suburl: /our-approach/leadership.html
         subimg: /images/meeting-2.jpg
 
-  - page: Personal Wealth Management
+  - page: Private Wealth Management
     url: /
     sub:
-      - subpage: Personal Wealth Management
+      - subpage: Private Wealth Management
         suburl: /personal-wealth-management/
         subimg: /images/meeting-2.jpg
       - subpage: Investment Management
-        suburl: /personal-wealth-management/investment-management.html
+        suburl: /personal-wealth-management/personal-investment-management.html
         subimg: /images/meeting-2.jpg
       - subpage: Wealth Planning
         suburl: /personal-wealth-management/financial-planning.html
@@ -45,7 +45,7 @@ nav_major:
         suburl: /institutional-asset-management/
         subimg: /images/meeting-2.jpg
       - subpage: Investment Management
-        suburl: /institutional-asset-management/investment-management.html
+        suburl: /institutional-asset-management/institutional-investment-management.html
         subimg: /images/meeting-2.jpg
       - subpage: Trust and Custody Services
         suburl: /institutional-asset-management/trust-and-custody-services.html
@@ -60,7 +60,7 @@ nav_major:
         suburl: /institutional-asset-management/corporate-trust.html
         subimg: /images/meeting-2.jpg
 
-  - page: News & Insights
+  - page: News and Insights
     url: /news-and-insights/
 
   # - page: Contact Us

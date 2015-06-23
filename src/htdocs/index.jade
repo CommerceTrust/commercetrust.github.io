@@ -6,19 +6,31 @@
 ---
 title: Commerce Trust
 description: Commerce Trust
+
+
 individuals:
-  - Investment Management
-  - Private Banking
-  - Wealth Planning
-  - Trust and Estate Services
-  - Commerce Family Office 
+  - page: Investment Management
+    url: /personal-investment-management.html
+  - page: Private Banking
+    url: /private-banking.html
+  - page: Wealth Planning
+    url: /financial-planning.html
+  - page: Trust and Estate Services
+    url: /trust-and-estate-services.html
+  - page: Commerce Family Office 
+    url: 'http://www.commercebank.com/wealth-management/trust/commerce-family-office/'
 
 institutions:
-  - Investment Management
-  - Retirement Planning
-  - Trust and Custody Services
-  - Corporate Trust
-  - Non-Profit Services
+  - page: Investment Management
+    url: /institutional-investment-management.html
+  - page: Retirement Planning
+    url: /retirement-plan-services.html
+  - page: Trust and Custody Services
+    url: /trust-and-custody-services.html
+  - page: Corporate Trust
+    url: /corporate-trust.html
+  - page: Non-Profit Services
+    url: /non-profit-services.html
 ---
 //- This will add the content of this page inside the 'global.jade' file
 extends ../layout/global
@@ -71,7 +83,7 @@ block content
       ul
         each val in individuals
           li
-            a.card-diptic__link(href="")= val
+            a.card-diptic__link(href="#{val.url}")= val.page
 
           
     .card-diptic__box.col-6-12
@@ -82,10 +94,10 @@ block content
       ul
         each val in institutions
           li
-            a.card-diptic__link(href="")= val
+            a.card-diptic__link(href="#{val.url}")= val.page
           
           
   .cta-center
-    h2.cta-center__heading About Commerce Trust Company
+    h2.cta-center__heading About The Commerce Trust Company
     p.cta-center__text Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence value.
     a.cta-center__button(href="#") Learn more
