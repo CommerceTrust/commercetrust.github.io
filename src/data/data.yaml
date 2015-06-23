@@ -14,7 +14,10 @@ nav_major:
     sub:
       - subpage: Our Approach
         suburl: /our-approach/
-        subimg: /images/meeting-2.jpg
+        subimg: /images/our_approach.jpg
+      - subpage: About Us
+        suburl: /our-approach/about-us.html
+        subimg: /images/about_us.jpg
       - subpage: Our Leadership
         suburl: /our-approach/leadership.html
         subimg: /images/meeting-2.jpg
@@ -24,41 +27,41 @@ nav_major:
     sub:
       - subpage: Private Wealth Management
         suburl: /personal-wealth-management/
-        subimg: /images/meeting-2.jpg
+        subimg: /images/private_wealth_mgmt.jpg
       - subpage: Investment Management
         suburl: /personal-wealth-management/personal-investment-management.html
-        subimg: /images/meeting-2.jpg
+        subimg: /images/personal_invest_mgmt.jpg
       - subpage: Wealth Planning
         suburl: /personal-wealth-management/financial-planning.html
-        subimg: /images/meeting-2.jpg
+        subimg: /images/wealth_planning.jpg
       - subpage: Private Banking
         suburl: /personal-wealth-management/private-banking.html
-        subimg: /images/meeting-2.jpg
+        subimg: /images/private_banking.jpg
       - subpage: Trust and Estate Services
         suburl: /personal-wealth-management/trust-and-estate-services.html
-        subimg: /images/meeting-2.jpg
+        subimg: /images/trust_estate.jpg
 
   - page: Institutional Asset Management
     url: /
     sub:
       - subpage: Institutional Asset Management
         suburl: /institutional-asset-management/
-        subimg: /images/meeting-2.jpg
+        subimg: /images/institutional_asset_mgmt.jpg
       - subpage: Investment Management
         suburl: /institutional-asset-management/institutional-investment-management.html
-        subimg: /images/meeting-2.jpg
+        subimg: /images/institutional_invest_mgmt.jpg
       - subpage: Trust and Custody Services
         suburl: /institutional-asset-management/trust-and-custody-services.html
         subimg: /images/meeting-2.jpg
       - subpage: Retirement Plan Services
         suburl: /institutional-asset-management/retirement-plan-services.html
-        subimg: /images/meeting-2.jpg
+        subimg: /images/retirement_plan_services.jpg
       - subpage: Non-Profit Services
         suburl: /institutional-asset-management/non-profit-services.html
-        subimg: /images/meeting-2.jpg
+        subimg: /images/non_profit.jpg
       - subpage: Corporate Trust
         suburl: /institutional-asset-management/corporate-trust.html
-        subimg: /images/meeting-2.jpg
+        subimg: /images/corporate_trust.jpg
 
   - page: News and Insights
     url: /news-and-insights/
