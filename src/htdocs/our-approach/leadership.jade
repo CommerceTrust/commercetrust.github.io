@@ -1,23 +1,10 @@
 //-
 //- This is a 'Front Matter block'
 //- It uses YAML to create JSON objects that provide local variables to the page
-//-
+//- This file uses the Leadership data in the data.yml file
 ---
 title: Our Leadership
 description: Collaboratively administrate empowered markets via plug-and-play networks.
-
-people:
-  - name: V. Raymond Stranghoener
-    title: President
-
-  - name: Scott Boswell
-    title: President Western Region
-
-  - name: J.-J. Landers Carnal, CFA
-    title: Chief Investment Officer
-
-  - name: John K. Handy
-    title: Chief Operating Officer
 
 ---
 //- This will add the content of this page inside the 'global.jade' file
@@ -39,19 +26,18 @@ block content
   .banner-standard
     .banner-standard__box.col-5-12
       h1.banner-standard__heading= title
-      p.banner-standard__text Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+      p.banner-standard__text
     .banner-standard__media-leadership.col-7-12
-      
+      img(src="../images/successful-team.jpg", alt="The Commerce Trust Company Leadership Team")
+
   .main-bios
-    each val in people
+    each val in leadership
       .card-bio
         .card-bio__media.col-2-12
-          img(src="../images/head-shot.jpg", alt="Meeting")
+          img(src="../images/#{val.image}", alt="#{val.name}")
         .card-bio__box.col-10-12
           h2.card-bio__heading= val.name
           h3.card-bio__subtitle= val.title
+          a(href="#{val.linkedin}") LinkedIn
           .card-bio__text
-            p= lorem.p
-            
-            p= lorem.p
-    
+            p= val.bio
