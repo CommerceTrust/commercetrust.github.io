@@ -1,6 +1,6 @@
 //Banner Tall - This is found on the homepage only
 .banner-tall
-  background-image: url(images/boat.jpg)
+  background-image: url(images/index_hero.jpg)
   background-position: center
   background-size: cover
   height: 200px
@@ -33,7 +33,11 @@
   background: $green
   color: $white
   display: table
-  height: 340px
+  height: auto
+
+  // Get rid of weird space below image in the banners
+  img
+    display: block
 
   &__box
     padding: 1rem 2rem
@@ -46,20 +50,20 @@
   &__media
     background-color: $slate
 
-  // THis is found on the Approach Page
+  // This is found on the Approach Page
   &__media-approach
-    background-image: url(../images/meeting.jpg)
-    background-position: center
-    background-size: cover
+   // background-image: url(../images/meeting.jpg)
+   // background-position: center
+   // background-size: cover
 
     +media("<=tablet")
       height: 300px
 
   // This is found on the Leadership page
   &__media-leadership
-    background-image: url(../images/people.jpg)
-    background-position: center
-    background-size: cover
+   // background-image: url(../images/people.jpg)
+   // background-position: center
+   // background-size: cover
 
     +media("<=tablet")
       height: 300px

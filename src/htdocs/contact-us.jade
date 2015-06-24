@@ -11,7 +11,7 @@ sidebar:
   title: Our Locations
   text: Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.
   button_text: Find a Location
-  button_url: http://google.com
+  button_url: /locations.html
 ---
 //- This will add the content of this page inside the 'global.jade' file
 extends ../layout/global
@@ -32,12 +32,36 @@ block content
   .banner-standard
     .banner-standard__box.col-5-12
       h1.banner-standard__heading= title
-      p.banner-standard__text Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+      p.banner-standard__text
     .banner-standard__media-approach.col-7-12
+      img(src="../images/contact_us.jpg", alt="Woman texting making phone call on mobile phone")
 
   .main-standard
     .main-standard__content.col-7-12
       .main-standard__text
+        ol
+          li General Inquiries
+          ul
+            li General Inquiries (1-800-892-7100 x17329)
+            li Institutional-specific Inquiries (1-800-892-7100 x17329)
+            li Brokerage-specific Inquiries (1-800-772-7283)
+          li
+            a(href="/locations.html") Locations
+          li
+            a(href="http://commercebank.com/about/careers/", target="_blank") Careers
+          li Media Contact
+            ul
+              li
+                | Chris Schildz, Marketing Manager, <a href="mailto:christopher.schildz@commercebank.com">Email</a>
+          li The Commerce Trust Company Customer Support
+            ul
+              li
+                | M–F 7:30 a.m.–10:00 p.m. CT; SAT 7:30 a.m.–4:00 p.m. CT; 877-605-7490; <a href="mailto:ctc.techsupport@commercebank.com">Email</a>
+          li Separate Account Management Inquiries
+
+        p
+          strong To send an email that contains confidential information, please visit the <a href="http://www.commercebank.com/about/security-center/secure-message-center.asp" target="_blank">Secure Message Center</a>, where there are additional instructions about whether to use Secure Email or Online Banking messaging.
+
         form.form-standard
           label I want to get in contact with...
           .selectbox
