@@ -34,10 +34,15 @@
       j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-P4FLLL');
-      
     </script>
     <nav class="nav-minor">
       <div class="nav-minor__container">
+        <div id="cd-search" class="cd-search">
+          <form action="/search.html">
+            <input name="q" type="search" placeholder="Search...">
+            <input type="submit" value="Submit">
+          </form>
+        </div>
         <ul>
           <li><a href="/contact-us.html" class="nav-minor__link">Contact Us</a></li>
           <li><a href="/locations.html" class="nav-minor__link">Locations</a></li>
@@ -201,7 +206,6 @@
     <div class="container cd-main-content">
       <header class="cd-main-header">
         <ul class="cd-header-buttons">
-          <li><a href="#cd-search" class="cd-search-trigger">Search<span></span></a></li>
           <li><a href="#cd-primary-nav" class="cd-nav-trigger">Menu<span></span></a></li>
         </ul>
       </header>
@@ -519,11 +523,6 @@
           <li><a href="/news-and-insights/">News and Insights</a></li>
         </ul>
       </nav>
-      <div id="cd-search" class="cd-search">
-        <form action="/search.html">
-          <input name="q" type="search" placeholder="Search...">
-        </form>
-      </div>
     </div>
     <script src="/global.js"></script>
     <script src="/page.js"></script>
