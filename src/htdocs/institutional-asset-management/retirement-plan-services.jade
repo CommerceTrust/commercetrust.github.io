@@ -13,6 +13,12 @@ sidebar:
   button_text: Learn more
   button_url: http://google.com
 
+breadcrumb:
+  rootname: Institutional Asset Management
+  rooturl: /institutional-asset-management/
+
+  currentpage: Retirement Plan Services
+
 ---
 //- This will add the content of this page inside the 'global.jade' file
 extends ../../layout/global
@@ -36,7 +42,9 @@ block content
       p.banner-standard__text Providing investment resources for your employees is an important responsibility – as important as any other financial matter you tend to on their behalf.
     .banner-standard__media-approach.col-7-12
       img(src="../images/retirement_plan_services.jpg", alt="Union employees at a factory")
-
+  .breadcrumb
+    a.breadcrumb__link(href="#{breadcrumb.rooturl}")= breadcrumb.rootname 
+    span= ' | ' + title
   .main-standard
     .main-standard__content.col-7-12
       .main-standard__text

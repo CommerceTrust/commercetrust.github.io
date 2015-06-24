@@ -6,6 +6,11 @@
 title: Our Leadership
 description: Collaboratively administrate empowered markets via plug-and-play networks.
 
+breadcrumb:
+  rootname: Our Approach
+  rooturl: /our-approach/
+  currentpage: Our Leadership
+
 ---
 //- This will add the content of this page inside the 'global.jade' file
 extends ../../layout/global
@@ -29,7 +34,9 @@ block content
       p.banner-standard__text
     .banner-standard__media-leadership.col-7-12
       img(src="../images/successful-team.jpg", alt="The Commerce Trust Company Leadership Team")
-
+  .breadcrumb
+    a.breadcrumb__link(href="#{breadcrumb.rooturl}")= breadcrumb.rootname 
+    span= ' | ' + title
   .main-bios
     each val in leadership
       .card-bio
