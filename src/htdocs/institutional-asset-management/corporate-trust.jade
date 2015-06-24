@@ -6,6 +6,12 @@
 title: Corporate Trust
 description: Expect the dependable financing administration your large building projects require.
 
+breadcrumb:
+  rootname: Institutional Asset Management
+  rooturl: /institutional-asset-management/
+
+  currentpage: Corporate Trust
+
 sidebar:
   image: meeting-2.jpg
   title: Connect with Commerce Trust
@@ -35,8 +41,9 @@ block content
       h1.banner-standard__heading= title
       p.banner-standard__text Expect the dependable financing administration your large building projects require.
     .banner-standard__media-approach.col-7-12
-      img(src="../images/corporate_trust.jpg", alt="Contractor foreman reviewing construction plans")
-
+  .breadcrumb
+    a.breadcrumb__link(href="#{breadcrumb.rooturl}")= breadcrumb.rootname 
+    span= ' | ' + title
   .main-standard
     .main-standard__content.col-7-12
       .main-standard__text

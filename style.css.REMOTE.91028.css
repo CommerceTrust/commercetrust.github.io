@@ -255,14 +255,6 @@ img, iframe, embed {
 .col-11-12 {
   width: 91.66667%; }
 
-.breadcrumb {
-  padding: 16px 32px 0 32px;
-  padding: 1rem 2rem 0 2rem; }
-  .breadcrumb a {
-    color: #267e64; }
-    .breadcrumb a:hover {
-      color: #455652; }
-
 * {
   margin: 0;
   padding: 0;
@@ -985,8 +977,6 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 .card-bio {
   padding-bottom: 32px;
   padding-bottom: 2rem; }
-  .card-bio__media {
-    vertical-align: top; }
   .card-bio__box {
     padding-left: 32px;
     padding-left: 2rem;
@@ -1000,7 +990,7 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
     font-weight: 400;
     line-height: 1; }
   .card-bio__subtitle {
-    color: #7f7e7e; }
+    color: #ccc; }
   .card-bio__text * + * {
     margin-top: 16px;
     margin-top: 1rem; }
