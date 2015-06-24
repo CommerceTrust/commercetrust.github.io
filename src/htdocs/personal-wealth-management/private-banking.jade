@@ -13,6 +13,11 @@ sidebar:
   button_text: Learn more
   button_url: http://google.com
 
+breadcrumb:
+  rootname: Private Wealth Management
+  rooturl: /personal-wealth-management/
+  currentpage: Private Banking
+
 ---
 //- This will add the content of this page inside the 'global.jade' file
 extends ../../layout/global
@@ -36,7 +41,9 @@ block content
       p.banner-standard__text Access a broad range of banking products and services to meet your cash flow objectives and borrowing needs.
     .banner-standard__media-approach.col-7-12
       img(src="../images/private_banking.jpg", alt="Private banker meeting with clients")
-
+  .breadcrumb
+    a.breadcrumb__link(href="#{breadcrumb.rooturl}")= breadcrumb.rootname 
+    span= ' | ' + title
   .main-standard
     .main-standard__content.col-7-12
       .main-standard__text

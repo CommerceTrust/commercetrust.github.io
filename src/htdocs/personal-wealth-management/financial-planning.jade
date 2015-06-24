@@ -13,6 +13,11 @@ sidebar:
   button_text: Learn more
   button_url: http://google.com
 
+breadcrumb:
+  rootname: Private Wealth Management
+  rooturl: /personal-wealth-management/
+  currentpage: Wealth Planning
+
 ---
 //- This will add the content of this page inside the 'global.jade' file
 extends ../../layout/global
@@ -36,7 +41,9 @@ block content
       p.banner-standard__text Life is not one-dimensional. That’s why we create comprehensive wealth plans – to consider all its many aspects.
     .banner-standard__media-approach.col-7-12
       img(src="../images/wealth_planning.jpg", alt="Hand holding a compass standing on a wooded trail journey")
-
+  .breadcrumb
+    a.breadcrumb__link(href="#{breadcrumb.rooturl}")= breadcrumb.rootname 
+    span= ' | ' + title
   .main-standard
     .main-standard__content.col-7-12
       .main-standard__text
