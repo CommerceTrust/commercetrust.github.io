@@ -13,6 +13,11 @@ sidebar:
   button_text: Learn more
   button_url: http://google.com
 
+breadcrumb:
+  rootname: Private Wealth Management
+  rooturl: /personal-wealth-management/
+  currentpage: Personal Investment Management
+
 ---
 //- This will add the content of this page inside the 'global.jade' file
 extends ../../layout/global
@@ -36,7 +41,9 @@ block content
       p.banner-standard__text Investing is personal. It’s not just about numbers and figures. It’s about reaching your goals.
     .banner-standard__media-approach.col-7-12
       img(src="../images/personal_invest_mgmt.jpg", alt="Mountain climber standing on peak looking over expanse")
-
+  .breadcrumb
+    a.breadcrumb__link(href="#{breadcrumb.rooturl}")= breadcrumb.rootname 
+    span= ' | ' + title
   .main-standard
     .main-standard__content.col-7-12
       .main-standard__text
