@@ -99,13 +99,13 @@ nav_minor:
 
 nav_terms:
   - page: Terms & Conditions
-    url: /terms-and-conditions.html
+    url: https://www.commercebank.com/terms.asp
 
   - page: Privacy Policy
-    url: /privacy-policy.html
+    url: https://www.commercebank.com/about/security-center/privacy.asp
 
   - page: Site Map
-    url:  /privacy-policy.html
+    url:  /site-map.html
 
 
 
