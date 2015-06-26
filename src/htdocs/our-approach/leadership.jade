@@ -35,8 +35,8 @@ block content
     .banner-standard__media-leadership.col-7-12
       img(src="../images/our_leadership.jpg", alt="The Commerce Trust Company Leadership Team")
   .breadcrumb
-    a.breadcrumb__link(href="#{breadcrumb.rooturl}")= breadcrumb.rootname
-    span= ' | ' + title
+    a.breadcrumb__link(href="#{breadcrumb.rooturl}")= breadcrumb.rootname 
+    span= ' > ' + title
   .main-bios
     each val in leadership
       .card-bio
