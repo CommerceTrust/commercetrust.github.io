@@ -40,6 +40,7 @@
     // Keep small images from getting giant
     img
       width: auto
+      max-width:100%
 
 
 // Main content block on Leadership page
@@ -51,6 +52,18 @@
 // Main content block on News page
 .main-news
   @extend %main
+
+//Main content locations table
+.city-column
+  width:135px
+.address-column
+  width:335px
+.phone-column
+
+.location-phone 
+  color:$nightgreen
+  &:hover
+    color:$green
 
 
 // Main content block on Blog Post page

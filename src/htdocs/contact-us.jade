@@ -65,13 +65,16 @@ block content
         form.form-standard
           label I want to get in contact with...
           .selectbox
-            select#select1(name='select1')
-              option Personal Wealth Management
-              option Institutional Asset Management
-          label My name is...
-          input(type='name' placeholder='Name')
-          label My email is...
-          input(type='email' placeholder='Email')
+            select#select1(name='select1' required)
+              option Select Recipient
+              option Personal Wealth Management Team
+              option Institutional Asset Management Team
+          label Name
+          input(type='name' placeholder='Name' required)
+          label Email
+          input(type='email' placeholder='Email' required)
+          label Phone
+          input(type='phone' placeholder='Phone')
           label Message
           textarea(rows='8' placeholder='Comments')
           input(type='checkbox' class='form-standard__checkbox')

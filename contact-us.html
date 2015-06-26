@@ -244,15 +244,18 @@
             <form class="form-standard">
               <label>I want to get in contact with...</label>
               <div class="selectbox">
-                <select id="select1" name="select1">
-                  <option>Personal Wealth Management</option>
-                  <option>Institutional Asset Management</option>
+                <select id="select1" name="select1" required>
+                  <option>Select Recipient</option>
+                  <option>Personal Wealth Management Team</option>
+                  <option>Institutional Asset Management Team</option>
                 </select>
               </div>
-              <label>My name is...</label>
-              <input type="name" placeholder="Name">
-              <label>My email is...</label>
-              <input type="email" placeholder="Email">
+              <label>Name</label>
+              <input type="name" placeholder="Name" required>
+              <label>Email</label>
+              <input type="email" placeholder="Email" required>
+              <label>Phone</label>
+              <input type="phone" placeholder="Phone">
               <label>Message</label>
               <textarea rows="8" placeholder="Comments"></textarea>
               <input type="checkbox" class="form-standard__checkbox">
