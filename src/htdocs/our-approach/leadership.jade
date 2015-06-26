@@ -33,7 +33,7 @@ block content
       h1.banner-standard__heading= title
       p.banner-standard__text
     .banner-standard__media-leadership.col-7-12
-      img(src="../images/successful-team.jpg", alt="The Commerce Trust Company Leadership Team")
+      img(src="../images/our_leadership.jpg", alt="The Commerce Trust Company Leadership Team")
   .breadcrumb
     a.breadcrumb__link(href="#{breadcrumb.rooturl}")= breadcrumb.rootname 
     span= ' > ' + title
@@ -44,7 +44,10 @@ block content
           img(src="../images/#{val.image}", alt="#{val.name}")
         .card-bio__box.col-10-12
           h2.card-bio__heading= val.name
-          h3.card-bio__subtitle= val.title
-          a(href="#{val.linkedin}") LinkedIn
+          .card-bio__subtitle
+            h3= val.title
+            if val.linkedin
+              a(href="#{val.linkedin}" target="_blank")
+                i(class="fa fa-linkedin")
           .card-bio__text
             p= val.bio

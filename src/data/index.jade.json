@@ -28,7 +28,7 @@
         {
           "subpage": "Our Leadership",
           "suburl": "/our-approach/leadership.html",
-          "subimg": "/images/meeting-2.jpg"
+          "subimg": "/images/our_leadership.jpg"
         }
       ]
     },
@@ -80,7 +80,7 @@
         {
           "subpage": "Trust and Custody Services",
           "suburl": "/institutional-asset-management/trust-and-custody-services.html",
-          "subimg": "/images/meeting-2.jpg"
+          "subimg": "/images/trust_custody.jpg"
         },
         {
           "subpage": "Retirement Plan Services",
@@ -151,13 +151,13 @@
       "name": "J.-J. Landers Carnal, CFA®",
       "title": "Chief Investment Officer",
       "image": "Landers-Carnal_resize.jpg",
-      "linkedin": "https://www.linkedin.com/in/johnkhandy",
       "bio": "Landers is the chief investment officer for The Commerce Trust Company and president of Commerce Investment Advisors, Inc., the SEC-registered advisor to the Commerce Funds mutual fund complex. Prior to joining Commerce in June 2000, Landers was president and chief investment officer of Boatmen’s Capital Management, Inc., a subsidiary of Bank of America. He also served as co-chief investment officer, executive vice president and member of the board of directors of the former Boatmen’s Trust Company. All told, Landers has more than 30 years of professional investment experience. Landers is a Phi Beta Kappa graduate of Washington and Lee University and received his master of business administration degree from Washington University in St. Louis. He holds the Chartered Financial Analyst® designation and is a past president of the St. Louis Society of Financial Analysts. He also holds a FINRA Series 65 securities license."
     },
     {
       "name": "John Handy",
       "title": "Chief Operating Officer and President, Private Client Services",
       "image": "John-Handy_resize.jpg",
+      "linkedin": "https://www.linkedin.com/in/johnkhandy",
       "bio": "John is chief operating officer and president of private client services for The Commerce Trust Company. Prior to joining Commerce Bank in December 1999, John was the chief operating officer and a director of TIAA-CREF Trust Company, FSB, the Missouri-based trust subsidiary of the national teachers&rsquo; retirement fund manager. Prior to joining TIAA-CREF, he was with Bank of America (formerly Boatmen’s Trust Company) for 10 years, where his responsibilities included managing a group of 14 regional trust offices in seven states. John received his bachelor of arts degree in economics and business administration from Wittenberg University in 1985. In 1991, he graduated with honors from the ABA Graduate Trust School of Northwestern University, where he earned his CFSC designation. John also holds a Series 65 license."
     }
   ]
