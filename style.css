@@ -257,7 +257,8 @@ img, iframe, embed {
 
 .breadcrumb {
   padding: 16px 32px 0 32px;
-  padding: 1rem 2rem 0 2rem; }
+  padding: 1rem 2rem 0 2rem;
+  font-size: 14px; }
   .breadcrumb a {
     color: #267e64; }
     .breadcrumb a:hover {
@@ -1318,12 +1319,24 @@ svg:hover path, svg:hover polygon {
     padding-left: 32px;
     padding-left: 2rem; }
   .main-standard__text img {
-    width: auto; }
+    width: auto;
+    max-width: 100%; }
 
 .main-bios {
   display: table;
   padding: 32px;
   padding: 2rem; }
+
+.city-column {
+  width: 135px; }
+
+.address-column {
+  width: 335px; }
+
+.location-phone {
+  color: #455652; }
+  .location-phone:hover {
+    color: #267e64; }
 .main-post__text * + * {
   margin-top: 16px;
   margin-top: 1rem; }
