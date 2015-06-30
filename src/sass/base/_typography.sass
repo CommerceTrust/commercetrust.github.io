@@ -99,6 +99,7 @@ body
 input[type="button"],
 input[type="reset"]
   border: 1px solid $green
+  cursor: pointer
   display: inline-block
   font-family: $serif
   font-size: 1.2rem
@@ -137,3 +138,10 @@ input[type="reset"]
     /*These will transition on hover
     background-color: $green
     color: $color
+
+
+.loader__button.disabled
+  background-color: $cloud
+  color: $green
+  cursor: default
+  opacity: .3
