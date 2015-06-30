@@ -1003,7 +1003,8 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
     margin-bottom: 16px;
     margin-bottom: 1rem; }
   .card-bio__subtitle {
-    color: #7f7e7e; }
+    color: #7f7e7e;
+    margin-bottom: 8px; }
     .card-bio__subtitle h3 {
       display: inline-block; }
     .card-bio__subtitle a {
