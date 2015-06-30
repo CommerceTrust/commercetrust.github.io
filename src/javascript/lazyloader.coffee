@@ -20,5 +20,10 @@ $loadmore.click ->
 
 
 $loadless.click ->
-  x = (if (x - more < 0) then 3 else x - more)
-  $(".card-article__box").not(":lt(" + x + ")").hide('slow')
+  if ($(".card-article__box:visible").length > more)
+    x = (if (x - more < 0) then 3 else x - more)
+    $(".card-article__box").not(":lt(" + x + ")").hide('slow', ->
+      if ($(".card-article__box:visible").length <= more)
+        $loadless.addClass('disabled')
+    )
+    $loadmore.removeClass('disabled')
