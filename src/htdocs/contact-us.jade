@@ -51,7 +51,7 @@ block content
           label I want to get in contact with...
           .selectbox
             select#select1(name='select1' required)
-              option Select Recipient
+              option(disabled='', selected='', value='') Select Recipient
               option Private Wealth Management Team
               option Institutional Asset Management Team
           label Name
@@ -63,7 +63,7 @@ block content
           label Message
           textarea(rows='8' placeholder='Comments')
           input(type='checkbox' class='form-standard__checkbox')
-          label Yes, Sign Me Up for Newsletter
+          label Yes, sign me up for our latest insights
           input(class='contact-us__button' type='submit' value='Submit')
 
         p
