@@ -260,6 +260,9 @@ input[type="search"]::-webkit-search-results-decoration
       transform: rotate(45deg)
 
 .cd-nav-trigger
+  &:hover
+    //Hide 'Menu' word for accessibility I hope
+    color: transparent
   span, span::before, span::after
     /* hamburger icon in CSS
     position: absolute
@@ -437,12 +440,13 @@ input[type="search"]::-webkit-search-results-decoration
   .cd-primary-nav
     position: static
     padding: 0 50px 0 0
+    margin-left: 20px
     height: auto
     width: 100%
     //float: right
     overflow: visible
     background: transparent
-    text-align: center
+    //text-align: center
 
     +clearfix
 
@@ -653,6 +657,7 @@ input[type="search"]::-webkit-search-results-decoration
           color: $green
           font-size: .9rem
           padding: 0 .4rem
+          font-weight: normal
 
     .cd-nav-icons
 
@@ -755,12 +760,12 @@ input[type="search"]::-webkit-search-results-decoration
 .cd-search
   float:right;
 
-  
+
 
   form
     position:relative
   input[type="submit"]
-    background-image: url("/images/search-icon.png") 
+    background-image: url("/images/search-icon.png")
     background-repeat: no-repeat
     background-color: transparent
     display: inline-block
@@ -798,10 +803,10 @@ input[type="search"]::-webkit-search-results-decoration
     position: fixed
 
   +media(">desktop")
-   
+
 
     input
-      
+
 
 
 .cd-overlay
