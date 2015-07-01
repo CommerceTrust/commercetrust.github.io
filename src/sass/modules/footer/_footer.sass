@@ -16,6 +16,7 @@ footer
 
 	+media("<=tablet")
 		padding: 2rem 0 0 0
+		display: block
 
 	&__logo-box
 		width: 450px
@@ -35,27 +36,26 @@ footer
 			text-align: right
 
 		small
-			display: inline-block
+			display: block
 			font-size: 14px
 			padding-right: .5rem
-
-			&::before
-				content: '|'
-
-			&:nth-child(1)
-				&::before
-					content: ' '
 
 
 			+media(">=tablet", ">=desktop")
 				font-size: 12px
+				display: inline-block
+
+				&::before
+				  content: '|'
+
+				&:nth-child(1)
+				  &::before
+				    content: ''
 
 		.nav-minor
-
 			li
 			  a
 			    font-size: 14px
-
 			    +media(">=tablet", ">=desktop")
 			      font-size: 12px
 
@@ -70,13 +70,6 @@ footer
 		padding: 20px
 		margin: 50px auto 10px
 
-	h6, p, ul
-		font-size: 14px
-		margin-bottom: 1rem
-
-		+media(">=tablet", ">=desktop")
-			font-size: 12px
-
 	ul
 		@extend %menu
 		display: table
@@ -84,6 +77,19 @@ footer
 
 		li
 			display: table-cell
-			border: 1px solid $footer-text
+			border: 1px solid #CCCCCC
+			border-right: none
+			border-left-style: dashed
 			margin: 0 10px
 			padding: .5rem
+			&:last-child
+			  border-right: 1px #CCC solid
+			&:first-child
+			  border-left-style: solid
+
+	h6, p, ul
+		font-size: 14px
+		margin-bottom: 1rem
+
+		+media(">=tablet", ">=desktop")
+			font-size: 12px
