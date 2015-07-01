@@ -60,6 +60,11 @@
           "subpage": "Trust and Estate Services",
           "suburl": "/personal-wealth-management/trust-and-estate-services.html",
           "subimg": "/images/trust_estate.jpg"
+        },
+        {
+          "subpage": "Family Office",
+          "suburl": "http://www.commercebank.com/wealth-management/trust/commerce-family-office/",
+          "subimg": "/images/private_wealth_mgmt.jpg"
         }
       ]
     },

@@ -307,11 +307,18 @@ input[type="search"]::-webkit-search-results-decoration
     display: none
 
 
+.cd-primary-nav
+  right: 0
+
+//Right aligning the menu means we have to bump the dropdown back over to line up
+.cd-primary-nav ul
+  right: 20px
+
 .cd-primary-nav,
 .cd-primary-nav ul
   position: fixed
   top: 0
-  right: 0
+  //right: 0
   height: 100%
   width: $nav-width-S
   background: $nightgreen
