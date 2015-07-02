@@ -11,7 +11,7 @@ lazyloader = require("./lazyloader");
 
 
 
-},{"./lazyloader":"/Applications/MAMP/htdocs/CommerceBank-GITHUB/commerce-1/src/javascript/lazyloader.coffee","./nav":"/Applications/MAMP/htdocs/CommerceBank-GITHUB/commerce-1/src/javascript/nav.coffee","./subscribe":"/Applications/MAMP/htdocs/CommerceBank-GITHUB/commerce-1/src/javascript/subscribe.coffee"}],"/Applications/MAMP/htdocs/CommerceBank-GITHUB/commerce-1/src/javascript/lazyloader.coffee":[function(require,module,exports){
+},{"./lazyloader":2,"./nav":3,"./subscribe":4}],2:[function(require,module,exports){
 var $article_size, $loadless, $loadmore, more, x;
 
 console.log('lazyloader.js loaded!');
@@ -54,7 +54,7 @@ $loadless.click(function() {
 
 
 
-},{}],"/Applications/MAMP/htdocs/CommerceBank-GITHUB/commerce-1/src/javascript/nav.coffee":[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 var MqL, checkWindowWidth, closeNav, moveNavigation, toggleSearch;
 
 closeNav = function() {
@@ -199,7 +199,7 @@ $(".go-back").on("click", function() {
 
 
 
-},{}],"/Applications/MAMP/htdocs/CommerceBank-GITHUB/commerce-1/src/javascript/subscribe.coffee":[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 var $subscribe, $subscribe_box, $subscribe_button, $subscribe_error, $subscribe_input, $subscribe_message, IsEmail;
 
 console.log('subscribe.js loaded!');
