@@ -7,4 +7,4 @@ var today = new Date(),
 
 $('.footer-copyright__box').prepend("<small>&copy;"+ year +" Commerce Bancshares, Inc.</small>");
 
-console.log('page.js loaded!');
+// console.log('page.js loaded!');
