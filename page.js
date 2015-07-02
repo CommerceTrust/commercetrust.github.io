@@ -1,5 +1,226 @@
-(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-// Browserify entry point for the page.js bundle (yay JavaScript!)
+
+// nav
+var MqL, checkWindowWidth, closeNav, moveNavigation, toggleSearch;
+
+closeNav = function() {
+  $(".cd-nav-trigger").removeClass("nav-is-visible");
+  $(".cd-main-header").removeClass("nav-is-visible");
+  $(".cd-primary-nav").removeClass("nav-is-visible");
+  $(".has-children ul").addClass("is-hidden");
+  $(".has-children a").removeClass("selected");
+  $(".moves-out").removeClass("moves-out");
+  return $(".cd-main-content").removeClass("nav-is-visible").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
+    return $("body").removeClass("overflow-hidden");
+  });
+};
+
+toggleSearch = function(type) {
+  if (type === "close") {
+    $(".cd-search").removeClass("is-visible");
+    $(".cd-search-trigger").removeClass("search-is-visible");
+    return $(".cd-overlay").removeClass("search-is-visible");
+  } else {
+    $(".cd-search").toggleClass("is-visible");
+    $(".cd-search-trigger").toggleClass("search-is-visible");
+    $(".cd-overlay").toggleClass("search-is-visible");
+    if ($(window).width() > MqL && $(".cd-search").hasClass("is-visible")) {
+      $(".cd-search").find("input[type=\"search\"]").focus();
+    }
+    if ($(".cd-search").hasClass("is-visible")) {
+      return $(".cd-overlay").addClass("is-visible");
+    } else {
+      return $(".cd-overlay").removeClass("is-visible");
+    }
+  }
+};
+
+checkWindowWidth = function() {
+  var a, e;
+  e = window;
+  a = "inner";
+  if (!("innerWidth" in window)) {
+    a = "client";
+    e = document.documentElement || document.body;
+  }
+  if (e[a + "Width"] >= MqL) {
+    return true;
+  } else {
+    return false;
+  }
+};
+
+moveNavigation = function() {
+  var desktop, navigation;
+  navigation = $(".cd-nav");
+  desktop = checkWindowWidth();
+  if (desktop) {
+    navigation.detach();
+    return navigation.insertBefore(".cd-header-buttons");
+  } else {
+    navigation.detach();
+    return navigation.insertAfter(".cd-main-content");
+  }
+};
+
+MqL = 1023;
+
+moveNavigation();
+
+$(window).on("resize", function() {
+  if (!window.requestAnimationFrame) {
+    return setTimeout(moveNavigation, 300);
+  } else {
+    return window.requestAnimationFrame(moveNavigation);
+  }
+});
+
+$(".cd-nav-trigger").on("click", function(event) {
+  event.preventDefault();
+  if ($(".cd-main-content").hasClass("nav-is-visible")) {
+    closeNav();
+    return $(".cd-overlay").removeClass("is-visible");
+  } else {
+    $(this).addClass("nav-is-visible");
+    $(".cd-primary-nav").addClass("nav-is-visible");
+    $(".cd-main-header").addClass("nav-is-visible");
+    $(".cd-main-content").addClass("nav-is-visible").one("webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend", function() {
+      return $("body").addClass("overflow-hidden");
+    });
+    toggleSearch("close");
+    return $(".cd-overlay").addClass("is-visible");
+  }
+});
+
+$(".cd-search-trigger").on("click", function(event) {
+  event.preventDefault();
+  toggleSearch();
+  return closeNav();
+});
+
+$(".cd-overlay").on("swiperight", function() {
+  if ($(".cd-primary-nav").hasClass("nav-is-visible")) {
+    closeNav();
+    return $(".cd-overlay").removeClass("is-visible");
+  }
+});
+
+$(".nav-on-left .cd-overlay").on("swipeleft", function() {
+  if ($(".cd-primary-nav").hasClass("nav-is-visible")) {
+    closeNav();
+    return $(".cd-overlay").removeClass("is-visible");
+  }
+});
+
+$(".cd-overlay").on("click", function() {
+  closeNav();
+  toggleSearch("close");
+  return $(".cd-overlay").removeClass("is-visible");
+});
+
+$(".cd-primary-nav").children(".has-children").children("a").on("click", function(event) {
+  return event.preventDefault();
+});
+
+$(".has-children").children("a").on("click", function(event) {
+  var selected;
+  if (!checkWindowWidth()) {
+    event.preventDefault();
+  }
+  selected = $(this);
+  if (selected.next("ul").hasClass("is-hidden")) {
+    selected.addClass("selected").next("ul").removeClass("is-hidden").end().parent(".has-children").parent("ul").addClass("moves-out");
+    selected.parent(".has-children").siblings(".has-children").children("ul").addClass("is-hidden").end().children("a").removeClass("selected");
+    $(".cd-overlay").addClass("is-visible");
+  } else {
+    selected.removeClass("selected").next("ul").addClass("is-hidden").end().parent(".has-children").parent("ul").removeClass("moves-out");
+    $(".cd-overlay").removeClass("is-visible");
+  }
+  return toggleSearch("close");
+});
+
+$(".go-back").on("click", function() {
+  return $(this).parent("ul").addClass("is-hidden").parent(".has-children").parent("ul").removeClass("moves-out");
+});
+
+
+
+
+// lazyloader
+//
+
+var $article_size, $loadless, $loadmore, more, x;
+
+$article_size = $(".card-article__box").size();
+
+x = 3;
+
+more = 3;
+
+$loadmore = $("#loadMore");
+
+$loadless = $("#showLess");
+
+$(".card-article__box:lt(" + x + ")").show();
+
+$loadless.addClass('disabled');
+
+$loadmore.click(function() {
+  x = (x + more <= $article_size ? x + more : $article_size);
+  $(".card-article__box:lt(" + x + ")").show('slow', function() {
+    if ($(".card-article__box:visible").length === $article_size) {
+      return $loadmore.addClass('disabled');
+    }
+  });
+  return $loadless.removeClass('disabled');
+});
+
+$loadless.click(function() {
+  if ($(".card-article__box:visible").length > more) {
+    x = (x - more < 0 ? 3 : x - more);
+    $(".card-article__box").not(":lt(" + x + ")").hide('slow', function() {
+      if ($(".card-article__box:visible").length <= more) {
+        return $loadless.addClass('disabled');
+      }
+    });
+    return $loadmore.removeClass('disabled');
+  }
+});
+
+
+
+
+// subscribe
+//
+var $subscribe, $subscribe_box, $subscribe_button, $subscribe_error, $subscribe_input, $subscribe_message, IsEmail;
+
+$subscribe = $(".cta-subscribe");
+
+$subscribe_box = $subscribe.find(".cta-subscribe__signup");
+
+$subscribe_error = $subscribe.find(".cta-subscribe__error");
+
+$subscribe_input = $subscribe_box.find(".cta-subscribe__input");
+
+$subscribe_button = $subscribe_box.find(".cta-subscribe__button");
+
+$subscribe_message = $subscribe.find(".cta-subscribe__message");
+
+IsEmail = function(email) {
+  var regex;
+  regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+};
+
+$subscribe_button.on("click", function() {
+  if (IsEmail($subscribe_input.val())) {
+    $subscribe_box.fadeOut('fast');
+    $subscribe_message.fadeIn('slow');
+    return $subscribe_error.hide();
+  } else {
+    return $subscribe_error.fadeIn('fast');
+  }
+});
+
 
 // Add date
 
@@ -7,13 +228,3 @@ var today = new Date(),
     year = today.getFullYear();
 
 $('.footer-copyright__box').prepend("<small>&copy;"+ year +" Commerce Bancshares, Inc.</small>");
-
-// console.log('page.js loaded!');
-
-<<<<<<< HEAD
-},{}]},{},[".//javascript/page.js"])
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9icm93c2VyaWZ5L25vZGVfbW9kdWxlcy9icm93c2VyLXBhY2svX3ByZWx1ZGUuanMiLCJqYXZhc2NyaXB0L3BhZ2UuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7QUNBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwiZmlsZSI6ImdlbmVyYXRlZC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzQ29udGVudCI6WyIoZnVuY3Rpb24gZSh0LG4scil7ZnVuY3Rpb24gcyhvLHUpe2lmKCFuW29dKXtpZighdFtvXSl7dmFyIGE9dHlwZW9mIHJlcXVpcmU9PVwiZnVuY3Rpb25cIiYmcmVxdWlyZTtpZighdSYmYSlyZXR1cm4gYShvLCEwKTtpZihpKXJldHVybiBpKG8sITApO3ZhciBmPW5ldyBFcnJvcihcIkNhbm5vdCBmaW5kIG1vZHVsZSAnXCIrbytcIidcIik7dGhyb3cgZi5jb2RlPVwiTU9EVUxFX05PVF9GT1VORFwiLGZ9dmFyIGw9bltvXT17ZXhwb3J0czp7fX07dFtvXVswXS5jYWxsKGwuZXhwb3J0cyxmdW5jdGlvbihlKXt2YXIgbj10W29dWzFdW2VdO3JldHVybiBzKG4/bjplKX0sbCxsLmV4cG9ydHMsZSx0LG4scil9cmV0dXJuIG5bb10uZXhwb3J0c312YXIgaT10eXBlb2YgcmVxdWlyZT09XCJmdW5jdGlvblwiJiZyZXF1aXJlO2Zvcih2YXIgbz0wO288ci5sZW5ndGg7bysrKXMocltvXSk7cmV0dXJuIHN9KSIsIi8vIEJyb3dzZXJpZnkgZW50cnkgcG9pbnQgZm9yIHRoZSBwYWdlLmpzIGJ1bmRsZSAoeWF5IEphdmFTY3JpcHQhKVxuXG4vLyBBZGQgZGF0ZVxuXG52YXIgdG9kYXkgPSBuZXcgRGF0ZSgpLFxuICAgIHllYXIgPSB0b2RheS5nZXRGdWxsWWVhcigpO1xuXG4kKCcuZm9vdGVyLWNvcHlyaWdodF9fYm94JykucHJlcGVuZChcIjxzbWFsbD4mY29weTtcIisgeWVhciArXCIgQ29tbWVyY2UgQmFuY3NoYXJlcywgSW5jLjwvc21hbGw+XCIpO1xuXG4vLyBjb25zb2xlLmxvZygncGFnZS5qcyBsb2FkZWQhJyk7XG4iXX0=
-=======
-},{}]},{},[1])
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm5vZGVfbW9kdWxlcy9icm93c2VyaWZ5L25vZGVfbW9kdWxlcy9icm93c2VyLXBhY2svX3ByZWx1ZGUuanMiLCJqYXZhc2NyaXB0L3BhZ2UuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7QUNBQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7QUFDQTtBQUNBIiwiZmlsZSI6ImdlbmVyYXRlZC5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzQ29udGVudCI6WyIoZnVuY3Rpb24gZSh0LG4scil7ZnVuY3Rpb24gcyhvLHUpe2lmKCFuW29dKXtpZighdFtvXSl7dmFyIGE9dHlwZW9mIHJlcXVpcmU9PVwiZnVuY3Rpb25cIiYmcmVxdWlyZTtpZighdSYmYSlyZXR1cm4gYShvLCEwKTtpZihpKXJldHVybiBpKG8sITApO3ZhciBmPW5ldyBFcnJvcihcIkNhbm5vdCBmaW5kIG1vZHVsZSAnXCIrbytcIidcIik7dGhyb3cgZi5jb2RlPVwiTU9EVUxFX05PVF9GT1VORFwiLGZ9dmFyIGw9bltvXT17ZXhwb3J0czp7fX07dFtvXVswXS5jYWxsKGwuZXhwb3J0cyxmdW5jdGlvbihlKXt2YXIgbj10W29dWzFdW2VdO3JldHVybiBzKG4/bjplKX0sbCxsLmV4cG9ydHMsZSx0LG4scil9cmV0dXJuIG5bb10uZXhwb3J0c312YXIgaT10eXBlb2YgcmVxdWlyZT09XCJmdW5jdGlvblwiJiZyZXF1aXJlO2Zvcih2YXIgbz0wO288ci5sZW5ndGg7bysrKXMocltvXSk7cmV0dXJuIHN9KSIsIi8vIEJyb3dzZXJpZnkgZW50cnkgcG9pbnQgZm9yIHRoZSBwYWdlLmpzIGJ1bmRsZSAoeWF5IEphdmFTY3JpcHQhKVxuXG4vLyBBZGQgZGF0ZVxuXG52YXIgdG9kYXkgPSBuZXcgRGF0ZSgpLFxuICAgIHllYXIgPSB0b2RheS5nZXRGdWxsWWVhcigpO1xuXG4kKCcuZm9vdGVyLWNvcHlyaWdodF9fYm94JykucHJlcGVuZChcIjxzbWFsbD4mY29weTtcIisgeWVhciArXCIgQ29tbWVyY2UgQmFuY3NoYXJlcywgSW5jLjwvc21hbGw+XCIpO1xuXG5jb25zb2xlLmxvZygncGFnZS5qcyBsb2FkZWQhJyk7XG4iXX0=
->>>>>>> master
