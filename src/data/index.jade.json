@@ -64,7 +64,8 @@
         {
           "subpage": "Family Office",
           "suburl": "http://www.commercebank.com/wealth-management/trust/commerce-family-office/",
-          "subimg": "/images/private_wealth_mgmt.jpg"
+          "subimg": "/images/private_wealth_mgmt.jpg",
+          "target": "_blank"
         }
       ]
     },
