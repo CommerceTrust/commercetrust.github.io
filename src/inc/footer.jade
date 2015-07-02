@@ -26,7 +26,7 @@ footer
       ul.nav-footer__sub-links
         each val in nav_major[1].sub
           li
-            a.footer-nav__link(href="#{val.suburl}")= val.subpage
+            a.footer-nav__link(href="#{val.suburl}", target="#{val.target || '_self'}")= val.subpage
 
     .nav-footer__box.col-3-12
       ul.nav-footer__sub-links
