@@ -84,13 +84,16 @@ module.exports = {
       extensions: ['.coffee'],
       // list of modules to make require-able externally
       require: ['jquery']
-    }, {
-      entries: src + '/javascript/page.js',
-      dest: dest,
-      outputName: 'page.js',
-      // list of externally available modules to exclude from the bundle
-      external: ['jquery']
-    }]
+    }
+    // , 
+    // {
+    //   entries: src + '/javascript/page.js',
+    //   dest: dest,
+    //   outputName: 'page.js',
+    //   // list of externally available modules to exclude from the bundle
+    //   external: ['jquery']
+    // }
+    ]
   },
   production: {
     cssSrc: dest + '/*.css',

@@ -3,6 +3,6 @@
 console.log 'global.js loaded!'
 
 #$ = require("jquery")
-nav = require "./nav"
-subscribe = require "./subscribe"
-lazyloader = require "./lazyloader"
+# nav = require "./nav"
+#subscribe = require "./subscribe"
+#lazyloader = require "./lazyloader"

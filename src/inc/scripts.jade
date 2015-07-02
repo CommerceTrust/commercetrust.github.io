@@ -1,18 +1,17 @@
 //- script(src="/js/jquery.mobile.custom.min.js")
 
 //- script(src="/global.js?v=0.3")
-  
-script(type="text/javascript").
-  function downloadJSAtOnload() {
-    var element = document.createElement("script");
-    element.src = "/global.js";
-    document.body.appendChild(element);
-  }
-  if (window.addEventListener)
-  window.addEventListener("load", downloadJSAtOnload, false);
-  else if (window.attachEvent)
-  window.attachEvent("onload", downloadJSAtOnload);
-  else window.onload = downloadJSAtOnload;
+//- script(type="text/javascript").
+//-   function downloadJSAtOnload() {
+//-     var element = document.createElement("script");
+//-     element.src = "/global.js";
+//-     document.body.appendChild(element);
+//-   }
+//-   if (window.addEventListener)
+//-   window.addEventListener("load", downloadJSAtOnload, false);
+//-   else if (window.attachEvent)
+//-   window.attachEvent("onload", downloadJSAtOnload);
+//-   else window.onload = downloadJSAtOnload;
 
 script(src="/page.js")
 
