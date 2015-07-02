@@ -1,6 +1,19 @@
 //- script(src="/js/jquery.mobile.custom.min.js")
 
-script(src="/global.js?v=0.3")
+//- script(src="/global.js?v=0.3")
+  
+script(type="text/javascript").
+  function downloadJSAtOnload() {
+    var element = document.createElement("script");
+    element.src = "/global.js";
+    document.body.appendChild(element);
+  }
+  if (window.addEventListener)
+  window.addEventListener("load", downloadJSAtOnload, false);
+  else if (window.attachEvent)
+  window.attachEvent("onload", downloadJSAtOnload);
+  else window.onload = downloadJSAtOnload;
+
 script(src="/page.js")
 
 
@@ -30,3 +43,4 @@ script(type='text/javascript').
     bh.src = '//www.bugherd.com/sidebarv2.js?apikey=lw9lswvqdcq3larz0gn0jq';
     s.parentNode.insertBefore(bh, s);
     })(document, 'script');
+    
