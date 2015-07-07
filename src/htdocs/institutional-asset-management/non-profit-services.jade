@@ -42,11 +42,11 @@ block content
       p.banner-standard__text Look for a financial partner in the “business of doing good.”
     .banner-standard__media-approach.col-7-12
       img(src="../images/non_profit.jpg", alt="University campus non-profit institution")
-  .breadcrumb
-    a.breadcrumb__link(href="#{breadcrumb.rooturl}")= breadcrumb.rootname 
-    span= ' > ' + title
+
   .main-standard
     .main-standard__content.col-7-12
+      include ../../inc/breadcrumb.jade
+      
       .main-standard__text
         p The “business of doing good” is not for the faint of heart. We know meeting your organization’s long-term mission can be an almost overwhelming responsibility when juggling tight budgets and the expectations of those you serve. You need advisor who can help you feel comfortable making the decisions that affect your organization’s financial future.
         p At The Commerce Trust Company, we understand that non-profits must make the most of often-underfunded resources – usually while facing a growing need for services or potential funding issues outside their control. From establishing an investment policy statement to maximizing the relationship you have with your staff or executive board, the pressure to perform is every bit as daunting as that of any for-profit operation.

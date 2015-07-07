@@ -34,10 +34,10 @@ block content
       p.banner-standard__text
     .banner-standard__media-leadership.col-7-12
       img(src="../images/our_leadership.jpg", alt="The Commerce Trust Company Leadership Team")
-  .breadcrumb
-    a.breadcrumb__link(href="#{breadcrumb.rooturl}")= breadcrumb.rootname 
-    span= ' > ' + title
+  
   .main-bios
+    include ../../inc/breadcrumb.jade
+    //- The leadership data can be found in the data directory
     each val in leadership
       .card-bio
         .card-bio__media.col-2-12
