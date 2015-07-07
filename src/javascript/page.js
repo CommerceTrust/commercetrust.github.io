@@ -1,4 +1,6 @@
-// Browserify entry point for the page.js bundle (yay JavaScript!)
+// IE9 is choking on the Browserify/Gulp output, so I'm leaving the orignial configuration.
+// All of this now managed on the root level from the page.js file.
+// I will make gulp output this file there later
 
 
 // nav
