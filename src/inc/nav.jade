@@ -4,21 +4,21 @@ nav.cd-nav
   ul#cd-primary-nav.cd-primary-nav.is-fixed
     each val in nav_major
       if val.sub
-        
+
         li.has-children
           a(href="#{val.url}")= val.page
-          
+
           if val.sub
             ul.cd-nav-gallery.is-hidden
               li.go-back
                 a(href="#0") Main menu
-                
+
               each subval in val.sub
                 li
-                  a(href="#{subval.suburl}").cd-nav-item
+                  a(href="#{subval.suburl}", target="#{subval.target || '_self'}").cd-nav-item
                     img(src="#{subval.subimg}", alt="#{subval.subpage}")
                     h3= subval.subpage
-                      
+
       else
         li
           a(href="#{val.url}")= val.page
