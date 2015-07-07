@@ -40,15 +40,14 @@
 
   &__checkbox
     display: inline-block
-    float: left !important;
-    width: auto !important;
+    float: left !important
+    width: auto !important
 
   &__checkbox + label
     display: inline-block
-    float: left !important;
-    margin: 10px 10px 20px 10px !important;
+    float: left !important
+    margin: 10px 10px 20px 10px !important
 
-  ‘
   .selectbox
     background: $white
     border-radius: 0
@@ -56,22 +55,42 @@
     position: relative
     height: 48px
 
+    &::after
+      color: #ccc
+      content: '▾'
+      position: absolute
+      top: 1rem
+      right: .5rem
+      width: 1rem
+      height: 1rem
+
 
   select
     background: $white
     box-shadow: none
     border-radius: 0
     border: 1px solid $borderColor
-    color: $site-text-color
+    color: $stone
     cursor: pointer
     display: block
     font-size: 1rem
-    height: 45px
-    padding: 1rem
+    height: 60px
     position: relative
+
+    padding-left: 1rem
     width: 100%
+    -webkit-appearance:none
+    -moz-appearance: none
+    appearance: none
+
 
 .contact-us__button
   background-color: $slate
   max-width:183px
-  clear:both;
+  clear:both
+
+
+// IE9 override
+// Using modernizr for feature detection
+.no-cssgradients .selectbox::after
+  z-index: -3
