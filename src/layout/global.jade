@@ -49,14 +49,14 @@ html
       })(window,document,'script','dataLayer','GTM-P4FLLL');
     nav.nav-minor
       .nav-minor__container
-        #cd-search.cd-search
-          form(action="/search.html")
-            input(name="q", type="search", placeholder="Search...")
-            input(type="submit" value="Submit")
         ul
           each vals in nav_minor
             li
               a(href="#{vals.url}").nav-minor__link= vals.page
+        #cd-search.cd-search
+          form(action="/search.html")
+            input(name="q", type="search", placeholder="Search...")
+            input(type="submit" value="Submit")
       .header__logo-box
         .header__logo
           include ../inc/logo
