@@ -41,11 +41,11 @@ block content
       p.banner-standard__text Protect your assets and pass them on according to your wishes.
     .banner-standard__media-approach.col-7-12
       img(src="../images/trust_estate.jpg", alt="Grandpa son grandson walking in the fall legacy")
-  .breadcrumb
-    a.breadcrumb__link(href="#{breadcrumb.rooturl}")= breadcrumb.rootname 
-    span= ' > ' + title
+
   .main-standard
     .main-standard__content.col-7-12
+      include ../../inc/breadcrumb.jade
+      
       .main-standard__text
         p The Commerce Trust Company understands that preserving your assets can be as challenging as building them. That is why an experienced advisor will help you navigate the sometimes uncomfortable process of identifying potential risks to you and your family and setting up trusts to minimize your exposure.
         p Utilizing trust services can help you maintain control of your finances by:

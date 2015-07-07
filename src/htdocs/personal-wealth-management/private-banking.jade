@@ -41,11 +41,11 @@ block content
       p.banner-standard__text Access a broad range of banking products and services to meet&nbsp;your cash flow objectives and borrowing needs.
     .banner-standard__media-approach.col-7-12
       img(src="../images/private_banking.jpg", alt="Private banker meeting with clients")
-  .breadcrumb
-    a.breadcrumb__link(href="#{breadcrumb.rooturl}")= breadcrumb.rootname
-    span= ' > ' + title
+
   .main-standard
     .main-standard__content.col-7-12
+      include ../../inc/breadcrumb.jade
+      
       .main-standard__text
         p For over a century, The Commerce Trust Company has provided private banking services for wealthy individuals like you and families like yours. From checking and savings programs to sophisticated financing structures, we will work to meet your changing needs with innovative solutions and unparalleled personal service. Our private bankers can help meet a broad range of your financial needs, including:
         ul

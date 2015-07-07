@@ -41,11 +41,11 @@ block content
       p.banner-standard__text Life is not one-dimensional. That’s why we create comprehensive wealth plans – to consider all its many aspects.
     .banner-standard__media-approach.col-7-12
       img(src="../images/wealth_planning.jpg", alt="Hand holding a compass standing on a wooded trail journey")
-  .breadcrumb
-    a.breadcrumb__link(href="#{breadcrumb.rooturl}")= breadcrumb.rootname 
-    span= ' > ' + title
+
   .main-standard
     .main-standard__content.col-7-12
+      include ../../inc/breadcrumb.jade
+      
       .main-standard__text
         p Some clients have a clear understanding of where they want to go. Others may need guidance and a trusted advisor with whom to talk through those difficult decisions. Regardless of which one you are, The Commerce Trust Company is here to help.
         p Our Financial Advisory Services team can help you chart a path to reach your financial goals, provide guidance to stay the course, and get you back on track when unexpected detours occur. Our experienced financial planners will work with you to develop a strategic plan to address your needs, including:

@@ -15,6 +15,10 @@
     +media("<=tablet")
       text-align: left
 
+    &.col-7-12
+      padding-top: 1.5rem
+      vertical-align: top
+
   &__text
 
     * + *
@@ -60,7 +64,7 @@
   width:335px
 .phone-column
 
-.location-phone 
+.location-phone
   color:$nightgreen
   &:hover
     color:$green
@@ -91,3 +95,15 @@
 
     blockquote
       +blockquote()
+
+
+.breadcrumb
+  padding-bottom: 1.5rem
+  font-size:14px
+
+  a
+    color:$green
+    &:hover
+      color:$nightgreen
+  span
+    color:$stone
