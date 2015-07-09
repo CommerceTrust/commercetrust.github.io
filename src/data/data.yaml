@@ -26,7 +26,7 @@ nav_major:
     url: /
     sub:
       - subpage: Private Wealth Management
-        suburl: /personal-wealth-management/
+        suburl: /private-wealth-management/
         subimg: /images/private_wealth_mgmt.jpg
       - subpage: Investment Management
         suburl: /personal-wealth-management/personal-investment-management.html
