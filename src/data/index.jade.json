@@ -38,27 +38,27 @@
       "sub": [
         {
           "subpage": "Private Wealth Management",
-          "suburl": "/personal-wealth-management/",
+          "suburl": "/private-wealth-management/",
           "subimg": "/images/private_wealth_mgmt.jpg"
         },
         {
           "subpage": "Investment Management",
-          "suburl": "/personal-wealth-management/personal-investment-management.html",
+          "suburl": "/private-wealth-management/personal-investment-management.html",
           "subimg": "/images/personal_invest_mgmt.jpg"
         },
         {
           "subpage": "Wealth Planning",
-          "suburl": "/personal-wealth-management/wealth-planning.html",
+          "suburl": "/private-wealth-management/wealth-planning.html",
           "subimg": "/images/wealth_planning.jpg"
         },
         {
           "subpage": "Private Banking",
-          "suburl": "/personal-wealth-management/private-banking.html",
+          "suburl": "/private-wealth-management/private-banking.html",
           "subimg": "/images/private_banking.jpg"
         },
         {
           "subpage": "Trust and Estate Services",
-          "suburl": "/personal-wealth-management/trust-and-estate-services.html",
+          "suburl": "/private-wealth-management/trust-and-estate-services.html",
           "subimg": "/images/trust_estate.jpg"
         },
         {
