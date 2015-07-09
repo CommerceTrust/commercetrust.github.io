@@ -14,29 +14,7 @@ $below-content: 1
 $content: 2
 $above-content: 3
 
-//
-  "phone": 320px,
-  "tablet": 768px,
-  "desktop": 1024px)
 
-
-// breakpoints
-  $S: 480px
-  $M: 768px
-  $L: 1024px
-  $maxL: $L - 1px
-
-
-//
-  +MQ(maxL)
-  +media("<desktop")
-
-//
-  +MQ(L)
-  +media(">desktop")
-
-
-// super light grid - it works with the .cd-container class inside style.scss
 
 =column($percentage, $float-direction: left)
   width: 100% * $percentage
@@ -53,12 +31,11 @@ a.cd-nav-item
     img
       opacity: .7 !important
     h3
-      color: $nightgreen !important
+      color: lighten($green, 30%)
+      //color: $nightgreen !important
 
 
 //Primary style
-
-
 body
   +media("<desktop")
     // layout mixins inside partials > _layout.scss
@@ -314,6 +291,9 @@ input[type="search"]::-webkit-search-results-decoration
 .cd-primary-nav ul
   right: 20px
 
+  +media("<=tablet")
+    right: 0
+
 .cd-primary-nav,
 .cd-primary-nav ul
   position: fixed
@@ -332,6 +312,7 @@ input[type="search"]::-webkit-search-results-decoration
   transition: transform 0.3s
 
   a
+    text-decoration: none
     display: block
     font-size: 1.2rem
     height: 50px
@@ -347,6 +328,10 @@ input[type="search"]::-webkit-search-results-decoration
     transform: translateZ(0)
     will-change: transform, opacity
     transition: transform 0.3s, opacity 0.3s
+
+    &:hover
+      color: lighten($green, 30%)
+
 
   &.is-hidden
     /* secondary navigations hidden by default
@@ -372,12 +357,15 @@ input[type="search"]::-webkit-search-results-decoration
   .cd-nav-gallery .cd-nav-item,
   .cd-nav-icons .cd-nav-item
     /* items with picture (or icon) and title
-    height: 80px
-    line-height: 80px
+    height: 50px
+    line-height: 50px
 
     h3
       overflow: hidden
       text-overflow: ellipsis
+      font-size: 1.2rem
+      font-weight: normal
+      padding-left: 1.2rem
 
   .cd-nav-gallery .cd-nav-item
     //padding-left: 90px
@@ -537,7 +525,7 @@ input[type="search"]::-webkit-search-results-decoration
         position: absolute
         left: 0
         bottom: 0
-        height: 80px
+        height: 50px
         width: 100%
         overflow: hidden
         /* reset some inherited style
@@ -553,7 +541,7 @@ input[type="search"]::-webkit-search-results-decoration
           font-size: 2.2rem
           font-weight: bold
           text-align: center
-          line-height: 80px
+          line-height: 50px
           border-top: 1px solid $cloud
           /* reset some inherited style
           border-bottom: none
@@ -678,7 +666,7 @@ input[type="search"]::-webkit-search-results-decoration
           margin-right: 0
       .cd-nav-item
         border-bottom: none
-        height: 80px
+        height: 50px
         line-height: 1.2
         padding: 24px 0 0 85px
         &:hover
