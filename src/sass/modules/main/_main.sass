@@ -43,7 +43,12 @@
 
     // Keep small images from getting giant
     img
+      height: auto
       width: 100%
+
+      // Give small images a class of .auto so they fit correctly.
+      &.auto
+        width: auto
 
 
 // Main content block on Leadership page
