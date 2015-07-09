@@ -10,7 +10,7 @@
     height: 465px
 
   +media("<=phone")
-    background-position: left
+    //background-position: left
     height: 265px
 
 
@@ -26,13 +26,16 @@
     margin: 0 0 1rem 1rem
     text-shadow: 2px 2px 2px $charcoal
 
-    sup
-      font-size:1.75rem
-
-    +media("<tablet")
+    +media("<=tablet")
       position: static
       font-size: 2rem
       padding: 2rem
+
+    sup
+      font-size:1.75rem
+
+      +media("<=tablet")
+        top: -0.25em
 
 // Banner Standard - This is found on the majority of the internal pages
 .banner-standard
