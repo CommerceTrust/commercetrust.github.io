@@ -19,15 +19,17 @@ footer
 		display: block
 
 	&__logo-box
-		width: 450px
 
-		+media("<=tablet")
-			display: inline-block
-			width: auto
+		.logo
+			width: 500px
 
-			.logo__stacked
+			+media("<=tablet")
 				display: inline-block
-				width: 250px
+				width: auto
+
+				.logo__stacked
+					display: inline-block
+					width: 250px
 
 
 	&__box
