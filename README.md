@@ -1,58 +1,53 @@
 # Dev notes : Commerce Bank
 - This is a static site built using Jade, LibSass, Gulp and Node
+- The project Repo is in GitHub
+- We are only making the static assets and handing them off to the client. 
 
 
 ## Stack
 - Jade
 - Gulp
-- Libsass (Indented Flavor)
+- Libsass (Indented Sass)
 - GitHub
 
 ## Gulp build commands
 
 `gulp`
 
-This will compile the Jade, Sass, YAML, Frontmatter, and CoffeeScript. All css will be auto-prefixed. A lot more happends, but this is the main stuff to be concerned about.
+This will compile everything and open the project in the browser for you. It will also watch for changes and refresh the browser on every save.
 
-`gulp prod`
-This is not set up yet
-
-
-## Deployment
-Just merge your feature branch into master
+`gulp ghp`
+This is used to copy all the files in the `dist` director to the `master` branch for displaying the site.
 
 
 ---
 
 ## Environment URLs
 - **DEV** - [commercetrust.github.io](http://commercetrust.github.io/)
-- **PROD** - []()
 
 
 ---
 ## Workflow
 
 ### Setup
-1. Clone this repo to the local directory of your choice, or run `git pull` if you are already setup
-1. Create a feature branch `git checkout -b featureName` or use SourceTree for that.
+1. Clone this repo to the local directory of your choice
+1. Checkout the `dev` branch
+1. Create a `feature` branch from the `dev` branch to work from
 
 
 ### Editing local repo
-1. You must have Node installed. Go do that if you don't have it. If you are unsure, jump into the terminal and run `node -v`. If a version shows up, then you have node installed.
-1. From the project root run `cd src` to get in to the src directory where the gulpfile exists.
-1. With node installed run `npm i` from the root directory. This will install all of the dependencies.
+*You must have Node installed. Go do that if you don't have it. If you are unsure, jump into the terminal and run `node -v`. If a version shows up, then you have node installed.*
+
+1. From the project root run `npm i`. This will install all of the node dependencies.
 1. Now run `gulp`. This with build the site and launch it in your browser. The site will automatically update with each save from a sass, scss, js, coffee, yaml or jade file.
 
 
 ### Dev deployment
-1. Push your feature branch `git push origin featureName` to GitHub
-1. Create a pull request to merge into develop
-1. Create another pull request to merge into develop into master. This will push the changes live to [commercetrust.github.io](http://commercetrust.github.io/)
+1. Push your feature branch `git push origin featureName`
+1. Create a pull request to merge into `dev`
+1. After you merge your feature branch into the `dev` branch jump in your terminal and run `gulp ghp`. Done. This will push the changes live to [commercetrust.github.io](http://commercetrust.github.io/)
 
-
-### Produciton Deployment
-This has yet to be determined
-
+---
 
 ### :poop: Clean up
 1. Delete your local and remote support ticket branch when done. Avoid leaving stale branches.
