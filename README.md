@@ -1,7 +1,7 @@
 # Dev notes : Commerce Bank
 - This is a static site built using Jade, LibSass, Gulp and Node
 - The project Repo is in GitHub
-- We are only making the static assets and handing them off to the client. 
+- We are only making the static assets and handing them off to the client.
 
 
 ## Stack
@@ -43,6 +43,8 @@ This is used to copy all the files in the `dist` director to the `master` branch
 
 
 ### Dev deployment
+*warning - never merge the `dev` branch into `master`*
+
 1. Push your feature branch `git push origin featureName`
 1. Create a pull request to merge into `dev`
 1. After you merge your feature branch into the `dev` branch jump in your terminal and run `gulp ghp`. Done. This will push the changes live to [commercetrust.github.io](http://commercetrust.github.io/)
