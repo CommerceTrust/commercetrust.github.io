@@ -100,8 +100,9 @@ We are using LibSass for faster compile times while using browser-sync to refres
 ## Contacts
 
 ### :smiley: Developer(s)
-- Lindsay Hornsby
 - Benjamin Gandhi-Shepard
+- Lindsay Hornsby
+- Kevin
 
 ### :smiley: PM(s)
 - Jamal McLaughlin
@@ -110,13 +111,12 @@ We are using LibSass for faster compile times while using browser-sync to refres
 ## Issues that aren't JIRA tickets
 
 ### :skull: Known Issues + Workaround Log
-1. Posts are duplicating for some weird reason.
-- We are deleting these manually for now.
+1. Gulp-Sass cannot be updated to the latest version. Not sure what the issue is. Just stay at this verion ^1.3.3 and all will be good. It is written into the package file so this will be locked in for who ever clones and runs this next.
 
 ---
 
 ### :disappointed: Shame Log
-1. There is some funky stuff about this site. 
+1. There is some funky stuff about this site.
 1. Branch - titlehead - has the header that I think works best
 
 
