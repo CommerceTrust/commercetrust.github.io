@@ -1,0 +1,79 @@
+//-
+//- This is a 'Front Matter block'
+//- It uses YAML to create JSON objects that provide local variables to the page
+//-
+---
+title: Site Map
+description: Collaboratively administrate empowered markets via plug-and-play networks.
+
+sidebar:
+  image: meeting-2.jpg
+  title: Get in touch with us!
+  text: Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.
+  button_text: Contact Us
+  button_url: http://google.com
+---
+//- This will add the content of this page inside the 'global.jade' file
+extends ../layout/global
+//-
+//- This will overwrite the 'block seo' placeholder in the 'global.jade' file
+//- with the content below
+block seo
+  //- Iindent(nest) your code after a 'block' placeholder to make it show
+  title= title
+  meta(name="description" content="#{description}")
+//-
+//- This will overwrite the 'block content' placeholder in the 'global.jade' file
+//- with the content below
+block content
+  //-
+  //- Indent(nest) your code after a 'block' placeholder to make it show
+  //-
+  .banner-standard
+    .banner-standard__box.col-5-12
+      h1.banner-standard__heading= title
+      p.banner-standard__text Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+    .banner-standard__media-approach.col-7-12
+
+  .main-standard
+    .main-standard__content.col-7-12
+      .main-standard__text
+        ul.site-map
+          li
+            a(href='/private-wealth-management/') Private Wealth Management
+            ul
+              li
+                a(href='/private-wealth-management/personal-investment-management.html') Investment Management
+              li
+                a(href='/private-wealth-management/wealth-planning.html') Wealth Planning
+              li
+                a(href='/private-wealth-management/private-banking.html') Private Banking
+              li
+                a(href='/private-wealth-management/trust-and-estate-services.html') Trust and Estate Services
+          li
+            a(href='/institutional-asset-management/') Institutional Asset Management
+            ul
+              li
+                a(href='/institutional-asset-management/institutional-investment-management.html') Investment Management
+              li
+                a(href='/institutional-asset-management/trust-and-custody-services.html') Trust and Custody Services
+              li
+                a(href='/institutional-asset-management/retirement-plan-services.html') Retirement Plan Services
+              li
+                a(href='/institutional-asset-management/non-profit-services.html') Non-Profit Services
+              li
+                a(href='/institutional-asset-management/corporate-trust.html') Corporate Trust
+          li
+            a(href='/our-approach/') Our Approach
+            ul
+              li
+                a(href='/our-approach/about-us.html') About Us
+              li
+                a(href='/our-approach/leadership.html') Our Leadership
+              li
+                a(href='/news-and-insights/') News and Insights
+              li
+                a(href='https://www.linkedin.com/company/the-commerce-trust-company') Connect on LinkedIn
+
+
+    include ../inc/sidebar.jade
