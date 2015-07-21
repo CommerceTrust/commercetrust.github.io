@@ -1,9 +1,3 @@
-// TODO
-
-// Set up gulp gh-pages
-// Figure out Gulp-Markdown
-
-
 // Paths
 var sendto = {
   dist: './dist'
@@ -11,6 +5,8 @@ var sendto = {
 
 var srcPath = {
   jade: './src/htdocs/**/*.jade',
+  inc: './src/inc/**/*.jade',
+  layout: './src/layout/**/*.jade',
   yaml: './src/data/data.yaml',
   img: './src/images/**/*',
   sass: './src/sass/**/*.{sass,scss}',
@@ -26,7 +22,7 @@ var srcPath = {
 var gulp            = require('gulp');
 var browserSync     = require('browser-sync');      // Automagicly refreshes browser when you save
 var reload          = browserSync.reload;
-var sass          = require('gulp-sass');       // PreProcessor
+var sass            = require('gulp-sass');         // PreProcessor
 // var rupture         = require('rupture');        // Use Rupture for
 var sourcemaps      = require('gulp-sourcemaps');   // SourceMaps for CSS and JS
 var please          = require('gulp-pleeease');     // PostProcessor for (auto-prefixing, minifying, and IE fallbacks)
@@ -90,7 +86,6 @@ gulp.task('sass', function () {
         indentedSyntax: true
         //includePaths : './src/sass/style.sass'
       }))
-    //.pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write())
     .pipe(please(pleaseOptions))
     .pipe(gulp.dest(sendto.dist + '/css'))
@@ -204,10 +199,12 @@ gulp.task('copy-svg', function() {
 });
 
 
+var options = { branch: 'master'};
+
 // Deploy active branch to gh-pages branch
 gulp.task('ghp', function() {
   return gulp.src('./dist/**/*')
-    .pipe(ghPages());
+    .pipe(ghPages(options));
 });
 
 
@@ -217,4 +214,6 @@ gulp.task('default', ['imgs', 'sass', 'yaml', 'jade', 'copy-js', 'copy-pdf', 'co
   gulp.watch(srcPath.img, ['imgs']);        // Run jade task when any jade file changes
   gulp.watch(srcPath.sass, ['sass']);       // Run stylus task when any stylus file changes
   gulp.watch(srcPath.jade, ['jade']);       // Run jade task when any jade file changes
+    gulp.watch(srcPath.inc, ['jade']);       // Run jade task when any jade file changes
+      gulp.watch(srcPath.layout, ['jade']);       // Run jade task when any jade file changes
 });
