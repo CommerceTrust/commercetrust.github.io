@@ -13,7 +13,11 @@ var srcPath = {
   jade: './src/htdocs/**/*.jade',
   yaml: './src/data/data.yaml',
   img: './src/images/**/*',
-  sass: './src/sass/**/*.{sass,scss}'
+  sass: './src/sass/**/*.{sass,scss}',
+  pdf: './src/pdf/**/*.pdf',
+  robots: './src/robots.txt',
+  svg: './src/svg/**/*.svg',
+  favicon: './src/favicon.ico'
 };
 
 
@@ -174,7 +178,7 @@ gulp.task('imgs', function () {
 
 // Copy pfd
 gulp.task('copy-pdf', function() {
-    gulp.src('./pdf/**/*.pdf')
+    gulp.src(srcPath.pdf)
     // Perform minification tasks, etc here
     .pipe(gulp.dest(sendto.dist + '/pdf'));
 });
@@ -182,7 +186,7 @@ gulp.task('copy-pdf', function() {
 
 // Copy favicon
 gulp.task('copy-favicon', function() {
-    gulp.src('./favicon.ico')
+    gulp.src(srcPath.favicon)
     // Perform minification tasks, etc here
     .pipe(gulp.dest(sendto.dist));
 });
@@ -190,7 +194,7 @@ gulp.task('copy-favicon', function() {
 
 // Copy robots
 gulp.task('copy-robots', function() {
-    gulp.src('./robots.txt')
+    gulp.src(srcPath.robots)
     // Perform minification tasks, etc here
     .pipe(gulp.dest(sendto.dist));
 });
@@ -198,7 +202,7 @@ gulp.task('copy-robots', function() {
 
 // copy svg
 gulp.task('copy-svg', function() {
-    gulp.src('./svg/**/*.svg')
+    gulp.src(srcPath.svg)
     // Perform minification tasks, etc here
     .pipe(gulp.dest(sendto.dist + '/svg'));
 });
@@ -212,18 +216,16 @@ gulp.task('ghp', function() {
 
 
 
-//var sassWatch      = themePath + '/sass/**/*.{sass,scss}';
-
 gulp.task('default', ['imgs', 'sass', 'yaml', 'jade', 'copy-pdf', 'copy-favicon', 'copy-robots', 'copy-svg', 'browser-sync'], function () {
-  gulp.watch(srcPath.yaml, ['sequence']);  // Run yaml and then jade tasks when yaml file changes
-  gulp.watch(srcPath.img, ['imgs']);      // Run jade task when any jade file changes
-  gulp.watch(srcPath.sass, ['sass']);  // Run stylus task when any stylus file changes
-  gulp.watch(srcPath.jade, ['jade']);      // Run jade task when any jade file changes
+  gulp.watch(srcPath.yaml, ['sequence']);   // Run yaml and then jade tasks when yaml file changes
+  gulp.watch(srcPath.img, ['imgs']);        // Run jade task when any jade file changes
+  gulp.watch(srcPath.sass, ['sass']);       // Run stylus task when any stylus file changes
+  gulp.watch(srcPath.jade, ['jade']);       // Run jade task when any jade file changes
 });
 
 // Not configured yet
 gulp.task('prod', ['imgs', 'stylus', 'yaml', 'jade' ,'browser-sync'], function () {
-  gulp.watch(srcPath.yaml, ['sequence']);  // Run yaml and then jade tasks when yaml file changes
-  gulp.watch(srcPath.stylus, ['stylus']);  // Run stylus task when any stylus file changes
-  gulp.watch(srcPath.jade, ['jade']);      // Run jade task when any jade file changes
+  gulp.watch(srcPath.yaml, ['sequence']);   // Run yaml and then jade tasks when yaml file changes
+  gulp.watch(srcPath.stylus, ['stylus']);   // Run stylus task when any stylus file changes
+  gulp.watch(srcPath.jade, ['jade']);       // Run jade task when any jade file changes
 });
