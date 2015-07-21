@@ -1,3 +1,7 @@
+// TODO
+// Task to Remove Sourcemaps and comments - no minification
+
+
 // Paths
 var sendto = {
   dist: './dist'
@@ -80,17 +84,30 @@ var pleaseOptions  = {
 
 gulp.task('sass', function () {
   return gulp.src('./src/sass/style.sass')
-    .pipe(sourcemaps.init())
+    //.pipe(sourcemaps.init())
     .pipe(sass({
         errLogToConsole: true,
         indentedSyntax: true
         //includePaths : './src/sass/style.sass'
       }))
-    .pipe(sourcemaps.write())
+    //.pipe(sourcemaps.write())
     .pipe(please(pleaseOptions))
     .pipe(gulp.dest(sendto.dist + '/css'))
     .pipe(reload({ stream: true }));
 });
+
+
+// gulp.task('sass-gh', function () {
+//   return gulp.src('./src/sass/style.sass')
+//     .pipe(sass({
+//         errLogToConsole: true,
+//         indentedSyntax: true
+//         //includePaths : './src/sass/style.sass'
+//       }))
+//     .pipe(please(pleaseOptions))
+//     .pipe(gulp.dest(sendto.dist + '/css'))
+//     .pipe(reload({ stream: true }));
+// });
 
 
 gulp.task('yaml', function () {
