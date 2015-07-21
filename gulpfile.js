@@ -82,20 +82,6 @@ var pleaseOptions  = {
 };
 
 
-// gulp.task('stylus', function () {
-//   return gulp.src('src/stylus/style.styl')
-//     .pipe(plumber())
-//     //.pipe(gulpif(production, uglify()), sourcemaps.init())
-//     .pipe(sourcemaps.init())
-//     .pipe(stylus())
-//     //.on('error', handleErrors)
-//     .pipe(sourcemaps.write())
-//     .pipe(please(pleaseOptions))
-//     .pipe(gulp.dest(sendto.dist))
-//     .pipe(reload({ stream: true }));
-// });
-
-
 gulp.task('sass', function () {
   return gulp.src('./src/sass/style.sass')
     .pipe(sourcemaps.init())
@@ -107,16 +93,9 @@ gulp.task('sass', function () {
     //.pipe(sass().on('error', sass.logError))
     .pipe(sourcemaps.write())
     .pipe(please(pleaseOptions))
-    .pipe(gulp.dest(sendto.dist))
+    .pipe(gulp.dest(sendto.dist + '/css'))
     .pipe(reload({ stream: true }));
 });
-
-// gulp.task('sass', function () {
-//   gulp.src('./src/sass/style.sass')
-//     .pipe(plumber())
-//     .pipe(sass().on('error', sass.logError))
-//     .pipe(gulp.dest(sendto.dist));
-// });
 
 
 gulp.task('yaml', function () {
